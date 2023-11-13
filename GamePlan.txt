@@ -1,0 +1,60 @@
+[TASK LIST]:
+
+!PRIORITY!
+flight missions + control
+
+design doc [leaf]
+-now, go, do stuff.
+
+3D models [stof]
+	P1 model
+	P2 model
+	enemies
+	levels
+	level objects
+	pickups
+	projectiles
+	
+
+programming [shared]
+	flight controls (flying missions)
+	tank controls (ground missions)
+	aircraft controls (open air missions)
+	seamless 2 player connection
+	enemy spawning
+	enemy movement for all missions
+	endless level spawning
+	save files for high-score
+	basic UI controls
+	pickups (bomb, 1up, health, weapon change)
+	destructable objects
+	score rings (or some other bonus stuff)
+	score count
+	score save + display
+
+effects & detail [later]
+	projectile hit effect
+	pickup collection effect + sound
+	enemy kill effect + sound
+	projectile fire sound
+	player dead effect + sound
+	dodge effect + sound
+	
+
+level design [idk]
+	endless score mission
+		display highscore and attached player name list on startup
+		randomly selected level blocks to spawn
+		gradualy more difficult
+		save score at end to add to high score list + 3 letter code for player name
+	
+
+other stuff
+
+[DESIGN DESCRIPTION]:
+players
+	space wizards with drip (ground missions)
+	spaceships (flying missions)
+	p1=purple || p2=green
+	aim reticle is attached to player model
+	animation is done via script		
