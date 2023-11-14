@@ -14,7 +14,8 @@ public class FlightControl : MonoBehaviour
     
     public bool P1Active, P2Active;
 
-    public float PlayerSpeed = 0.04f, PlayerRotMulti = 30;
+    public float PlayerSpeed = 0.1f, PlayerRotMulti = 30;
+    public float LevelSpeed = 0.1f;
    
 
     // Start is called before the first frame update
@@ -44,6 +45,9 @@ public class FlightControl : MonoBehaviour
     {
         P1.localPosition += new Vector3(P1Input.x, P1Input.y, 0) * PlayerSpeed;
         P2.localPosition += new Vector3(P2Input.x, P2Input.y, 0) * PlayerSpeed;
+
+        transform.position += new Vector3(0, 0, LevelSpeed);
+
 
         if(P1.localPosition.y >= limitY)
         {
@@ -82,8 +86,8 @@ public class FlightControl : MonoBehaviour
 
     void ModelAnimation()
     {
-        P1Model.localEulerAngles = new Vector3(-P1Input.y * PlayerRotMulti, P1Input.x * PlayerRotMulti, 0);
-        P2Model.localEulerAngles = new Vector3(-P2Input.y * PlayerRotMulti, P2Input.x * PlayerRotMulti, 0);
+        P1Model.localEulerAngles = new Vector3(-P1Input.y * PlayerRotMulti, P1Input.x * PlayerRotMulti, -P1Input.x * PlayerRotMulti);
+        P2Model.localEulerAngles = new Vector3(-P2Input.y * PlayerRotMulti, P2Input.x * PlayerRotMulti, -P2Input.x * PlayerRotMulti);
     }
 
 }

@@ -147,8 +147,9 @@ MonoBehaviour:
   limitY: 4.5
   P1Active: 0
   P2Active: 0
-  PlayerSpeed: 0.08
+  PlayerSpeed: 0.1
   PlayerRotMulti: 20
+  LevelSpeed: 0.1
 --- !u!1001 &1911375007926431560
 PrefabInstance:
   m_ObjectHideFlags: 0
