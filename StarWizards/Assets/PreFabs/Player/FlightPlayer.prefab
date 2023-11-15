@@ -429,6 +429,7 @@ GameObject:
   - component: {fileID: 628686512258127538}
   - component: {fileID: 6963080256700744672}
   - component: {fileID: 4578505417117958958}
+  - component: {fileID: 4909501749155951499}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -501,6 +502,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4909501749155951499
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709929213348075171}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2124705421725058983, guid: 5f7c93c9954fcf9429370d1e75c5e7ef, type: 3}
 --- !u!1 &8546970458540277335
 GameObject:
   m_ObjectHideFlags: 0
