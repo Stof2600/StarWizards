@@ -139,9 +139,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  MoveActive: 0
+  MoveActive: 1
   MoveSpeed: 0.1
   RotateSpeed: 0.5
+  AnimRot: 20
+  Model: {fileID: 6998174186733656802}
+  PlayerCam: {fileID: 3852490459226511944}
   ProjectilePrefab: {fileID: 1467398005605321871, guid: 50aabef53969c9d4aa71d0d3ea061b00, type: 3}
 --- !u!1 &6048225567367275653
 GameObject:

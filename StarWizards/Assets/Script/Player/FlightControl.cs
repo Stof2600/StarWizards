@@ -21,7 +21,9 @@ public class FlightControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        P1.GetComponent<PlayerControl>().MoveActive = false;
+        P2.GetComponent<PlayerControl>().MoveActive = false;
+        P2.GetComponent<PlayerControl>().playerID = 2;
     }
 
     // Update is called once per frame

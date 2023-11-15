@@ -8,6 +8,9 @@ public class PlayerControl : MonoBehaviour
     public bool MoveActive;
 
     public float MoveSpeed = 0.1f, RotateSpeed = 0.1f;
+    public float AnimRot = 20;
+    public Transform Model;
+    public GameObject PlayerCam;
 
     Vector2 PlayerInput;
 
@@ -23,7 +26,18 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         ReadInput();
-        Movement();
+        if(MoveActive)
+        {
+            Movement();
+            ModelAnim();
+
+            PlayerCam.SetActive(true);
+        }
+        else
+        {
+            PlayerCam.SetActive(false);
+        }
+
     }
 
     void ReadInput()
@@ -54,10 +68,16 @@ public class PlayerControl : MonoBehaviour
     {
         transform.position += transform.forward * MoveSpeed;
 
+        transform.Rotate(PlayerInput.y * RotateSpeed, PlayerInput.x * RotateSpeed, 0);
     }
 
     void Fire()
     {
         Instantiate(ProjectilePrefab, transform.position, transform.rotation);
+    }
+
+    void ModelAnim()
+    {
+        Model.localEulerAngles = new Vector3(PlayerInput.y * AnimRot, PlayerInput.x * AnimRot, -PlayerInput.x * AnimRot);
     }
 }
