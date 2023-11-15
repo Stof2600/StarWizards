@@ -20,6 +20,17 @@ public class ProjectileScript : MonoBehaviour
         transform.position += transform.forward * MoveSpeed; 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        HealthScript HS = other.GetComponentInParent<HealthScript>();
+        PlayerControl PC = other.GetComponentInParent<PlayerControl>();
+
+        if (HS != null && (PC == null || (PC != null && !PlayerProjectile)))
+        {
+            HS.TakeDamage(1);
+        }
+    }
+
     IEnumerator DespawnTime()
     {
         yield return new WaitForSeconds(3);

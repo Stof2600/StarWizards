@@ -355,6 +355,7 @@
 "Assets/Script/Player/FlightControl.cs"
 "Assets/Script/Player/PlayerControl.cs"
 "Assets/Script/Projectile/ProjectileScript.cs"
+"Assets/Script/Shared/HealthScript.cs"
 -langversion:9.0
 
 /deterministic
