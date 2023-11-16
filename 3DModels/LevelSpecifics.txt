@@ -1,0 +1,9 @@
+
+FLIGHT LEVEL SPECIFICS:
+levels consist of 4 segments: about 3 minutes to fly through
+a segment is 500 units long and 100 units wide for the floor
+
+the level sides can have ramps to cover off the screen
+the level has collision
+the level can also have no ground (space levels)
+the level should have some obstacles
