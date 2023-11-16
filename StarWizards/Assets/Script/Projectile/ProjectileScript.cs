@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-    public float MoveSpeed = 0.5f;
+    public float MoveSpeed = 50f;
 
     public bool PlayerProjectile;
 
@@ -17,7 +17,7 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * MoveSpeed; 
+        transform.position += transform.forward * MoveSpeed * Time.deltaTime; 
     }
 
     private void OnTriggerEnter(Collider other)

@@ -54,6 +54,7 @@
     <UnityVersion>2022.3.12f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Game\GameManager.cs" />
     <Compile Include="Assets\Script\Shared\HealthScript.cs" />
     <Compile Include="Assets\Script\Player\PlayerControl.cs" />
     <Compile Include="Assets\Script\Projectile\ProjectileScript.cs" />

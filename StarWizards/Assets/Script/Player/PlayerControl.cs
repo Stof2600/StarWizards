@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
     public int playerID;
     public bool MoveActive;
 
-    public float MoveSpeed = 0.1f, RotateSpeed = 0.1f;
+    public float MoveSpeed = 10f, RotateSpeed = 50f;
     public float AnimRot = 20;
     public Transform Model;
     public GameObject PlayerCam;
@@ -66,9 +66,9 @@ public class PlayerControl : MonoBehaviour
 
     void Movement()
     {
-        transform.position += transform.forward * MoveSpeed;
+        transform.position += transform.forward * MoveSpeed * Time.deltaTime;
 
-        transform.Rotate(PlayerInput.y * RotateSpeed, PlayerInput.x * RotateSpeed, 0);
+        transform.Rotate(PlayerInput.y * RotateSpeed * Time.deltaTime, PlayerInput.x * RotateSpeed * Time.deltaTime, 0);
     }
 
     void Fire()
@@ -79,5 +79,18 @@ public class PlayerControl : MonoBehaviour
     void ModelAnim()
     {
         Model.localEulerAngles = new Vector3(PlayerInput.y * AnimRot, PlayerInput.x * AnimRot, -PlayerInput.x * AnimRot);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(!other.GetComponentInParent<PlayerControl>() && !other.GetComponentInParent<ProjectileScript>())
+        {
+            GetComponent<HealthScript>().TakeDamage(1);
+        }
+
+        if (other.GetComponentInParent<HealthScript>())
+        {
+            other.GetComponentInParent<HealthScript>().TakeDamage(1);
+        }
     }
 }

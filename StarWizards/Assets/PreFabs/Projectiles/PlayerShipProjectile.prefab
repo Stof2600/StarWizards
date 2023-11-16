@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6c210676278374a8c5c3f589b8eb5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 0.5
+  MoveSpeed: 50
   PlayerProjectile: 1
 --- !u!65 &5362025119967331309
 BoxCollider:

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class FlightControl : MonoBehaviour
 {
+    public GameManager GM;
+
     public Transform P1, P2;
     public Transform P1Model, P2Model;
 
@@ -14,13 +17,18 @@ public class FlightControl : MonoBehaviour
     
     public bool P1Active, P2Active;
 
-    public float PlayerSpeed = 0.1f, PlayerRotMulti = 30;
-    public float LevelSpeed = 0.1f;
+    public float PlayerSpeed = 10f, PlayerRotMulti = 30;
+    public float LevelSpeed = 10f;
+
+    public Slider P1HealthBar, P2HealthBar;
+    public Text ScoreText;
    
 
     // Start is called before the first frame update
     void Start()
     {
+        GM = FindAnyObjectByType<GameManager>();
+
         P1.GetComponent<PlayerControl>().MoveActive = false;
         P2.GetComponent<PlayerControl>().MoveActive = false;
         P2.GetComponent<PlayerControl>().playerID = 2;
@@ -32,6 +40,8 @@ public class FlightControl : MonoBehaviour
         ReadInput();
         Movement();
         ModelAnimation();
+
+        UIControl();
     }
 
     void ReadInput()
@@ -45,10 +55,10 @@ public class FlightControl : MonoBehaviour
     
     void Movement()
     {
-        P1.localPosition += new Vector3(P1Input.x, P1Input.y, 0) * PlayerSpeed;
-        P2.localPosition += new Vector3(P2Input.x, P2Input.y, 0) * PlayerSpeed;
+        P1.localPosition += new Vector3(P1Input.x, P1Input.y, 0) * PlayerSpeed * Time.deltaTime;
+        P2.localPosition += new Vector3(P2Input.x, P2Input.y, 0) * PlayerSpeed * Time.deltaTime;
 
-        transform.position += new Vector3(0, 0, LevelSpeed);
+        transform.position += new Vector3(0, 0, LevelSpeed) * Time.deltaTime;
 
 
         if(P1.localPosition.y >= limitY)
@@ -90,6 +100,20 @@ public class FlightControl : MonoBehaviour
     {
         P1Model.localEulerAngles = new Vector3(-P1Input.y * PlayerRotMulti, P1Input.x * PlayerRotMulti, -P1Input.x * PlayerRotMulti);
         P2Model.localEulerAngles = new Vector3(-P2Input.y * PlayerRotMulti, P2Input.x * PlayerRotMulti, -P2Input.x * PlayerRotMulti);
+    }
+
+    void UIControl()
+    {
+        HealthScript P1H = P1.GetComponent<HealthScript>();
+        HealthScript P2H = P2.GetComponent<HealthScript>();
+
+        P1HealthBar.maxValue = P1H.MaxHealth;
+        P2HealthBar.maxValue = P2H.MaxHealth;
+
+        P1HealthBar.value = P1H.Health;
+        P2HealthBar.value = P2H.Health;
+
+        ScoreText.text = "SCORE\n" + GM.VisualScore.ToString("000000000");
     }
 
 }
