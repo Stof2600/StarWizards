@@ -57,4 +57,24 @@ players
 	spaceships (flying missions)
 	p1=purple || p2=green
 	aim reticle is attached to player model
-	animation is done via script		
+	animation is done via script	
+
+[MISSIONS] NEED MORE STUFF
+flight missions (5 + final boss):
+	space cruiser map (start)
+	grass planet map (2)
+	ocean planet map (3)
+	Gaint factory(4)
+	Space strip (5)
+	Gas gaint planet (final boss)
+
+Ground missions (2):
+	Bunker destroyer(1)
+	Data Storage place(2)
+Open air missions(2):
+	destroy ground targets(1)
+	shoot to kill(2)
+
+mission connection:
+	flight1 > flight2 > flight3  >  ground1 > flight5> Open2 > Ground2 > Boss  
+		          > Open1 > flight4      >
