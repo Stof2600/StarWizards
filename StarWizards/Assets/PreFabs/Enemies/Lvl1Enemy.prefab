@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6198827187580007811}
   - component: {fileID: 6369135205159383392}
+  - component: {fileID: 2495424563178605676}
   m_Layer: 0
   m_Name: Lvl1Enemy
   m_TagString: Untagged
@@ -47,6 +48,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 0
   MaxHealth: 1
+--- !u!114 &2495424563178605676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083426378963580211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c75247795d2fa4a83361e7d1eed410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootCountdown: 1
+  MoveSpeed: -10
+  EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}
 --- !u!1 &9092242751312358815
 GameObject:
   m_ObjectHideFlags: 0

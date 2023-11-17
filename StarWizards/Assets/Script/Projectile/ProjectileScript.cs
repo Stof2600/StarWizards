@@ -24,11 +24,14 @@ public class ProjectileScript : MonoBehaviour
     {
         HealthScript HS = other.GetComponentInParent<HealthScript>();
         PlayerControl PC = other.GetComponentInParent<PlayerControl>();
+        EnemyControl EC = other.GetComponentInParent<EnemyControl>();
 
-        if (HS != null && (PC == null || (PC != null && !PlayerProjectile)))
+        if (HS != null && ((PC == null && PlayerProjectile) || (PC != null && !PlayerProjectile)))
         {
             HS.TakeDamage(1);
         }
+
+        
     }
 
     IEnumerator DespawnTime()
