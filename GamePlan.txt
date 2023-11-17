@@ -60,12 +60,13 @@ players
 	animation is done via script	
 
 [MISSIONS] NEED MORE STUFF
-flight missions (5 + final boss):
+flight missions (6 + final boss):
 	space cruiser map (start)
 	grass planet map (2)
 	ocean planet map (3)
 	Gaint factory(4)
 	Space strip (5)
+	Rising sun planet (6)
 	Gas gaint planet (final boss)
 
 Ground missions (2):
@@ -76,5 +77,5 @@ Open air missions(2):
 	shoot to kill(2)
 
 mission connection:
-	flight1 > flight2 > flight3  >  ground1 > flight5> Open2 > Ground2 > Boss  
-		          > Open1 > flight4      >
+	flight1 > flight2 > flight3  >  ground1 > flight5 > Open2     > Boss  
+		          > Open1 > flight4      > flight6 > Ground2 /\
