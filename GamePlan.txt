@@ -17,11 +17,11 @@ design doc [leaf]
 	
 
 programming [shared]
-	flight controls (flying missions)
-	tank controls (ground missions)
+	flight controls (flying missions) <
+	tank controls (ground missions)	
 	aircraft controls (open air missions)
-	seamless 2 player connection
-	enemy spawning
+	seamless 2 player connection <
+	enemy spawning <
 	enemy movement for all missions
 	endless level spawning
 	save files for high-score

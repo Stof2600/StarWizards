@@ -19,6 +19,11 @@ public class HealthScript : MonoBehaviour
 
         if (Health <= 0)
         {
+            if(GetComponent<PlayerControl>())
+            {
+                FindObjectOfType<GameManager>().ResetPlayer(GetComponent<PlayerControl>().playerID);
+            }
+
             Destroy(gameObject);
         }
     }

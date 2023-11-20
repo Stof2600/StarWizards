@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
                 SpawnPosition = new Vector3(Random.Range(-LimitX, LimitX), Random.Range(-LimitY, LimitY), transform.position.z);
             }
             
-            Instantiate(EnemyPrefab, SpawnPosition, new Quaternion(transform.rotation.y + 180, transform.rotation.x, transform.rotation.z, transform.rotation.w));
+            Instantiate(EnemyPrefab, SpawnPosition, new Quaternion(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z, transform.rotation.w));
         }
         
         Destroy(gameObject);

@@ -42,7 +42,7 @@ public class PlayerControl : MonoBehaviour
 
     void ReadInput()
     {
-        if(playerID == 1)
+        if(playerID == 0)
         {
             PlayerInput.x = Input.GetAxis("P1H");
             PlayerInput.y = Input.GetAxis("P1V");
