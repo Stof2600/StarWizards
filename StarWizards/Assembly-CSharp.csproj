@@ -64,6 +64,7 @@
     <Compile Include="Assets\Script\Player\PlayerControl.cs" />
     <Compile Include="Assets\Script\Projectile\ProjectileScript.cs" />
     <Compile Include="Assets\Script\Player\FlightControl.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyControl.cs" />
     <Compile Include="Assets\Script\Enemy\EnemySpawner.cs" />
   </ItemGroup>
   <ItemGroup>

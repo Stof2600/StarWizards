@@ -45,4 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanActive: 0
+  LimitX: 8.5
+  LimitY: 4.5
+  EnemyAmount: 10
   EnemyPrefab: {fileID: 7083426378963580211, guid: 854a624db9c2748478197de06b9e6829, type: 3}
