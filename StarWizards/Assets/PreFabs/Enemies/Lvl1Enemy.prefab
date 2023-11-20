@@ -61,8 +61,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootCountdown: 1
-  MoveSpeed: -10
+  MoveSpeed: -3
+  StaticEnemy: 0
+  TimeCount: 0
   EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}
+  ProjectileDirections:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!1 &9092242751312358815
 GameObject:
   m_ObjectHideFlags: 0
