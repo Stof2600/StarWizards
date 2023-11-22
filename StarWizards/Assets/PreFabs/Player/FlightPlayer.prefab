@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7135913982833178297}
   - component: {fileID: 304782854707983584}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ReticleLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3251852312846870276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalPosition: {x: 0, y: 0, z: 40}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7851811228017617596}
   - component: {fileID: 1315403739685064161}
   - component: {fileID: 3846531338673041349}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,9 +186,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8302029955392413311}
   - component: {fileID: 1685084596692891971}
-  - component: {fileID: 8249481365872437723}
   - component: {fileID: 5522609624763917013}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FlightPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,28 +225,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bea3e17cdb79ea45bc63675700167df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0
+  MaxHealth: 5
+  MoveSpeed: 10
   playerID: 1
   MoveActive: 1
-  MoveSpeed: 10
   RotateSpeed: 0.5
   AnimRot: 20
   Model: {fileID: 6998174186733656802}
   PlayerCam: {fileID: 3852490459226511944}
+  ReticleSpacing: 20
+  AimPoint: {fileID: 0}
+  LongReticle: {fileID: 7135913982833178297}
+  ShortReticle: {fileID: 878342456709739443}
+  LRSprite: {fileID: 304782854707983584}
+  SRSprite: {fileID: 2637537037870637687}
   ProjectilePrefab: {fileID: 1467398005605321871, guid: 50aabef53969c9d4aa71d0d3ea061b00, type: 3}
---- !u!114 &8249481365872437723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4520967960135278876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8201590c068e971419ced2181dcee9db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 0
-  MaxHealth: 5
 --- !u!54 &5522609624763917013
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -274,7 +267,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &6048225567367275653
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4596628907407370375}
   - component: {fileID: 677420178718022453}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4248841444734987344}
   - component: {fileID: 3719452144419723232}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +552,7 @@ GameObject:
   - component: {fileID: 6963080256700744672}
   - component: {fileID: 4578505417117958958}
   - component: {fileID: 4909501749155951499}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6998174186733656802}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 878342456709739443}
   - component: {fileID: 2637537037870637687}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ReticleShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,7 +706,7 @@ Transform:
   m_GameObject: {fileID: 8700221226007221505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []

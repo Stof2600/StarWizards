@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4645029815080246571}
   - component: {fileID: 2831466261664817010}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ReticleLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1031688833327058070}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalPosition: {x: 0, y: 0, z: 40}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5730427289017942318}
   - component: {fileID: 3544593832116053619}
   - component: {fileID: 1589825830462473303}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,9 +186,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5784611720461186541}
   - component: {fileID: 3752398402523747025}
-  - component: {fileID: 5840507275469423177}
   - component: {fileID: 8058608541185050951}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FlightPlayer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,28 +225,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bea3e17cdb79ea45bc63675700167df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0
+  MaxHealth: 5
+  MoveSpeed: 10
   playerID: 1
   MoveActive: 1
-  MoveSpeed: 10
   RotateSpeed: 0.5
   AnimRot: 20
   Model: {fileID: 4787097345787834736}
   PlayerCam: {fileID: 1587349944475349466}
+  ReticleSpacing: 20
+  AimPoint: {fileID: 0}
+  LongReticle: {fileID: 4645029815080246571}
+  ShortReticle: {fileID: 3405233946381031457}
+  LRSprite: {fileID: 2831466261664817010}
+  SRSprite: {fileID: 570765291672324581}
   ProjectilePrefab: {fileID: 1467398005605321871, guid: 50aabef53969c9d4aa71d0d3ea061b00, type: 3}
---- !u!114 &5840507275469423177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147119280502491790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8201590c068e971419ced2181dcee9db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 0
-  MaxHealth: 5
 --- !u!54 &8058608541185050951
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -274,7 +267,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &6191708061044544965
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4787097345787834736}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3405233946381031457}
   - component: {fileID: 570765291672324581}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ReticleShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 6614882885668060819}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -403,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070297206589063957}
   - component: {fileID: 3032897152656093351}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839517297171335106}
   - component: {fileID: 1220347890694929522}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +670,7 @@ GameObject:
   - component: {fileID: 4886539108905150578}
   - component: {fileID: 2088460348535597244}
   - component: {fileID: 7445470669530077209}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}

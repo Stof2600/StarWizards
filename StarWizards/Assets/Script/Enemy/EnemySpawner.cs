@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public bool CanActive;
+    public bool ForceSameLocation;
     Transform PlayerHolder;
 
     public float LimitX, LimitY;
@@ -17,6 +18,11 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         PlayerHolder = FindAnyObjectByType<FlightControl>().transform;
+
+        if(ForceSameLocation)
+        {
+            EnemyAmount = 0;
+        }
     }
 
     // Update is called once per frame
@@ -33,6 +39,12 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
+        if (ForceSameLocation)
+        {
+            Instantiate(EnemyPrefab, transform.position, new Quaternion(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z, transform.rotation.w));
+            Destroy(gameObject);
+        }
+
         for (int i = 0; i < EnemyAmount; i++)
         {
             Vector3 SpawnPosition = new Vector3(Random.Range(-LimitX, LimitX), Random.Range(-LimitY, LimitY), transform.position.z);

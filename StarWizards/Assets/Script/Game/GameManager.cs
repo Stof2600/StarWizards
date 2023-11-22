@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
         if (FC)
         {
             InFlightControl = true;
+
+            SpawnPlayer(0);
         }
     }
 

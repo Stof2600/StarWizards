@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileScript : MonoBehaviour
+public class ProjectileScript : StatObject
 {
-    public float MoveSpeed = 50f;
-
     public bool PlayerProjectile;
 
 
@@ -17,21 +15,22 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * MoveSpeed * Time.deltaTime; 
+        MoveForward();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        HealthScript HS = other.GetComponentInParent<HealthScript>();
         PlayerControl PC = other.GetComponentInParent<PlayerControl>();
         EnemyControl EC = other.GetComponentInParent<EnemyControl>();
 
-        if (HS != null && ((PC == null && PlayerProjectile) || (PC != null && !PlayerProjectile)))
+        if(!PlayerProjectile && PC)
         {
-            HS.TakeDamage(1);
+            PC.TakeDamage(1);
         }
-
-        
+        else if(PlayerProjectile && EC)
+        {
+            EC.TakeDamage(1);
+        }
     }
 
     IEnumerator DespawnTime()

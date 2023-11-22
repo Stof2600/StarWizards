@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2351530608317621576}
   - component: {fileID: 5362025119967331309}
   - component: {fileID: 3207445858193785989}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnemieShipProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6c210676278374a8c5c3f589b8eb5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0
+  MaxHealth: 0
   MoveSpeed: 50
   PlayerProjectile: 0
 --- !u!65 &5362025119967331309
@@ -108,7 +110,7 @@ GameObject:
   - component: {fileID: 2362551781647254721}
   - component: {fileID: 8428689523488797010}
   - component: {fileID: 214985112369262656}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

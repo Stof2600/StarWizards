@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyControl : MonoBehaviour
+public class EnemyControl : StatObject
 {
-    public float ShootCountdown = 1;
-    public float MoveSpeed = 5;
+    public float FireTimerMin = 0.7f, FireTimerMax = 1.5f;
+    public float ShootCountdown;
 
     public bool StaticEnemy;
 
@@ -21,12 +21,13 @@ public class EnemyControl : MonoBehaviour
     void Start()
     {
         Cam = FindAnyObjectByType<FlightControl>().transform;
+        ShootCountdown = Random.Range(FireTimerMin, FireTimerMax);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        MoveForward();
 
         ShootCountdown -= Time.deltaTime;
 
@@ -34,7 +35,7 @@ public class EnemyControl : MonoBehaviour
         {
             FireProjectiles();
 
-            ShootCountdown = 1;
+            ShootCountdown = Random.Range(FireTimerMin, FireTimerMax);
         }
 
         if (StaticEnemy)
@@ -47,7 +48,7 @@ public class EnemyControl : MonoBehaviour
 
         float XRotFixed = transform.eulerAngles.x;
 
-        if (Distance <= 10 && (XRotFixed > 360 - 90 || XRotFixed == 0))
+        if (Distance <= 15 && (XRotFixed > 360 - 90 || XRotFixed == 0))
         {
             MoveSpeed = 10;
 

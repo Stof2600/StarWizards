@@ -21,6 +21,7 @@ public class FlightControl : MonoBehaviour
 
     public float PlayerSpeed = 10f, PlayerRotMulti = 30;
     public float LevelSpeed = 10f;
+    public float EndPosition;
 
     public Vector3 P1Spawn, P2Spawn;
 
@@ -50,7 +51,15 @@ public class FlightControl : MonoBehaviour
             P2Movement();
         }
 
-        transform.position += new Vector3(0, 0, LevelSpeed) * Time.deltaTime;
+        if(P1Active || P2Active)
+        {
+            transform.position += new Vector3(0, 0, LevelSpeed) * Time.deltaTime;
+        }
+
+        if(transform.position.z >= EndPosition)
+        {
+            print("WIN");
+        }
 
         EnemyDetecting();
 
@@ -142,6 +151,7 @@ public class FlightControl : MonoBehaviour
                 P1Model = NewPlayer.Model;
                 NewPlayer.MoveActive = false;
                 NewPlayer.playerID = 0;
+                NewPlayer.AimPoint = cam.transform;
                 P1Active = true;
                 break;
             case 1:
@@ -149,6 +159,7 @@ public class FlightControl : MonoBehaviour
                 P2Model = NewPlayer.Model;
                 NewPlayer.MoveActive = false;
                 NewPlayer.playerID = 1;
+                NewPlayer.AimPoint = cam.transform;
                 P2Active = true;
                 break;
         }
@@ -158,9 +169,9 @@ public class FlightControl : MonoBehaviour
     {
         if(P1Active)
         {
-            HealthScript P1H = P1.GetComponent<HealthScript>();
-            P1HealthBar.maxValue = P1H.MaxHealth;
-            P1HealthBar.value = P1H.Health;
+            PlayerControl P1C = P1.GetComponent<PlayerControl>();
+            P1HealthBar.maxValue = P1C.MaxHealth;
+            P1HealthBar.value = P1C.Health;
         }
         else
         {
@@ -168,9 +179,9 @@ public class FlightControl : MonoBehaviour
         }
         if(P2Active)
         {
-            HealthScript P2H = P2.GetComponent<HealthScript>();
-            P2HealthBar.maxValue = P2H.MaxHealth;
-            P2HealthBar.value = P2H.Health;
+            PlayerControl P2C = P1.GetComponent<PlayerControl>();
+            P1HealthBar.maxValue = P2C.MaxHealth;
+            P1HealthBar.value = P2C.Health;
         }
         else
         {

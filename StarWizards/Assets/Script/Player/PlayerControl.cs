@@ -2,31 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : StatObject
 {
     public int playerID;
     public bool MoveActive;
 
-    public float MoveSpeed = 10f, RotateSpeed = 50f;
+    public float RotateSpeed = 50f;
     public float AnimRot = 20;
     public Transform Model;
     public GameObject PlayerCam;
+
+    public float ReticleSpacing = 20;
+    public Transform AimPoint;
+    public Transform LongReticle, ShortReticle;
+    public SpriteRenderer LRSprite, SRSprite;
+    Vector3 LongPos;
 
     Vector2 PlayerInput;
 
     public GameObject ProjectilePrefab;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         ReadInput();
-        if(MoveActive)
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        if (MoveActive)
         {
             Movement();
             ModelAnim();
@@ -38,6 +38,7 @@ public class PlayerControl : MonoBehaviour
             PlayerCam.SetActive(false);
         }
 
+        ReticleCollision();
     }
 
     void ReadInput()
@@ -66,8 +67,7 @@ public class PlayerControl : MonoBehaviour
 
     void Movement()
     {
-        transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-
+        MoveForward();
         transform.Rotate(PlayerInput.y * RotateSpeed * Time.deltaTime, PlayerInput.x * RotateSpeed * Time.deltaTime, 0);
     }
 
@@ -85,12 +85,46 @@ public class PlayerControl : MonoBehaviour
     {
         if(!other.GetComponentInParent<PlayerControl>() && !other.GetComponentInParent<ProjectileScript>())
         {
-            GetComponent<HealthScript>().TakeDamage(1);
+            GetComponent<PlayerControl>().TakeDamage(1);
         }
 
-        if (other.GetComponentInParent<HealthScript>())
+        if (other.GetComponentInParent<EnemyControl>())
         {
-            other.GetComponentInParent<HealthScript>().TakeDamage(1);
+            other.GetComponentInParent<EnemyControl>().TakeDamage(1);
+        }
+    }
+
+    void ReticleCollision()
+    {
+        if(!AimPoint)
+        {
+            AimPoint = transform;
+        }
+
+        Debug.DrawRay(transform.position, transform.forward * 100, Color.blue);
+        if(Physics.Raycast(transform.position, transform.forward, out RaycastHit Hit, 100f))
+        {
+            Vector3 ReticleDrawDir = (AimPoint.position - Hit.point);
+            ReticleDrawDir *= -1;
+            Debug.DrawLine(AimPoint.position, AimPoint.position + ReticleDrawDir, Color.red);
+
+            LongReticle.position = AimPoint.position + ReticleDrawDir;
+            ShortReticle.position = AimPoint.position + ReticleDrawDir / 2;
+
+            LRSprite.color = Color.red;
+            SRSprite.color = Color.red;
+        }
+        else 
+        {
+            Vector3 ReticleDrawDir = (AimPoint.position - (transform.position + new Vector3(0, 0, ReticleSpacing * 2)));
+            ReticleDrawDir *= -1;
+            Debug.DrawLine(AimPoint.position, AimPoint.position + ReticleDrawDir, Color.green);
+
+            LongReticle.position = AimPoint.position + ReticleDrawDir;
+            ShortReticle.position = AimPoint.position + ReticleDrawDir / 2;
+
+            LRSprite.color = Color.green;
+            SRSprite.color = Color.green;
         }
     }
 }

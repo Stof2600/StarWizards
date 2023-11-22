@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6198827187580007811}
-  - component: {fileID: 6369135205159383392}
   - component: {fileID: 2495424563178605676}
   m_Layer: 0
   m_Name: Lvl1Enemy
@@ -34,20 +33,6 @@ Transform:
   - {fileID: 8459433765492995877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6369135205159383392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7083426378963580211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8201590c068e971419ced2181dcee9db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 0
-  MaxHealth: 1
 --- !u!114 &2495424563178605676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,16 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c75247795d2fa4a83361e7d1eed410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShootCountdown: 1
+  Health: 0
+  MaxHealth: 1
   MoveSpeed: -3
+  FireTimerMin: 0.7
+  FireTimerMax: 1.5
+  ShootCountdown: 1
   StaticEnemy: 0
   TimeCount: 0
   EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}
   ProjectileDirections:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
 --- !u!1 &9092242751312358815
 GameObject:
@@ -133,7 +118,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 1d0b44deaabc07d4eacf22a49100e2d3, type: 3}
+  - {fileID: 2100000, guid: 02654ba50e8f2624faa5dc85077b05ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

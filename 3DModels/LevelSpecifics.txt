@@ -1,7 +1,24 @@
 
 FLIGHT LEVEL SPECIFICS:
 levels consist of 4 segments: about 3 minutes to fly through
-a segment is 500 units long and 100 units wide for the floor
+a segment is 500 units long and 20 units wide for the floor
+
+scale for unity plane
+level floor :
+	position (0, -5.5, 0)
+	scale(2, 1, 50)
+level wall:
+	position (10, 0, 0)
+	scale(1.1, 1, 50)
+
+
+scale for blender (unity / 10)
+level floor:
+	position (0, -5.5, 0)
+	scale(0.2, 1, 5)
+level floor:
+	position (10, 0, 0)
+	scale(0.11, 1, 5)
 
 the level sides can have ramps to cover off the screen
 the level has collision
