@@ -811,6 +811,7 @@ MonoBehaviour:
   PlayerSpeed: 10
   PlayerRotMulti: 20
   LevelSpeed: 10
+  EndPosition: 0
   P1Spawn: {x: -3, y: -3, z: 0}
   P2Spawn: {x: 3, y: -3, z: 0}
   P1HealthBar: {fileID: 3903531231683337139}

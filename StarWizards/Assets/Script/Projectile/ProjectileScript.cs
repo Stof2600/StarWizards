@@ -26,10 +26,12 @@ public class ProjectileScript : StatObject
         if(!PlayerProjectile && PC)
         {
             PC.TakeDamage(1);
+            Destroy(gameObject);
         }
         else if(PlayerProjectile && EC)
         {
             EC.TakeDamage(1);
+            Destroy(gameObject);
         }
     }
 

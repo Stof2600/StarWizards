@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 0
   MaxHealth: 1
+  ScoreOnDeath: 3
   MoveSpeed: -3
   FireTimerMin: 0.7
   FireTimerMax: 1.5

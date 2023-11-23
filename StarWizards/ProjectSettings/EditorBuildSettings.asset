@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BootupScene.unity
+    guid: 26602bb33639a644ba57fdd7b9fe818d
+  - enabled: 1
+    path: Assets/Scenes/Missions/Flight1.unity
+    guid: a51d3dd2b3ea3404299099818bfe59a0
   m_configObjects: {}

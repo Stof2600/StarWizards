@@ -227,6 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 0
   MaxHealth: 5
+  ScoreOnDeath: 0
   MoveSpeed: 10
   playerID: 1
   MoveActive: 1
@@ -234,6 +235,7 @@ MonoBehaviour:
   AnimRot: 20
   Model: {fileID: 6998174186733656802}
   PlayerCam: {fileID: 3852490459226511944}
+  ReticleActive: 1
   ReticleSpacing: 20
   AimPoint: {fileID: 0}
   LongReticle: {fileID: 7135913982833178297}

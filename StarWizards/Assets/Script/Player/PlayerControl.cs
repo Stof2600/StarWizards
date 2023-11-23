@@ -12,6 +12,7 @@ public class PlayerControl : StatObject
     public Transform Model;
     public GameObject PlayerCam;
 
+    public bool ReticleActive;
     public float ReticleSpacing = 20;
     public Transform AimPoint;
     public Transform LongReticle, ShortReticle;
@@ -26,6 +27,7 @@ public class PlayerControl : StatObject
     {
         ReadInput();
         GetComponent<Rigidbody>().velocity = Vector3.zero;
+
         if (MoveActive)
         {
             Movement();
@@ -38,7 +40,20 @@ public class PlayerControl : StatObject
             PlayerCam.SetActive(false);
         }
 
-        ReticleCollision();
+        if(ReticleActive)
+        {
+            ShortReticle.gameObject.SetActive(true);
+            LongReticle.gameObject.SetActive(true);
+
+            ReticleCollision();
+        }
+        else
+        {
+            ShortReticle.gameObject.SetActive(false);
+            LongReticle.gameObject.SetActive(false);
+        }
+
+        WallInFrontCheck();
     }
 
     void ReadInput()
@@ -94,6 +109,14 @@ public class PlayerControl : StatObject
         }
     }
 
+    void WallInFrontCheck()
+    {
+        if(Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 0.7f) && hit.transform.CompareTag("Level"))
+        {
+            TakeDamage(MaxHealth);
+        }
+    }
+
     void ReticleCollision()
     {
         if(!AimPoint)
@@ -102,7 +125,7 @@ public class PlayerControl : StatObject
         }
 
         Debug.DrawRay(transform.position, transform.forward * 100, Color.blue);
-        if(Physics.Raycast(transform.position, transform.forward, out RaycastHit Hit, 100f))
+        if(Physics.Raycast(transform.position, transform.forward, out RaycastHit Hit, 100f) && Hit.transform.GetComponentInParent<EnemyControl>())
         {
             Vector3 ReticleDrawDir = (AimPoint.position - Hit.point);
             ReticleDrawDir *= -1;

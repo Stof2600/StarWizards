@@ -19,6 +19,8 @@ public class FlightControl : MonoBehaviour
     
     public bool P1Active, P2Active;
 
+    bool WonLevel;
+
     public float PlayerSpeed = 10f, PlayerRotMulti = 30;
     public float LevelSpeed = 10f;
     public float EndPosition;
@@ -40,7 +42,19 @@ public class FlightControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ReadInput();
+        if(!WonLevel)
+        {
+            ReadInput();
+
+            if (transform.position.z >= EndPosition)
+            {
+                WonLevel = true;
+            }
+        }
+        else
+        {
+            WinAnimation();
+        }
 
         if (P1Active)
         {
@@ -51,14 +65,9 @@ public class FlightControl : MonoBehaviour
             P2Movement();
         }
 
-        if(P1Active || P2Active)
+        if (P1Active || P2Active)
         {
             transform.position += new Vector3(0, 0, LevelSpeed) * Time.deltaTime;
-        }
-
-        if(transform.position.z >= EndPosition)
-        {
-            print("WIN");
         }
 
         EnemyDetecting();
@@ -79,48 +88,69 @@ public class FlightControl : MonoBehaviour
     {
         P1.localPosition += new Vector3(P1Input.x, P1Input.y, 0) * PlayerSpeed * Time.deltaTime;
 
-        if(P1.localPosition.y >= limitY)
+        if(!WonLevel)
         {
-            P1.localPosition = new Vector3(P1.localPosition.x, limitY, 0);
-        }
-        else if(P1.localPosition.y <= -limitY)
-        {
-            P1.localPosition = new Vector3(P1.localPosition.x, -limitY, 0);
-        }
-        if (P1.localPosition.x >= limitX)
-        {
-            P1.localPosition = new Vector3(limitX, P1.localPosition.y, 0);
-        }
-        else if (P1.localPosition.x <= -limitX)
-        {
-            P1.localPosition = new Vector3(-limitX, P1.localPosition.y, 0);
-        }
+            if (P1.localPosition.y >= limitY)
+            {
+                P1.localPosition = new Vector3(P1.localPosition.x, limitY, 0);
+            }
+            else if (P1.localPosition.y <= -limitY)
+            {
+                P1.localPosition = new Vector3(P1.localPosition.x, -limitY, 0);
+            }
+            if (P1.localPosition.x >= limitX)
+            {
+                P1.localPosition = new Vector3(limitX, P1.localPosition.y, 0);
+            }
+            else if (P1.localPosition.x <= -limitX)
+            {
+                P1.localPosition = new Vector3(-limitX, P1.localPosition.y, 0);
+            }
 
-        P1Model.localEulerAngles = new Vector3(-P1Input.y * PlayerRotMulti, P1Input.x * PlayerRotMulti, -P1Input.x * PlayerRotMulti);
+            PlayerCollisionCheck(P1);
+
+            P1Model.localEulerAngles = new Vector3(-P1Input.y * PlayerRotMulti, P1Input.x * PlayerRotMulti, -P1Input.x * PlayerRotMulti);
+        }
     }
 
     void P2Movement()
     {
         P2.localPosition += new Vector3(P2Input.x, P2Input.y, 0) * PlayerSpeed * Time.deltaTime;
 
-        if (P2.localPosition.y >= limitY)
+        if(!WonLevel)
         {
-            P2.localPosition = new Vector3(P2.localPosition.x, limitY, 0);
-        }
-        else if (P2.localPosition.y <= -limitY)
-        {
-            P2.localPosition = new Vector3(P2.localPosition.x, -limitY, 0);
-        }
-        if (P2.localPosition.x >= limitX)
-        {
-            P2.localPosition = new Vector3(limitX, P2.localPosition.y, 0);
-        }
-        else if (P2.localPosition.x <= -limitX)
-        {
-            P2.localPosition = new Vector3(-limitX, P2.localPosition.y, 0);
-        }
+            if (P2.localPosition.y >= limitY)
+            {
+                P2.localPosition = new Vector3(P2.localPosition.x, limitY, 0);
+            }
+            else if (P2.localPosition.y <= -limitY)
+            {
+                P2.localPosition = new Vector3(P2.localPosition.x, -limitY, 0);
+            }
+            if (P2.localPosition.x >= limitX)
+            {
+                P2.localPosition = new Vector3(limitX, P2.localPosition.y, 0);
+            }
+            else if (P2.localPosition.x <= -limitX)
+            {
+                P2.localPosition = new Vector3(-limitX, P2.localPosition.y, 0);
+            }
 
-        P2Model.localEulerAngles = new Vector3(-P2Input.y * PlayerRotMulti, P2Input.x * PlayerRotMulti, -P2Input.x * PlayerRotMulti);
+            PlayerCollisionCheck(P1);
+
+            P2Model.localEulerAngles = new Vector3(-P2Input.y * PlayerRotMulti, P2Input.x * PlayerRotMulti, -P2Input.x * PlayerRotMulti);
+        }
+    }
+
+    void PlayerCollisionCheck(Transform Player)
+    {
+        if(Physics.Linecast(transform.position, Player.position, out RaycastHit hit))
+        {
+            if(!hit.transform.GetComponent<PlayerControl>())
+            {
+                Player.position = hit.point;
+            }
+        }
     }
 
     void EnemyDetecting()
@@ -189,5 +219,74 @@ public class FlightControl : MonoBehaviour
         }
 
         ScoreText.text = "SCORE\n" + GM.VisualScore.ToString("000000000");
+    }
+
+    void WinAnimation()
+    {
+        cam.transform.SetParent(null);
+        LevelSpeed = 5;
+
+        if(P1Active)
+        {
+            P1.GetComponent<PlayerControl>().ReticleActive = false;
+
+            if(P1.position.x > 0)
+            {
+                P1Input = new Vector2(1, 0);
+                P1Model.Rotate(0, 50 * Time.deltaTime, 0);
+            }
+            else
+            {
+                P1Input = new Vector2(-1, 0);
+                P1Model.Rotate(0, -50 * Time.deltaTime, 0);
+            }
+        }
+        if(P2Active)
+        {
+            P2.GetComponent<PlayerControl>().ReticleActive = false;
+
+            if (P2.position.x > 0)
+            {
+                P2Input = new Vector2(1, 0);
+                P2Model.Rotate(0, 50 * Time.deltaTime, 0);
+            }
+            else
+            {
+                P2Input = new Vector2(-1, 0);
+                P2Model.Rotate(0, -50 * Time.deltaTime, 0);
+            }
+        }
+
+        PlayerControl[] Players = FindObjectsOfType<PlayerControl>();
+
+        if (Players.Length > 0)
+        {
+            Plane[] planes;
+
+            planes = GeometryUtility.CalculateFrustumPlanes(cam);
+
+            foreach (PlayerControl p in Players)
+            {
+                Collider PCol = p.GetComponentInChildren<Collider>();
+
+                if (!GeometryUtility.TestPlanesAABB(planes, PCol.bounds))
+                {
+                    switch(p.playerID)
+                    {
+                        case 0:
+                            P1Active = false;
+                            break;
+                        case 1:
+                            P2Active = false;
+                            break;
+                    }
+                    Destroy(p.gameObject);
+                }
+            }
+        }
+        else
+        {
+            GM.StartLoadScene(1);
+        }
     }
 }

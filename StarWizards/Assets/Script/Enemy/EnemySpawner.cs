@@ -72,4 +72,18 @@ public class EnemySpawner : MonoBehaviour
             return true;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        if(ForceSameLocation)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, 0.5f);
+        }
+        else
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, 3f);
+        }
+    }
 }

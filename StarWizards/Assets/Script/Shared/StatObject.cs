@@ -5,6 +5,7 @@ using UnityEngine;
 public class StatObject : MonoBehaviour
 {
     public int Health, MaxHealth;
+    public int ScoreOnDeath;
 
     public float MoveSpeed;
 
@@ -27,6 +28,10 @@ public class StatObject : MonoBehaviour
             if (GetComponent<PlayerControl>())
             {
                 FindObjectOfType<GameManager>().ResetPlayer(GetComponent<PlayerControl>().playerID);
+            }
+            if(ScoreOnDeath > 0)
+            {
+                FindObjectOfType<GameManager>().AddScore(ScoreOnDeath);
             }
 
             Destroy(gameObject);
