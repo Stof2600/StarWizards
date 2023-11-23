@@ -17,9 +17,13 @@ public class GameManager : MonoBehaviour
     public FlightControl FC;
 
     public bool TransitionActive;
-    float TransitionTime;
+    public float TransitionSpeed = 4;
+    float TransitionTime, LoadTime;
+    bool PlayedTransitionEffect;
     public RectTransform TransitionBarTop, TransitionBarBottom;
     public Vector3 TranstionClosedPos, TranstionOpenPos;
+    public ParticleSystem TransitionEffect;
+    public Transform[] LoadingGears;
 
     int NextScene;
 
@@ -29,11 +33,11 @@ public class GameManager : MonoBehaviour
 
         NextScene = -1;
         TransitionActive = false;
+        PlayedTransitionEffect = false;
 
         if(InFirstScene)
         {
-            NextScene = 1;
-            LoadScene();
+            StartLoadScene(1);
         }
     }
 
@@ -43,7 +47,10 @@ public class GameManager : MonoBehaviour
         {
             print("LOADED SCENE");
 
+            LoadTime = 0;
+
             TransitionActive = false;
+            PlayedTransitionEffect = false;
             LoadedNewScene = false;
         }
 
@@ -170,19 +177,34 @@ public class GameManager : MonoBehaviour
     {
         if(TransitionActive && TransitionTime < 1)
         {
-            TransitionTime += Time.deltaTime;
+            TransitionTime += Time.deltaTime * TransitionSpeed;
         }
         else if(!TransitionActive && TransitionTime > 0)
         {
-            TransitionTime -= Time.deltaTime;
+            TransitionTime -= Time.deltaTime * TransitionSpeed;
         }
 
         TransitionBarTop.localPosition = Vector3.Lerp(TranstionOpenPos, TranstionClosedPos, TransitionTime);
         TransitionBarBottom.localPosition = Vector3.Lerp(-TranstionOpenPos, -TranstionClosedPos, TransitionTime);
 
-        if(TransitionTime >= 1 && NextScene > -1)
+        if(NextScene > -1 && TransitionActive && TransitionTime >= 1)
         {
-            LoadScene();
+            LoadTime += Time.deltaTime;
+
+            foreach(Transform Gear in LoadingGears)
+            {
+                Gear.Rotate(0, 0, 1);
+            }
+
+            if(!PlayedTransitionEffect)
+            {
+                TransitionEffect.Play();
+                PlayedTransitionEffect = true;
+            }
+            if(LoadTime >= 2)
+            {
+                LoadScene();
+            }
         }
     }
 }
