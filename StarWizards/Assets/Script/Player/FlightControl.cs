@@ -27,9 +27,6 @@ public class FlightControl : MonoBehaviour
 
     public Vector3 P1Spawn, P2Spawn;
 
-    public Slider P1HealthBar, P2HealthBar;
-    public Text ScoreText;
-
     public Camera cam;
    
 
@@ -71,8 +68,6 @@ public class FlightControl : MonoBehaviour
         }
 
         EnemyDetecting();
-
-        UIControl();
     }
 
     void ReadInput()
@@ -195,32 +190,6 @@ public class FlightControl : MonoBehaviour
         }
     }
 
-    void UIControl()
-    {
-        if(P1Active)
-        {
-            PlayerControl P1C = P1.GetComponent<PlayerControl>();
-            P1HealthBar.maxValue = P1C.MaxHealth;
-            P1HealthBar.value = P1C.Health;
-        }
-        else
-        {
-            P1HealthBar.value = 0;
-        }
-        if(P2Active)
-        {
-            PlayerControl P2C = P1.GetComponent<PlayerControl>();
-            P1HealthBar.maxValue = P2C.MaxHealth;
-            P1HealthBar.value = P2C.Health;
-        }
-        else
-        {
-            P2HealthBar.value = 0;
-        }
-
-        ScoreText.text = "SCORE\n" + GM.VisualScore.ToString("000000000");
-    }
-
     void WinAnimation()
     {
         cam.transform.SetParent(null);
@@ -286,6 +255,7 @@ public class FlightControl : MonoBehaviour
         }
         else
         {
+            GM.AddProgress = true;
             GM.StartLoadScene(1);
         }
     }

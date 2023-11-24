@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public bool InFirstScene, LoadedNewScene;
+
+    public int GameProgress;
+    public bool AddProgress;
 
     public int TotalScore;
     public int VisualScore;
@@ -15,6 +19,13 @@ public class GameManager : MonoBehaviour
     public bool InFlightControl;
     public GameObject P1Prefab, P2Prefab;
     public FlightControl FC;
+
+    public Slider P1HPBar, P2HPBar;
+    public Text ScoreText;
+    public GameObject FCHud;
+
+    public GameObject MapSelector;
+    public GameObject[] MissionButtons;
 
     public bool TransitionActive;
     public float TransitionSpeed = 4;
@@ -30,6 +41,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+
+        GameProgress = 0;
 
         NextScene = -1;
         TransitionActive = false;
@@ -49,6 +62,12 @@ public class GameManager : MonoBehaviour
 
             LoadTime = 0;
 
+            if(AddProgress)
+            {
+                GameProgress += 1;
+                AddProgress = false;
+            }
+
             TransitionActive = false;
             PlayedTransitionEffect = false;
             LoadedNewScene = false;
@@ -67,6 +86,8 @@ public class GameManager : MonoBehaviour
 
         CheckForSpawn();
         ScoreCounter();
+
+        UIControl();
 
         TransitionAnim();
     }
@@ -128,6 +149,64 @@ public class GameManager : MonoBehaviour
                     P2Active = true;
                     break;
                 
+            }
+        }
+    }
+
+
+    void UIControl()
+    {
+        if(FC)
+        {
+            FCHud.SetActive(true);
+            MapSelector.SetActive(false);
+
+            if (P1Active)
+            {
+                PlayerControl P1C = FC.P1.GetComponent<PlayerControl>();
+                P1HPBar.maxValue = P1C.MaxHealth;
+                P1HPBar.value = P1C.Health;
+            }
+            else
+            {
+                P1HPBar.value = 0;
+            }
+            if (P2Active)
+            {
+                PlayerControl P2C = FC.P2.GetComponent<PlayerControl>();
+                P2HPBar.maxValue = P2C.MaxHealth;
+                P2HPBar.value = P2C.Health;
+            }
+            else
+            {
+                P2HPBar.value = 0;
+            }
+
+            ScoreText.text = "SCORE\n" + VisualScore.ToString("000000000");
+        }
+        else
+        {
+            FCHud.SetActive(false);
+
+            if(!InFirstScene)
+            {
+                MapSelector.SetActive(true);
+
+                for (int i = 0; i < MissionButtons.Length; i++)
+                {
+                    if (i <= GameProgress)
+                    {
+                        MissionButtons[i].SetActive(true);
+                    }
+                    else
+                    {
+                        MissionButtons[i].SetActive(false);
+                    }
+                }
+            }
+            else
+            {
+                MapSelector.SetActive(false);
             }
         }
     }
