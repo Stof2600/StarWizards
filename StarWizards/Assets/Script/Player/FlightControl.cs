@@ -24,6 +24,7 @@ public class FlightControl : MonoBehaviour
     public float PlayerSpeed = 10f, PlayerRotMulti = 30;
     public float LevelSpeed = 10f;
     public float EndPosition;
+    public bool LeaveUpward;
 
     public Vector3 P1Spawn, P2Spawn;
 
@@ -199,30 +200,46 @@ public class FlightControl : MonoBehaviour
         {
             P1.GetComponent<PlayerControl>().ReticleActive = false;
 
-            if(P1.position.x > 0)
+            if (LeaveUpward)
             {
-                P1Input = new Vector2(1, 0);
-                P1Model.Rotate(0, 50 * Time.deltaTime, 0);
+                P1Input = new Vector2(0, 1);
+                P1Model.Rotate(-50 * Time.deltaTime,0, 0);
             }
             else
             {
-                P1Input = new Vector2(-1, 0);
-                P1Model.Rotate(0, -50 * Time.deltaTime, 0);
+                if (P1.position.x > 0)
+                {
+                    P1Input = new Vector2(1, 0);
+                    P1Model.Rotate(0, 50 * Time.deltaTime, 0);
+                }
+                else
+                {
+                    P1Input = new Vector2(-1, 0);
+                    P1Model.Rotate(0, -50 * Time.deltaTime, 0);
+                }
             }
         }
         if(P2Active)
         {
             P2.GetComponent<PlayerControl>().ReticleActive = false;
 
-            if (P2.position.x > 0)
+            if(LeaveUpward)
             {
-                P2Input = new Vector2(1, 0);
-                P2Model.Rotate(0, 50 * Time.deltaTime, 0);
+                P2Input = new Vector2(0, 1);
+                P2Model.Rotate(-50 * Time.deltaTime, 0, 0);
             }
             else
             {
-                P2Input = new Vector2(-1, 0);
-                P2Model.Rotate(0, -50 * Time.deltaTime, 0);
+                if (P2.position.x > 0)
+                {
+                    P2Input = new Vector2(1, 0);
+                    P2Model.Rotate(0, 50 * Time.deltaTime, 0);
+                }
+                else
+                {
+                    P2Input = new Vector2(-1, 0);
+                    P2Model.Rotate(0, -50 * Time.deltaTime, 0);
+                }
             }
         }
 

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Missions/Flight1.unity
     guid: a51d3dd2b3ea3404299099818bfe59a0
+  - enabled: 1
+    path: Assets/Scenes/Missions/Flight2.unity
+    guid: 7e2547bb5af9d484782b76ef9f3a564a
   m_configObjects: {}

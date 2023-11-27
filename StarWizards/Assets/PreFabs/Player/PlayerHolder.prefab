@@ -148,8 +148,9 @@ MonoBehaviour:
   P2Active: 0
   PlayerSpeed: 10
   PlayerRotMulti: 20
-  LevelSpeed: 10
-  EndPosition: 0
+  LevelSpeed: 15
+  EndPosition: 1000
+  LeaveUpward: 0
   P1Spawn: {x: -3, y: -3, z: 0}
   P2Spawn: {x: 3, y: -3, z: 0}
   cam: {fileID: 2417117328420591111}

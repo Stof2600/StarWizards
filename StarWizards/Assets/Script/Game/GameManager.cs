@@ -90,6 +90,11 @@ public class GameManager : MonoBehaviour
         UIControl();
 
         TransitionAnim();
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            GameProgress = 9999;
+        }
     }
 
     void ScoreCounter()
@@ -161,6 +166,13 @@ public class GameManager : MonoBehaviour
             FCHud.SetActive(true);
             MapSelector.SetActive(false);
 
+            ScoreText.text = "SCORE\n" + VisualScore.ToString("000000000");
+
+            if(FC.transform.position.z >= FC.EndPosition)
+            {
+                return;
+            }
+
             if (P1Active)
             {
                 PlayerControl P1C = FC.P1.GetComponent<PlayerControl>();
@@ -181,8 +193,6 @@ public class GameManager : MonoBehaviour
             {
                 P2HPBar.value = 0;
             }
-
-            ScoreText.text = "SCORE\n" + VisualScore.ToString("000000000");
         }
         else
         {

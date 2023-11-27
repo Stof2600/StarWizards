@@ -2306,10 +2306,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1580581366034381037, guid: 22268f3569d14ab42a50808e266680dc, type: 3}
-      propertyPath: LevelSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1580581366034381037, guid: 22268f3569d14ab42a50808e266680dc, type: 3}
       propertyPath: EndPosition
       value: 1100
       objectReference: {fileID: 0}
