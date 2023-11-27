@@ -10,6 +10,11 @@ public class EnemyControl : StatObject
     public bool StaticEnemy;
 
     public float TimeCount;
+    public float FireRate = 0;
+
+    float FireTime;
+    bool DoFire;
+    int CurrentProjectile;
 
     public GameObject EnemyProjectilePrefab;
 
@@ -33,9 +38,15 @@ public class EnemyControl : StatObject
 
         if (ShootCountdown <= 0)
         {
-            FireProjectiles();
+            FireTime = FireRate;
+            DoFire = true;
 
             ShootCountdown = Random.Range(FireTimerMin, FireTimerMax);
+        }
+
+        if(DoFire)
+        {
+            FireProjectiles();
         }
 
         if (StaticEnemy)
@@ -58,12 +69,22 @@ public class EnemyControl : StatObject
 
     void FireProjectiles()
     {
-        for (int i = 0; i < ProjectileDirections.Count; i++)
+        FireTime += Time.deltaTime;
+
+        if(FireTime >= FireRate)
         {
-            Vector3 Dir = ProjectileDirections[i];
+            if(CurrentProjectile == ProjectileDirections.Count)
+            {
+                DoFire = false;
+                return;
+            }
+
+            Vector3 Dir = ProjectileDirections[CurrentProjectile];
             GameObject Proj = Instantiate(EnemyProjectilePrefab, transform.position, transform.rotation);
             Proj.transform.Rotate(-Dir.y, Dir.x, 0);
+
+            CurrentProjectile += 1;
+            FireTime = 0;
         }
     }
-
 }

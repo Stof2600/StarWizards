@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public Text ScoreText;
     public GameObject FCHud;
 
+    public GameObject MenuScreen;
+
     public GameObject MapSelector;
     public GameObject[] MissionButtons;
 
@@ -262,6 +264,16 @@ public class GameManager : MonoBehaviour
         InFirstScene = false;
     }
 
+    public void ToMissionSelect()
+    {
+        TransitionActive = true;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     void TransitionAnim()
     {
         if(TransitionActive && TransitionTime < 1)
@@ -276,7 +288,7 @@ public class GameManager : MonoBehaviour
         TransitionBarTop.localPosition = Vector3.Lerp(TranstionOpenPos, TranstionClosedPos, TransitionTime);
         TransitionBarBottom.localPosition = Vector3.Lerp(-TranstionOpenPos, -TranstionClosedPos, TransitionTime);
 
-        if(NextScene > -1 && TransitionActive && TransitionTime >= 1)
+        if(TransitionActive && TransitionTime >= 1)
         {
             LoadTime += Time.deltaTime;
 
@@ -290,9 +302,14 @@ public class GameManager : MonoBehaviour
                 TransitionEffect.Play();
                 PlayedTransitionEffect = true;
             }
-            if(LoadTime >= 2)
+            if(LoadTime >= 2 && NextScene > -1)
             {
                 LoadScene();
+            }
+            else if(LoadTime >= 2 && NextScene == -1)
+            {
+                LoadedNewScene = true;
+                MenuScreen.SetActive(false);
             }
         }
     }
