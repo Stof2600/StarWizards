@@ -7,7 +7,12 @@ public class EnemyControl : StatObject
     public float FireTimerMin = 0.7f, FireTimerMax = 1.5f;
     public float ShootCountdown;
 
+    Transform Target;
+
     public bool StaticEnemy;
+
+    public Transform FirePoint;
+    public Transform AimBase, AimRot;
 
     public float TimeCount;
     public float FireRate = 0;
@@ -39,6 +44,7 @@ public class EnemyControl : StatObject
         if (ShootCountdown <= 0)
         {
             FireTime = FireRate;
+            CurrentProjectile = 0;
             DoFire = true;
 
             ShootCountdown = Random.Range(FireTimerMin, FireTimerMax);
@@ -47,6 +53,11 @@ public class EnemyControl : StatObject
         if(DoFire)
         {
             FireProjectiles();
+        }
+
+        if(AimBase || AimRot)
+        {
+            SmartAim();
         }
 
         if (StaticEnemy)
@@ -79,12 +90,63 @@ public class EnemyControl : StatObject
                 return;
             }
 
+            Quaternion FireRot = transform.rotation;
+
+            if(AimRot)
+            {
+                FireRot = AimRot.rotation;
+            }
+
             Vector3 Dir = ProjectileDirections[CurrentProjectile];
-            GameObject Proj = Instantiate(EnemyProjectilePrefab, transform.position, transform.rotation);
+            GameObject Proj = Instantiate(EnemyProjectilePrefab, FirePoint.position, FireRot);
             Proj.transform.Rotate(-Dir.y, Dir.x, 0);
 
             CurrentProjectile += 1;
             FireTime = 0;
         }
+    }
+
+    void SmartAim()
+    {
+        if (!Target)
+        {
+            Target = FindTarget();
+            return;
+        }
+
+        if (AimRot && AimBase)
+        {
+            AimBase.LookAt(new Vector3(Target.position.x, AimBase.position.y, Target.position.z));
+            AimRot.LookAt(Target.position);
+        }
+        else if(AimRot && !AimBase)
+        {
+            AimRot.LookAt(Target.position);
+        }
+        else if(!AimRot && AimBase)
+        {
+            AimBase.LookAt(new Vector3(Target.position.x, AimBase.position.y, Target.position.z));
+        }
+    }
+
+    Transform FindTarget()
+    {
+        Transform ReturnValue = null;
+
+        PlayerControl[] Targets = FindObjectsOfType<PlayerControl>();
+        float LastDis = Mathf.Infinity;
+
+        foreach(PlayerControl PC in Targets)
+        {
+            float Dis = Vector3.Distance(transform.position, PC.transform.position);
+
+            if(Dis < LastDis)
+            {
+                LastDis = Dis;
+                ReturnValue = PC.transform;
+            }
+        }
+
+        return ReturnValue;
     }
 }

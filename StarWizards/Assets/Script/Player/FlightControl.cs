@@ -132,7 +132,7 @@ public class FlightControl : MonoBehaviour
                 P2.localPosition = new Vector3(-limitX, P2.localPosition.y, 0);
             }
 
-            PlayerCollisionCheck(P1);
+            PlayerCollisionCheck(P2);
 
             P2Model.localEulerAngles = new Vector3(-P2Input.y * PlayerRotMulti, P2Input.x * PlayerRotMulti, -P2Input.x * PlayerRotMulti);
         }
@@ -140,12 +140,20 @@ public class FlightControl : MonoBehaviour
 
     void PlayerCollisionCheck(Transform Player)
     {
-        if(Physics.Linecast(transform.position, Player.position, out RaycastHit hit))
+        bool LevelCheck = false;
+
+        Collider[] Collisions = Physics.OverlapSphere(Player.position, 1.5f);
+        foreach(Collider Col in Collisions)
         {
-            if(!hit.transform.GetComponent<PlayerControl>())
+            if(Col.CompareTag("Level"))
             {
-                Player.position = hit.point;
+                LevelCheck = true;
             }
+        }
+
+        if(Physics.Linecast(transform.position, Player.position, out RaycastHit hit) && hit.transform.CompareTag("Level") && LevelCheck)
+        {
+            Player.position = hit.point;
         }
     }
 

@@ -113,7 +113,7 @@ public class PlayerControl : StatObject
     {
         if(Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 0.7f) && hit.transform.CompareTag("Level"))
         {
-            TakeDamage(MaxHealth);
+            TakeDamage(Health);
         }
     }
 
