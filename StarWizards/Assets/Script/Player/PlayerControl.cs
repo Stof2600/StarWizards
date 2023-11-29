@@ -54,6 +54,7 @@ public class PlayerControl : StatObject
         }
 
         WallInFrontCheck();
+        RunHitAnim();
     }
 
     void ReadInput()

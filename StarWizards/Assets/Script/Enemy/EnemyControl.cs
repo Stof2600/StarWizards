@@ -60,6 +60,7 @@ public class EnemyControl : StatObject
             SmartAim();
         }
 
+        RunHitAnim();
         if (StaticEnemy)
         {
             MoveSpeed = 0;

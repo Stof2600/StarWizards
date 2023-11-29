@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using JetBrains.Annotations;
 
@@ -35,6 +36,10 @@ public class FlightControl : MonoBehaviour
     void Start()
     {
         GM = FindAnyObjectByType<GameManager>();
+        if(!GM)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     // Update is called once per frame
