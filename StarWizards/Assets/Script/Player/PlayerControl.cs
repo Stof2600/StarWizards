@@ -12,16 +12,16 @@ public class PlayerControl : StatObject
     public Transform Model;
     public GameObject PlayerCam;
 
-    public bool ReticleActive;
-    public float ReticleSpacing = 20;
-    public Transform AimPoint;
-    public Transform LongReticle, ShortReticle;
-    public SpriteRenderer LRSprite, SRSprite;
-    Vector3 LongPos;
-
     Vector2 PlayerInput;
 
     public GameObject ProjectilePrefab;
+
+    float KillTimer;
+
+    private void Start()
+    {
+        Setup();
+    }
 
     void Update()
     {
@@ -34,23 +34,17 @@ public class PlayerControl : StatObject
             ModelAnim();
 
             PlayerCam.SetActive(true);
+
+            KillTimer += Time.deltaTime;
+
+            if(KillTimer >= 5)
+            {
+                TakeDamage(MaxHealth);
+            }
         }
         else
         {
             PlayerCam.SetActive(false);
-        }
-
-        if(ReticleActive)
-        {
-            ShortReticle.gameObject.SetActive(true);
-            LongReticle.gameObject.SetActive(true);
-
-            ReticleCollision();
-        }
-        else
-        {
-            ShortReticle.gameObject.SetActive(false);
-            LongReticle.gameObject.SetActive(false);
         }
 
         WallInFrontCheck();
@@ -89,7 +83,7 @@ public class PlayerControl : StatObject
 
     void Fire()
     {
-        Instantiate(ProjectilePrefab, transform.position, transform.rotation);
+        Instantiate(ProjectilePrefab, Model.position, Model.rotation);
     }
 
     void ModelAnim()
@@ -99,7 +93,7 @@ public class PlayerControl : StatObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.GetComponentInParent<PlayerControl>() && !other.GetComponentInParent<ProjectileScript>())
+        if(!other.GetComponentInParent<PlayerControl>() && !other.GetComponentInParent<ProjectileScript>() && !other.CompareTag("Border"))
         {
             GetComponent<PlayerControl>().TakeDamage(1);
         }
@@ -109,46 +103,19 @@ public class PlayerControl : StatObject
             other.GetComponentInParent<EnemyControl>().TakeDamage(1);
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("Border"))
+        {
+            KillTimer = 0;
+        }
+    }
 
     void WallInFrontCheck()
     {
         if(Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 0.7f) && hit.transform.CompareTag("Level"))
         {
             TakeDamage(Health);
-        }
-    }
-
-    void ReticleCollision()
-    {
-        if(!AimPoint)
-        {
-            AimPoint = transform;
-        }
-
-        Debug.DrawRay(transform.position, transform.forward * 100, Color.blue);
-        if(Physics.Raycast(transform.position, transform.forward, out RaycastHit Hit, 100f) && Hit.transform.GetComponentInParent<EnemyControl>())
-        {
-            Vector3 ReticleDrawDir = (AimPoint.position - Hit.point);
-            ReticleDrawDir *= -1;
-            Debug.DrawLine(AimPoint.position, AimPoint.position + ReticleDrawDir, Color.red);
-
-            LongReticle.position = AimPoint.position + ReticleDrawDir;
-            ShortReticle.position = AimPoint.position + ReticleDrawDir / 2;
-
-            LRSprite.color = Color.red;
-            SRSprite.color = Color.red;
-        }
-        else 
-        {
-            Vector3 ReticleDrawDir = (AimPoint.position - (transform.position + new Vector3(0, 0, ReticleSpacing * 2)));
-            ReticleDrawDir *= -1;
-            Debug.DrawLine(AimPoint.position, AimPoint.position + ReticleDrawDir, Color.green);
-
-            LongReticle.position = AimPoint.position + ReticleDrawDir;
-            ShortReticle.position = AimPoint.position + ReticleDrawDir / 2;
-
-            LRSprite.color = Color.green;
-            SRSprite.color = Color.green;
         }
     }
 }

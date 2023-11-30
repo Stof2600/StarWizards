@@ -9,13 +9,19 @@ public class EnemyControl : StatObject
 
     Transform Target;
 
+    public bool OpenAir;
     public bool StaticEnemy;
 
     public Transform FirePoint;
     public Transform AimBase, AimRot;
 
+    public float PatrolRadius = 10, ChaseRadius = 30;
+    public float RotateSpeed = 20;
+
     public float TimeCount;
     public float FireRate = 0;
+
+    bool ChasePlayer;
 
     float FireTime;
     bool DoFire;
@@ -25,21 +31,42 @@ public class EnemyControl : StatObject
 
     public List<Vector3> ProjectileDirections = new List<Vector3>();
 
-    Transform Cam;
+    Vector3 PatrolPoint;
+    Vector3 MovePoint;
+
+    Transform Cam, PlayerTarget;
 
     // Start is called before the first frame update
     void Start()
     {
-        Cam = FindAnyObjectByType<FlightControl>().transform;
+        Setup();
+
+        FlightControl FC = FindObjectOfType<FlightControl>();
+        if(FC)
+        {
+            Cam = FC.transform;
+        }
+
         ShootCountdown = Random.Range(FireTimerMin, FireTimerMax);
+        PatrolPoint = transform.position;
+        PlayerTarget = null;
     }
 
     // Update is called once per frame
     void Update()
     {
         MoveForward();
+        RunHitAnim();
 
-        ShootCountdown -= Time.deltaTime;
+        if(OpenAir)
+        {
+            OpenAirMovement();
+        }
+
+        if((OpenAir && !ChasePlayer) || !OpenAir)
+        {
+            ShootCountdown -= Time.deltaTime;
+        }
 
         if (ShootCountdown <= 0)
         {
@@ -60,10 +87,14 @@ public class EnemyControl : StatObject
             SmartAim();
         }
 
-        RunHitAnim();
         if (StaticEnemy)
         {
             MoveSpeed = 0;
+            return;
+        }
+
+        if(!Cam)
+        {
             return;
         }
 
@@ -130,6 +161,62 @@ public class EnemyControl : StatObject
         }
     }
 
+    void OpenAirMovement()
+    {
+        if(MoveSpeed == 0)
+        {
+            MoveSpeed = 10;
+        }
+
+        Debug.DrawLine(transform.position, MovePoint);
+
+        if(MovePoint != Vector3.zero)
+        {
+            Quaternion TargetRot = Quaternion.LookRotation(MovePoint - transform.position);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, TargetRot, Time.deltaTime * RotateSpeed);
+        }
+
+        if(!ChasePlayer)
+        {
+            if(PlayerTarget)
+            {
+                ChasePlayer = true;
+                return;
+            }
+
+            if(MovePoint == Vector3.zero)
+            {
+                MovePoint = PatrolPoint + new Vector3(Random.Range(-PatrolRadius, PatrolRadius), Random.Range(-PatrolRadius, PatrolRadius), Random.Range(-PatrolRadius, PatrolRadius));
+            }
+            else if(Vector3.Distance(transform.position, MovePoint) < 3f)
+            {
+                MovePoint = Vector3.zero;
+            }
+
+            Collider[] NearbyCheck = Physics.OverlapSphere(transform.position, PatrolRadius);
+            foreach (Collider Col in NearbyCheck)
+            {
+                if (Col.GetComponentInParent<PlayerControl>())
+                {
+                    PlayerTarget = Col.transform;
+                    return;
+                }
+            }
+        }
+        else
+        {
+            MovePoint = PlayerTarget.position;
+
+            if(Vector3.Distance(transform.position, PlayerTarget.position) > ChaseRadius)
+            {
+                PatrolPoint = transform.position;
+                PlayerTarget = null;
+                ChasePlayer = false;
+            }
+        }
+    }
+
     Transform FindTarget()
     {
         Transform ReturnValue = null;
@@ -149,5 +236,11 @@ public class EnemyControl : StatObject
         }
 
         return ReturnValue;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, PatrolRadius);
+        Gizmos.DrawWireCube(PatrolPoint, new Vector3(PatrolRadius, PatrolRadius, PatrolRadius));
     }
 }

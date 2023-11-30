@@ -144,7 +144,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1262827346072087745}
@@ -164,12 +164,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 0
-  MaxHealth: 1
+  MaxHealth: 3
   ScoreOnDeath: 15
   MoveSpeed: 0
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
-  FireTimerMin: 0.3
-  FireTimerMax: 0.3
+  DefaultMat: {fileID: 0}
+  FireTimerMin: 3
+  FireTimerMax: 6
   ShootCountdown: 1
   StaticEnemy: 1
   FirePoint: {fileID: 2285367732514647613}
@@ -179,11 +180,15 @@ MonoBehaviour:
   FireRate: 0
   EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}
   ProjectileDirections:
+  - {x: 0, y: 1, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 3, y: 0, z: 0}
-  - {x: -3, y: 0, z: 0}
-  - {x: 0, y: 3, z: 0}
-  - {x: 0, y: -3, z: 0}
+  - {x: 0, y: -1, z: 0}
+  - {x: 1, y: 1, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: -1, z: 0}
+  - {x: -1, y: 1, z: 0}
+  - {x: -1, y: 0, z: 0}
+  - {x: -1, y: -1, z: 0}
 --- !u!95 &2029668897074392089
 Animator:
   serializedVersion: 5

@@ -54,6 +54,7 @@ MonoBehaviour:
   HitMat: {fileID: 0}
   DefaultMat: {fileID: 0}
   PlayerProjectile: 0
+  DespawnTimer: 10
 --- !u!65 &5362025119967331309
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -356,6 +356,7 @@
 "Assets/Script/Enemy/EnemySpawner.cs"
 "Assets/Script/Game/GameManager.cs"
 "Assets/Script/Player/FlightControl.cs"
+"Assets/Script/Player/OpenAirControl.cs"
 "Assets/Script/Player/PlayerControl.cs"
 "Assets/Script/Projectile/ProjectileScript.cs"
 "Assets/Script/Shared/StatObject.cs"

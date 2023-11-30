@@ -190,7 +190,6 @@ public class FlightControl : MonoBehaviour
                 P1Model = NewPlayer.Model;
                 NewPlayer.MoveActive = false;
                 NewPlayer.playerID = 0;
-                NewPlayer.AimPoint = cam.transform;
                 P1Active = true;
                 break;
             case 1:
@@ -198,7 +197,6 @@ public class FlightControl : MonoBehaviour
                 P2Model = NewPlayer.Model;
                 NewPlayer.MoveActive = false;
                 NewPlayer.playerID = 1;
-                NewPlayer.AimPoint = cam.transform;
                 P2Active = true;
                 break;
         }
@@ -211,8 +209,6 @@ public class FlightControl : MonoBehaviour
 
         if(P1Active)
         {
-            P1.GetComponent<PlayerControl>().ReticleActive = false;
-
             if (LeaveUpward)
             {
                 P1Input = new Vector2(0, 1);
@@ -234,8 +230,6 @@ public class FlightControl : MonoBehaviour
         }
         if(P2Active)
         {
-            P2.GetComponent<PlayerControl>().ReticleActive = false;
-
             if(LeaveUpward)
             {
                 P2Input = new Vector2(0, 1);

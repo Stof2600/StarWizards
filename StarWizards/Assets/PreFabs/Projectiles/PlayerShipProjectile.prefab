@@ -49,8 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 0
   MaxHealth: 0
+  ScoreOnDeath: 0
   MoveSpeed: 50
+  HitMat: {fileID: 0}
+  DefaultMat: {fileID: 0}
   PlayerProjectile: 1
+  DespawnTimer: 6
 --- !u!65 &5362025119967331309
 BoxCollider:
   m_ObjectHideFlags: 0

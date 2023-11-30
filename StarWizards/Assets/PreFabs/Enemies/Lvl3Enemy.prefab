@@ -158,13 +158,18 @@ MonoBehaviour:
   ScoreOnDeath: 7
   MoveSpeed: 0
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
+  DefaultMat: {fileID: 0}
   FireTimerMin: 1.3
   FireTimerMax: 2
   ShootCountdown: 1
+  OpenAir: 0
   StaticEnemy: 0
   FirePoint: {fileID: 7557722553885420720}
   AimBase: {fileID: 0}
   AimRot: {fileID: 7557722553885420720}
+  PatrolRadius: 30
+  ChaseRadius: 40
+  RotateSpeed: 3
   TimeCount: 0
   FireRate: 0.2
   EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}

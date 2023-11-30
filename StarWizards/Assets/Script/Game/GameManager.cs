@@ -16,9 +16,10 @@ public class GameManager : MonoBehaviour
     int ScoreCountHelper;
 
     public bool P1Active, P2Active;
-    public bool InFlightControl;
+    public bool InFlightControl, InOpenControl;
     public GameObject P1Prefab, P2Prefab;
     public FlightControl FC;
+    public OpenAirControl OAC;
 
     public Slider P1HPBar, P2HPBar;
     public Text ScoreText;
@@ -70,6 +71,9 @@ public class GameManager : MonoBehaviour
                 AddProgress = false;
             }
 
+            InFlightControl = false;
+            InOpenControl = false;
+
             TransitionActive = false;
             PlayedTransitionEffect = false;
             LoadedNewScene = false;
@@ -81,6 +85,16 @@ public class GameManager : MonoBehaviour
             if (FC)
             {
                 InFlightControl = true;
+
+                SpawnPlayer(0);
+            }
+        }
+        if (!OAC)
+        {
+            OAC = FindObjectOfType<OpenAirControl>();
+            if (OAC)
+            {
+                InOpenControl = true;
 
                 SpawnPlayer(0);
             }
@@ -158,12 +172,34 @@ public class GameManager : MonoBehaviour
                 
             }
         }
+        if(InOpenControl)
+        {
+            switch (PlayerID)
+            {
+                case 0:
+                    Instantiate(P1Prefab, OAC.transform.position + OAC.P1Spawn, OAC.transform.rotation);
+                    OAC.AssignPlayer(PlayerID);
+                    P1Active = true;
+                    break;
+                case 1:
+                    Instantiate(P2Prefab, OAC.transform.position + OAC.P2Spawn, OAC.transform.rotation);
+                    OAC.AssignPlayer(PlayerID);
+                    P2Active = true;
+                    break;
+
+            }
+        }
     }
 
 
     void UIControl()
     {
-        if(FC)
+        if(OAC)
+        {
+            FCHud.SetActive(false);
+            MapSelector.SetActive(false);
+        }
+        else if(FC)
         {
             FCHud.SetActive(true);
             MapSelector.SetActive(false);
@@ -236,6 +272,10 @@ public class GameManager : MonoBehaviour
                     FC.P1Model = null;
                     FC.P1Active = false;
                 }
+                if(InOpenControl)
+                {
+                    OAC.P1Active = false;
+                }
                 break;
             case 1:
                 P2Active = false;
@@ -245,6 +285,10 @@ public class GameManager : MonoBehaviour
                     FC.P2 = null;
                     FC.P2Model = null;
                     FC.P2Active = false;
+                }
+                if (InOpenControl)
+                {
+                    OAC.P2Active = false;
                 }
                 break;
         }

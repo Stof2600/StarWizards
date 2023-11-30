@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileScript : StatObject
 {
     public bool PlayerProjectile;
-
+    public float DespawnTimer;
 
     private void Start()
     {
@@ -37,7 +37,7 @@ public class ProjectileScript : StatObject
 
     IEnumerator DespawnTime()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(DespawnTimer);
         Destroy(gameObject);
     }
 }

@@ -2307,7 +2307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1580581366034381037, guid: 22268f3569d14ab42a50808e266680dc, type: 3}
       propertyPath: EndPosition
-      value: 1100
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 3634860370010354962, guid: 22268f3569d14ab42a50808e266680dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2563,7 +2563,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.3
   m_Range: 151.59175
   m_SpotAngle: 133.50021
   m_InnerSpotAngle: 21.80208
@@ -2602,7 +2602,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

@@ -14,7 +14,7 @@ public class StatObject : MonoBehaviour
 
     float HitAnimTime;
 
-    private void Start()
+    public void Setup()
     {
         Health = MaxHealth;
         DefaultMat = GetComponentInChildren<MeshRenderer>().material;
