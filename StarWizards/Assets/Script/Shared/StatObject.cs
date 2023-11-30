@@ -9,9 +9,15 @@ public class StatObject : MonoBehaviour
 
     public float MoveSpeed;
 
+    public Material HitMat;
+    public Material DefaultMat;
+
+    float HitAnimTime;
+
     private void Start()
     {
         Health = MaxHealth;
+        DefaultMat = GetComponentInChildren<MeshRenderer>().material;
     }
 
     public void MoveForward()
@@ -21,7 +27,12 @@ public class StatObject : MonoBehaviour
 
     public void TakeDamage(int Amount)
     {
-        Health -= Amount;
+        if(HitAnimTime <= 0)
+        {
+            Health -= Amount;
+
+            HitAnimTime = 0.6f;
+        }
 
         if (Health <= 0)
         {
@@ -35,6 +46,41 @@ public class StatObject : MonoBehaviour
             }
 
             Destroy(gameObject);
+        }
+    }
+
+    public void RunHitAnim()
+    {
+        if (HitAnimTime > 0)
+        {
+            HitAnimTime -= Time.deltaTime;
+
+            if((HitAnimTime * 10) % 2 < 1)
+            {
+                foreach (MeshRenderer MR in GetComponentsInChildren<MeshRenderer>())
+                {
+                    MR.material = HitMat;
+                }
+            }
+            else if((HitAnimTime * 10) % 2 >= 1)
+            {
+                foreach (MeshRenderer MR in GetComponentsInChildren<MeshRenderer>())
+                {
+                    MR.material = DefaultMat;
+                }
+            }
+        }
+        else 
+        {
+            if(!DefaultMat)
+            {
+                DefaultMat = GetComponentInChildren<MeshRenderer>().material;
+            }
+
+            foreach (MeshRenderer MR in GetComponentsInChildren<MeshRenderer>())
+            {
+                MR.material = DefaultMat;
+            }
         }
     }
 }

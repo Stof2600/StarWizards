@@ -237,7 +237,7 @@ public class GameManager : MonoBehaviour
                     FC.P1Active = false;
                 }
                 break;
-            case 2:
+            case 1:
                 P2Active = false;
 
                 if (InFlightControl)

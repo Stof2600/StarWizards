@@ -48,12 +48,17 @@ MonoBehaviour:
   Health: 0
   MaxHealth: 1
   ScoreOnDeath: 3
-  MoveSpeed: -3
+  MoveSpeed: 0
+  HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
   FireTimerMin: 0.7
   FireTimerMax: 1.5
   ShootCountdown: 1
   StaticEnemy: 0
+  FirePoint: {fileID: 6198827187580007811}
+  AimBase: {fileID: 0}
+  AimRot: {fileID: 0}
   TimeCount: 0
+  FireRate: 0
   EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}
   ProjectileDirections:
   - {x: 0, y: 0, z: 0}

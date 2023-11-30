@@ -229,6 +229,7 @@ MonoBehaviour:
   MaxHealth: 5
   ScoreOnDeath: 0
   MoveSpeed: 10
+  HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
   playerID: 1
   MoveActive: 1
   RotateSpeed: 0.5
