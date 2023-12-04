@@ -33,7 +33,11 @@ public class PlayerControl : StatObject
             Movement();
             ModelAnim();
 
-            PlayerCam.SetActive(true);
+            if (PlayerCam.transform.parent == transform)
+            {
+                PlayerCam.SetActive(true);
+            }
+            
 
             KillTimer += Time.deltaTime;
 

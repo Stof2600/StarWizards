@@ -39,6 +39,10 @@ public class StatObject : MonoBehaviour
             if (GetComponent<PlayerControl>())
             {
                 FindObjectOfType<GameManager>().ResetPlayer(GetComponent<PlayerControl>().playerID);
+                if (GetComponentInChildren<Camera>())
+                {
+                    GetComponentInChildren<Camera>().transform.SetParent(null);
+                }
             }
             if(ScoreOnDeath > 0)
             {

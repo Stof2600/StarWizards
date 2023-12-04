@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
     public ParticleSystem TransitionEffect;
     public Transform[] LoadingGears;
 
+    public float[] UIYPosFlight, UIYPosOpen;
+    public RectTransform[] UIObjects;
+
     int NextScene;
 
     private void Start()
@@ -174,16 +177,18 @@ public class GameManager : MonoBehaviour
         }
         if(InOpenControl)
         {
+            Transform NewP;
+
             switch (PlayerID)
             {
                 case 0:
-                    Instantiate(P1Prefab, OAC.transform.position + OAC.P1Spawn, OAC.transform.rotation);
-                    OAC.AssignPlayer(PlayerID);
+                    NewP = Instantiate(P1Prefab, OAC.transform.position + OAC.P1Spawn, OAC.transform.rotation, OAC.transform).transform;
+                    OAC.AssignPlayer(PlayerID, NewP);
                     P1Active = true;
                     break;
                 case 1:
-                    Instantiate(P2Prefab, OAC.transform.position + OAC.P2Spawn, OAC.transform.rotation);
-                    OAC.AssignPlayer(PlayerID);
+                    NewP = Instantiate(P2Prefab, OAC.transform.position + OAC.P2Spawn, OAC.transform.rotation, OAC.transform).transform;
+                    OAC.AssignPlayer(PlayerID, NewP);
                     P2Active = true;
                     break;
 
@@ -196,8 +201,31 @@ public class GameManager : MonoBehaviour
     {
         if(OAC)
         {
-            FCHud.SetActive(false);
+            FCHud.SetActive(true);
             MapSelector.SetActive(false);
+
+            ScoreText.text = "SCORE\n" + VisualScore.ToString("000000000");
+
+            if (P1Active)
+            {
+                PlayerControl P1C = OAC.P1.GetComponent<PlayerControl>();
+                P1HPBar.maxValue = P1C.MaxHealth;
+                P1HPBar.value = P1C.Health;
+            }
+            else
+            {
+                P1HPBar.value = 0;
+            }
+            if (P2Active)
+            {
+                PlayerControl P2C = OAC.P2.GetComponent<PlayerControl>();
+                P2HPBar.maxValue = P2C.MaxHealth;
+                P2HPBar.value = P2C.Health;
+            }
+            else
+            {
+                P2HPBar.value = 0;
+            }
         }
         else if(FC)
         {
@@ -257,6 +285,20 @@ public class GameManager : MonoBehaviour
                 MapSelector.SetActive(false);
             }
         }
+
+        for(int i = 0; i < UIObjects.Length; i++)
+        {
+            RectTransform t = UIObjects[i];
+
+            if(InFlightControl || (InOpenControl && ((P1Active && !P2Active) || (!P1Active && P2Active))))
+            {
+                t.localPosition = new Vector3(t.localPosition.x, UIYPosFlight[i], t.localPosition.z);
+            }
+            else if (InOpenControl && OAC.P2Active && OAC.P1Active)
+            {
+                t.localPosition = new Vector3(t.localPosition.x, UIYPosOpen[i], t.localPosition.z);
+            }
+        }
     }
 
     public void ResetPlayer(int PlayerID)
@@ -275,6 +317,7 @@ public class GameManager : MonoBehaviour
                 if(InOpenControl)
                 {
                     OAC.P1Active = false;
+                    OAC.P1 = null;
                 }
                 break;
             case 1:
@@ -289,6 +332,7 @@ public class GameManager : MonoBehaviour
                 if (InOpenControl)
                 {
                     OAC.P2Active = false;
+                    OAC.P2 = null;
                 }
                 break;
         }

@@ -613,6 +613,18 @@ MonoBehaviour:
   - {fileID: 1682158371548465166}
   - {fileID: 7952015070737342229}
   - {fileID: 5212889416594498286}
+  UIYPosFlight:
+  - 200
+  - 200
+  - 200
+  UIYPosOpen:
+  - 200
+  - 0
+  - -200
+  UIObjects:
+  - {fileID: 9060863606627092551}
+  - {fileID: 6381179922180425697}
+  - {fileID: 2324197077139284625}
 --- !u!1 &1685526090342176242
 GameObject:
   m_ObjectHideFlags: 0
