@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 0
-  MaxHealth: 1
+  MaxHealth: 2
   ScoreOnDeath: 5
   MoveSpeed: 0
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}

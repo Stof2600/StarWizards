@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 0
-  MaxHealth: 1
+  MaxHealth: 2
   ScoreOnDeath: 5
   MoveSpeed: 0
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
@@ -194,10 +194,14 @@ MonoBehaviour:
   FireTimerMin: 0.6
   FireTimerMax: 0.6
   ShootCountdown: 1
+  OpenAir: 0
   StaticEnemy: 1
   FirePoint: {fileID: 7557722553885420720}
   AimBase: {fileID: 9052756230289709576}
   AimRot: {fileID: 7557722553885420720}
+  PatrolRadius: 10
+  ChaseRadius: 30
+  RotateSpeed: 20
   TimeCount: 0
   FireRate: 0
   EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}
