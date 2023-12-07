@@ -87,7 +87,13 @@ public class PlayerControl : StatObject
 
     void Fire()
     {
-        Instantiate(ProjectilePrefab, Model.position, Model.rotation);
+        Quaternion FireRot = transform.rotation;
+        if(MoveActive)
+        {
+            FireRot = Model.rotation;
+        }
+
+        Instantiate(ProjectilePrefab, Model.position, FireRot);
     }
 
     void ModelAnim()

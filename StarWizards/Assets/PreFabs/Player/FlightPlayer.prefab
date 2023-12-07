@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3852490459226511944}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: -8}
+  m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -145,19 +145,13 @@ MonoBehaviour:
   MoveSpeed: 25
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
   DefaultMat: {fileID: 0}
+  DeathEffect: {fileID: 8852894649712479248, guid: 17d538284c8dd844db6e052951ff3a0a, type: 3}
   playerID: 0
   MoveActive: 1
   RotateSpeed: 75
   AnimRot: 20
   Model: {fileID: 6998174186733656802}
   PlayerCam: {fileID: 3852490459226511944}
-  ReticleActive: 1
-  ReticleSpacing: 20
-  AimPoint: {fileID: 0}
-  LongReticle: {fileID: 0}
-  ShortReticle: {fileID: 0}
-  LRSprite: {fileID: 0}
-  SRSprite: {fileID: 0}
   ProjectilePrefab: {fileID: 1467398005605321871, guid: 50aabef53969c9d4aa71d0d3ea061b00, type: 3}
 --- !u!54 &5522609624763917013
 Rigidbody:

@@ -51,6 +51,7 @@ MonoBehaviour:
   MoveSpeed: 0
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
   DefaultMat: {fileID: 0}
+  DeathEffect: {fileID: 8852894649712479248, guid: 17d538284c8dd844db6e052951ff3a0a, type: 3}
   FireTimerMin: 0.7
   FireTimerMax: 1.5
   ShootCountdown: 1
@@ -59,14 +60,13 @@ MonoBehaviour:
   FirePoint: {fileID: 6198827187580007811}
   AimBase: {fileID: 0}
   AimRot: {fileID: 0}
-  PatrolRadius: 30
-  ChaseRadius: 40
   RotateSpeed: 3
   TimeCount: 0
   FireRate: 0
   EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}
   ProjectileDirections:
   - {x: 0, y: 0, z: 0}
+  TargetArrow: {fileID: 0}
 --- !u!1 &9092242751312358815
 GameObject:
   m_ObjectHideFlags: 0

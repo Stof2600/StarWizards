@@ -11,6 +11,7 @@ public class StatObject : MonoBehaviour
 
     public Material HitMat;
     public Material DefaultMat;
+    public GameObject DeathEffect;
 
     float HitAnimTime;
 
@@ -47,6 +48,12 @@ public class StatObject : MonoBehaviour
             if(ScoreOnDeath > 0)
             {
                 FindObjectOfType<GameManager>().AddScore(ScoreOnDeath);
+            }
+
+            if(DeathEffect)
+            {
+                Transform NewEffect = Instantiate(DeathEffect, transform.position, transform.rotation).transform;
+                NewEffect.localScale = transform.localScale;
             }
 
             Destroy(gameObject);

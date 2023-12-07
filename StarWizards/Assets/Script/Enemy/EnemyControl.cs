@@ -15,7 +15,6 @@ public class EnemyControl : StatObject
     public Transform FirePoint;
     public Transform AimBase, AimRot;
 
-    public float PatrolRadius = 10, ChaseRadius = 30;
     public float RotateSpeed = 20;
 
     public float TimeCount;
@@ -32,9 +31,14 @@ public class EnemyControl : StatObject
     public List<Vector3> ProjectileDirections = new List<Vector3>();
 
     Vector3 PatrolPoint;
+    Vector3 PatrolLimit;
     Vector3 MovePoint;
 
+    float ChaseTimer, ChaseStart;
+
     Transform Cam, PlayerTarget;
+
+    public Transform TargetArrow;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +52,12 @@ public class EnemyControl : StatObject
         }
 
         ShootCountdown = Random.Range(FireTimerMin, FireTimerMax);
-        PatrolPoint = transform.position;
+
+        if(OpenAir)
+        {
+            ChaseStart = Random.Range(10, 100);
+            GetOpenArea();
+        }
         PlayerTarget = null;
     }
 
@@ -58,12 +67,17 @@ public class EnemyControl : StatObject
         MoveForward();
         RunHitAnim();
 
+        if(TargetArrow && Target)
+        {
+            TargetArrowControl();
+        }
+
         if(OpenAir)
         {
             OpenAirMovement();
         }
 
-        if((OpenAir && !ChasePlayer) || !OpenAir)
+        if((OpenAir && ChasePlayer) || !OpenAir)
         {
             ShootCountdown -= Time.deltaTime;
         }
@@ -163,9 +177,9 @@ public class EnemyControl : StatObject
 
     void OpenAirMovement()
     {
-        if(MoveSpeed == 0)
+        if(MoveSpeed < 15)
         {
-            MoveSpeed = 10;
+            MoveSpeed = 15;
         }
 
         Debug.DrawLine(transform.position, MovePoint);
@@ -179,40 +193,52 @@ public class EnemyControl : StatObject
 
         if(!ChasePlayer)
         {
-            if(PlayerTarget)
+            if (MovePoint == Vector3.zero || Vector3.Distance(transform.position, MovePoint) < 10)
             {
-                ChasePlayer = true;
-                return;
-            }
-
-            if(MovePoint == Vector3.zero)
-            {
-                MovePoint = PatrolPoint + new Vector3(Random.Range(-PatrolRadius, PatrolRadius), Random.Range(-PatrolRadius, PatrolRadius), Random.Range(-PatrolRadius, PatrolRadius));
-            }
-            else if(Vector3.Distance(transform.position, MovePoint) < 3f)
-            {
-                MovePoint = Vector3.zero;
-            }
-
-            Collider[] NearbyCheck = Physics.OverlapSphere(transform.position, PatrolRadius);
-            foreach (Collider Col in NearbyCheck)
-            {
-                if (Col.GetComponentInParent<PlayerControl>())
+                MovePoint = PatrolPoint + new Vector3(Random.Range(-PatrolLimit.x, PatrolLimit.x), Random.Range(-PatrolLimit.y, PatrolLimit.y), Random.Range(-PatrolLimit.z, PatrolLimit.z));
+                if(Physics.Linecast(transform.position, MovePoint))
                 {
-                    PlayerTarget = Col.transform;
-                    return;
+                    MovePoint = Vector3.zero;
+                }
+            }
+
+            if(ChaseTimer < ChaseStart)
+            {
+                ChaseTimer += Time.deltaTime;
+            }
+            else
+            {
+                PlayerTarget = FindTarget();
+
+                if(PlayerTarget)
+                {
+                    ChasePlayer = true;
                 }
             }
         }
         else
         {
-            MovePoint = PlayerTarget.position;
-
-            if(Vector3.Distance(transform.position, PlayerTarget.position) > ChaseRadius)
+            if(ChaseTimer > 20)
             {
-                PatrolPoint = transform.position;
+                ChaseTimer = 20;
+            }
+
+            if(PlayerTarget)
+            {
+                MovePoint = PlayerTarget.position;
+            }
+            else
+            {
+                ChaseTimer = 0;
+            }
+
+            ChaseTimer -= Time.deltaTime;
+
+            if(ChaseTimer <= 0)
+            {
                 PlayerTarget = null;
                 ChasePlayer = false;
+                ChaseStart = Random.Range(10, 200);
             }
         }
     }
@@ -238,9 +264,24 @@ public class EnemyControl : StatObject
         return ReturnValue;
     }
 
-    private void OnDrawGizmos()
+    void TargetArrowControl()
     {
-        Gizmos.DrawWireSphere(transform.position, PatrolRadius);
-        Gizmos.DrawWireCube(PatrolPoint, new Vector3(PatrolRadius, PatrolRadius, PatrolRadius));
+        TargetArrow.LookAt(Target.position);
+        float Scale = Vector3.Distance(transform.position, Target.position) / 50;
+
+        if(Scale < 1)
+        {
+            Scale = 0;
+        }
+
+        TargetArrow.localScale = new Vector3(Scale, Scale, Scale);
+    }
+
+    void GetOpenArea()
+    {
+        BoxCollider Area = GameObject.FindGameObjectWithTag("Border").GetComponent<BoxCollider>();
+
+        PatrolPoint = Area.transform.position + Area.center;
+        PatrolLimit = Area.size * 0.5f;
     }
 }
