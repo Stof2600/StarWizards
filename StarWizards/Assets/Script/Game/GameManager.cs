@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     int ScoreCountHelper;
 
     public bool P1Active, P2Active;
+    public bool P1Dead, P2Dead;
     public bool InFlightControl, InOpenControl;
     public GameObject P1Prefab, P2Prefab;
     public FlightControl FC;
@@ -23,9 +24,12 @@ public class GameManager : MonoBehaviour
 
     public Slider P1HPBar, P2HPBar;
     public Text ScoreText;
+    public Text LivesText;
     public GameObject FCHud;
 
     public GameObject MenuScreen;
+    public GameObject GameOverScreen;
+    public Text EndScore;
 
     public GameObject MapSelector;
     public GameObject[] MissionButtons;
@@ -44,9 +48,16 @@ public class GameManager : MonoBehaviour
 
     int NextScene;
 
+    public int MissionLives;
+    public int EndlessLives;
+
+    float ResetTimer;
+    bool DoReset;
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        GameOverScreen.SetActive(false);
 
         GameProgress = 0;
 
@@ -54,19 +65,46 @@ public class GameManager : MonoBehaviour
         TransitionActive = false;
         PlayedTransitionEffect = false;
 
-        if(InFirstScene)
+        MissionLives = 7;
+        EndlessLives = 5;
+
+        if (InFirstScene)
         {
             StartLoadScene(1);
-        }
+        }   
     }
 
     private void Update()
     {
+        if(DoReset)
+        {
+            ResetAnim();
+            ResetTimer -= Time.deltaTime;
+
+            if (ResetTimer <= 0 || Input.GetButtonDown("P1Fire") || Input.GetButtonDown("P2Fire"))
+            {
+                TotalScore = 0;
+                VisualScore = 0;
+                MissionLives = 7;
+                EndlessLives = 5;
+                DoReset = false;
+                GameProgress = 0;
+                MenuScreen.SetActive(true);
+                StartLoadScene(1);
+            }
+            return;
+        }
+
+
         if(LoadedNewScene)
         {
             print("LOADED SCENE");
+            GameOverScreen.SetActive(false);
 
             LoadTime = 0;
+
+            P1Dead = false;
+            P2Dead = false;
 
             if(AddProgress)
             {
@@ -104,6 +142,8 @@ public class GameManager : MonoBehaviour
         }
 
         CheckForSpawn();
+        CheckLives();
+
         ScoreCounter();
 
         UIControl();
@@ -166,11 +206,21 @@ public class GameManager : MonoBehaviour
                     PC = Instantiate(P1Prefab, FC.transform.position + FC.P1Spawn, FC.transform.rotation, FC.transform).GetComponent<PlayerControl>();
                     FC.AssignPlayer(PC, PlayerID);
                     P1Active = true;
+                    if (P1Dead)
+                    {
+                        ChangeLives(-1, true);
+                        P1Dead = false;
+                    }
                     break; 
                 case 1:
                     PC = Instantiate(P2Prefab, FC.transform.position + FC.P2Spawn, FC.transform.rotation, FC.transform).GetComponent<PlayerControl>();
                     FC.AssignPlayer(PC, PlayerID);
                     P2Active = true;
+                    if (P2Dead)
+                    {
+                        ChangeLives(-1, true);
+                        P2Dead = false;
+                    }
                     break;
                 
             }
@@ -185,17 +235,26 @@ public class GameManager : MonoBehaviour
                     NewP = Instantiate(P1Prefab, OAC.transform.position + OAC.P1Spawn, OAC.transform.rotation, OAC.transform).transform;
                     OAC.AssignPlayer(PlayerID, NewP);
                     P1Active = true;
+                    if (P1Dead)
+                    {
+                        ChangeLives(-1, true);
+                        P1Dead = false;
+                    }
                     break;
                 case 1:
                     NewP = Instantiate(P2Prefab, OAC.transform.position + OAC.P2Spawn, OAC.transform.rotation, OAC.transform).transform;
                     OAC.AssignPlayer(PlayerID, NewP);
                     P2Active = true;
+                    if (P2Dead)
+                    {
+                        ChangeLives(-1, true);
+                        P2Dead = false;
+                    }
                     break;
 
             }
         }
     }
-
 
     void UIControl()
     {
@@ -206,6 +265,8 @@ public class GameManager : MonoBehaviour
 
             ScoreText.text = "SCORE\n" + VisualScore.ToString("000000000");
 
+            LivesText.text = "LIVES: " + MissionLives.ToString("000");
+             
             if (P1Active)
             {
                 PlayerControl P1C = OAC.P1.GetComponent<PlayerControl>();
@@ -234,7 +295,9 @@ public class GameManager : MonoBehaviour
 
             ScoreText.text = "SCORE\n" + VisualScore.ToString("000000000");
 
-            if(FC.transform.position.z >= FC.EndPosition)
+            LivesText.text = "LIVES: " + MissionLives.ToString("000");
+
+            if (FC.transform.position.z >= FC.EndPosition)
             {
                 return;
             }
@@ -307,6 +370,7 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 P1Active = false;
+                P1Dead = true;
 
                 if (InFlightControl)
                 {
@@ -322,6 +386,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 1:
                 P2Active = false;
+                P2Dead = true;
 
                 if (InFlightControl)
                 {
@@ -362,6 +427,29 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void ChangeLives(int Amount, bool MissionMode)
+    {
+        switch (MissionMode)
+        {
+            case true:
+                MissionLives += Amount;
+                break;
+
+            case false:
+                EndlessLives += Amount;
+                break;
+        }
+    }
+
+    void CheckLives()
+    {
+        if((MissionLives <= 0 || EndlessLives <= 0) && !P1Active && !P2Active)
+        {
+            ResetTimer = 5;
+            DoReset = true;
+        }
+    }
+
     void TransitionAnim()
     {
         if(TransitionActive && TransitionTime < 1)
@@ -400,5 +488,14 @@ public class GameManager : MonoBehaviour
                 MenuScreen.SetActive(false);
             }
         }
+    }
+
+    void ResetAnim()
+    {
+        MenuScreen.SetActive(false);
+        FCHud.SetActive(false);
+
+        GameOverScreen.SetActive(true);
+        EndScore.text = "SCORE : " + TotalScore.ToString("000000000");
     }
 }
