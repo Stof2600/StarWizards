@@ -19,7 +19,7 @@ design doc [leaf]
 programming [shared]
 	flight controls (flying missions) <
 	tank controls (ground missions)	
-	aircraft controls (open air missions)
+	aircraft controls (open air missions) <
 	seamless 2 player connection <
 	enemy spawning <
 	enemy movement for all missions
@@ -29,7 +29,7 @@ programming [shared]
 	pickups (bomb, 1up, health, weapon change)
 	destructable objects
 	score rings (or some other bonus stuff)
-	score count
+	score count <
 	score save + display
 
 effects & detail [later]
@@ -56,24 +56,23 @@ players
 	space wizards with drip (ground missions)
 	spaceships (flying missions)
 	p1=purple || p2=green
-	aim reticle is attached to player model
 	animation is done via script	
 
 [MISSIONS] NEED MORE STUFF
 flight missions (6 + final boss):
-	space cruiser map (start)
-	grass planet map (2)
-	ocean planet map (3)
+	space cruiser map (start) <
+	grass planet map (2) <
+	ocean planet map (3) <
 	Gaint factory(4)
 	Space strip (5)
 	Rising sun planet (6)
 	Gas gaint planet (final boss)
 
 Ground missions (2):
-	Bunker destroyer(1)
+	Bunker destroyer(1) <
 	Data Storage place(2)
 Open air missions(2):
-	destroy ground targets(1)
+	destroy ground targets(1) <
 	shoot to kill(2)
 
 mission connection:
