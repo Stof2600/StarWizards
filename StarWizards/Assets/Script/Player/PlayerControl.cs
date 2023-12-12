@@ -17,10 +17,13 @@ public class PlayerControl : StatObject
     public GameObject ProjectilePrefab;
 
     float KillTimer;
+    float SpawnTimer;
 
     private void Start()
     {
         Setup();
+
+        SpawnTimer = 1;
     }
 
     void Update()
@@ -51,7 +54,15 @@ public class PlayerControl : StatObject
             PlayerCam.SetActive(false);
         }
 
-        WallInFrontCheck();
+        if(SpawnTimer > 0)
+        {
+            SpawnTimer -= Time.deltaTime;
+        }
+        else
+        {
+            WallInFrontCheck();
+        }
+        
         RunHitAnim();
     }
 
