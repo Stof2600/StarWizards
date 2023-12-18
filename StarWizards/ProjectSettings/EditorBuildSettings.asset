@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Missions/Open1.unity
     guid: 2e2dfda07155a604b921b0471885a345
+  - enabled: 1
+    path: Assets/Scenes/Missions/Flight3.unity
+    guid: 63b3127665b1d434c93cb034c618a7ac
+  - enabled: 1
+    path: Assets/Scenes/Missions/Ground1.unity
+    guid: 03cf3f463d3508c4cb8a2a54583d6ab5
   m_configObjects: {}

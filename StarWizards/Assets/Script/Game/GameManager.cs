@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public Text EndScore;
 
     public GameObject MapSelector;
-    public GameObject[] MissionButtons;
+    public MultiButtonSelect[] MissionButtons;
 
     public bool TransitionActive;
     public float TransitionSpeed = 4;
@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            GameProgress = 9999;
+            GameProgress += 1;
         }
     }
 
@@ -335,11 +335,11 @@ public class GameManager : MonoBehaviour
                 {
                     if (i <= GameProgress)
                     {
-                        MissionButtons[i].SetActive(true);
+                        MissionButtons[i].Enable();
                     }
                     else
                     {
-                        MissionButtons[i].SetActive(false);
+                        MissionButtons[i].Disable();
                     }
                 }
             }
@@ -497,5 +497,30 @@ public class GameManager : MonoBehaviour
 
         GameOverScreen.SetActive(true);
         EndScore.text = "SCORE : " + TotalScore.ToString("000000000");
+    }
+}
+
+[System.Serializable]
+public class MultiButtonSelect
+{
+    public GameObject Button1, Button2;
+
+    public void Enable()
+    {
+        Button1.SetActive(true);
+        if(!Button2)
+        {
+            return;
+        }
+        Button2.SetActive(true);
+    }
+    public void Disable()
+    {
+        Button1.SetActive(false);
+        if (!Button2)
+        {
+            return;
+        }
+        Button2.SetActive(false);
     }
 }
