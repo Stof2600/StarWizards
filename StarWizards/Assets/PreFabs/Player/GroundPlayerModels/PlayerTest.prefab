@@ -26,12 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3393867443258878539}
+  serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1440443024701800276
 MeshFilter:
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3393867443258878539}
-  m_Mesh: {fileID: -7960205322662387981, guid: e8876f7938cde284bb2c71efa71cca2b, type: 3}
+  m_Mesh: {fileID: -7960205322662387981, guid: 77d4cde2e9d612245a4c53ef53f0872f, type: 3}
 --- !u!137 &3393867443258878537
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -52,6 +53,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -60,7 +62,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 36278e2fe976c564b94fe338fb6ef2d8, type: 2}
+  - {fileID: 2100000, guid: 87b27cb1f07bb8c4aaa4f7795d15c822, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +87,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -7960205322662387981, guid: e8876f7938cde284bb2c71efa71cca2b, type: 3}
+  m_Mesh: {fileID: -7960205322662387981, guid: 77d4cde2e9d612245a4c53ef53f0872f, type: 3}
   m_Bones: []
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
@@ -100,7 +102,7 @@ Cloth:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3393867443258878539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_StretchingStiffness: 0.5
   m_BendingStiffness: 0.1
   m_UseTethers: 0
