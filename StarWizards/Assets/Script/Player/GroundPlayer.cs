@@ -14,8 +14,6 @@ public class GroundPlayer : MonoBehaviour
 
     public GameObject ProjectilePrefab;
 
-    public Transform Model;
-
     public Camera PlayerCam;
     Vector3 DefaultCamLocal;
 
@@ -68,13 +66,7 @@ public class GroundPlayer : MonoBehaviour
 
     void Fire()
     {
-        Quaternion FireRot = transform.rotation;
-        if (MoveActive)
-        {
-            FireRot = Model.rotation;
-        }
-
-        Instantiate(ProjectilePrefab, Model.position, FireRot);
+        Instantiate(ProjectilePrefab, transform.position, transform.rotation);
     }
 
    void CameraCollision()
