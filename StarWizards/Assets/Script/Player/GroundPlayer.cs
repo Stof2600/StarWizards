@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundPlayer : MonoBehaviour
+public class GroundPlayer : StatObject
 {
-    public float MoveSpeed;
-
     public int PlayerID;
 
     Vector2 PlayerInput;
+    Rigidbody RB;
 
     public bool MoveActive;
 
@@ -20,6 +19,7 @@ public class GroundPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RB = GetComponent<Rigidbody>();
         DefaultCamLocal = PlayerCam.transform.localPosition;
     }
 
@@ -27,7 +27,6 @@ public class GroundPlayer : MonoBehaviour
     void Update()
     {
         ReadInput();
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
 
         Movement();
     }
@@ -58,7 +57,7 @@ public class GroundPlayer : MonoBehaviour
 
     void Movement()
     {
-        transform.position += transform.forward * MoveSpeed * PlayerInput.y * Time.deltaTime;
+        RB.velocity = transform.forward * PlayerInput.y * MoveSpeed;
         transform.Rotate(0, PlayerInput.x * Time.deltaTime * MoveSpeed * 25, 0);
 
         CameraCollision();
@@ -66,14 +65,14 @@ public class GroundPlayer : MonoBehaviour
 
     void Fire()
     {
-        Instantiate(ProjectilePrefab, transform.position, transform.rotation);
+        Instantiate(ProjectilePrefab, transform.position + transform.forward * 0.5f, transform.rotation);
     }
 
    void CameraCollision()
     {
         bool WallCheck = Physics.Linecast(transform.position, PlayerCam.transform.position, out RaycastHit CollisionInfo);
 
-        if (WallCheck)
+        if (WallCheck && CollisionInfo.transform.CompareTag("Level"))
         {
             Debug.DrawLine(transform.position, CollisionInfo.point, Color.green);
 
@@ -81,7 +80,7 @@ public class GroundPlayer : MonoBehaviour
         }
         else
         {
-            PlayerCam.transform.localPosition = Vector3.MoveTowards(PlayerCam.transform.localPosition, DefaultCamLocal, Time.deltaTime * 5);
+            PlayerCam.transform.localPosition = Vector3.MoveTowards(PlayerCam.transform.localPosition, DefaultCamLocal, Time.deltaTime);
         }
     }
 }

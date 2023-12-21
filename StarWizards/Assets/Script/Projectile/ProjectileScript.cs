@@ -35,6 +35,11 @@ public class ProjectileScript : StatObject
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
+
     IEnumerator DespawnTime()
     {
         yield return new WaitForSeconds(DespawnTimer);

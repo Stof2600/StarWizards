@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5056770237806255711}
   - component: {fileID: 8847684876351753026}
   - component: {fileID: 8847684876351753027}
+  - component: {fileID: 8805350974928567739}
   m_Layer: 0
   m_Name: Player2Test
   m_TagString: Untagged
@@ -102,7 +103,7 @@ Cloth:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8847684876351753024}
-  m_Enabled: 1
+  m_Enabled: 0
   m_StretchingStiffness: 0.5
   m_BendingStiffness: 0.1
   m_UseTethers: 0
@@ -269,3 +270,25 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
+--- !u!64 &8805350974928567739
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847684876351753024}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 843398810588696384, guid: 9849a251a51c2f24587b92559fff5c47, type: 3}
