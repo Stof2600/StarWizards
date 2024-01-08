@@ -30,6 +30,7 @@ public class FlightControl : MonoBehaviour
     public Vector3 P1Spawn, P2Spawn;
 
     public Camera cam;
+    public bool AlwaysForward;
    
 
     // Start is called before the first frame update
@@ -68,7 +69,7 @@ public class FlightControl : MonoBehaviour
             P2Movement();
         }
 
-        if (P1Active || P2Active)
+        if (P1Active || P2Active || AlwaysForward)
         {
             transform.position += new Vector3(0, 0, LevelSpeed) * Time.deltaTime;
         }

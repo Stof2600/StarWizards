@@ -12,18 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MissionSelect.unity
     guid: d5a437272b7b0e545a748b342f34d47c
   - enabled: 1
-    path: Assets/Scenes/Missions/Flight1.unity
-    guid: a51d3dd2b3ea3404299099818bfe59a0
-  - enabled: 1
-    path: Assets/Scenes/Missions/Flight2.unity
-    guid: 7e2547bb5af9d484782b76ef9f3a564a
-  - enabled: 1
-    path: Assets/Scenes/Missions/Open1.unity
-    guid: 2e2dfda07155a604b921b0471885a345
-  - enabled: 1
-    path: Assets/Scenes/Missions/Flight3.unity
-    guid: 63b3127665b1d434c93cb034c618a7ac
-  - enabled: 1
-    path: Assets/Scenes/Missions/Ground1.unity
-    guid: 03cf3f463d3508c4cb8a2a54583d6ab5
+    path: Assets/Scenes/InfLevel.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
     int NextScene;
 
     public int MissionLives;
-    public int EndlessLives;
 
     float ResetTimer;
     bool DoReset;
@@ -65,8 +64,7 @@ public class GameManager : MonoBehaviour
         TransitionActive = false;
         PlayedTransitionEffect = false;
 
-        MissionLives = 7;
-        EndlessLives = 5;
+        MissionLives = 5;
 
         if (InFirstScene)
         {
@@ -85,8 +83,7 @@ public class GameManager : MonoBehaviour
             {
                 TotalScore = 0;
                 VisualScore = 0;
-                MissionLives = 7;
-                EndlessLives = 5;
+                MissionLives = 5;
                 DoReset = false;
                 GameProgress = 0;
                 MenuScreen.SetActive(true);
@@ -434,16 +431,12 @@ public class GameManager : MonoBehaviour
             case true:
                 MissionLives += Amount;
                 break;
-
-            case false:
-                EndlessLives += Amount;
-                break;
         }
     }
 
     void CheckLives()
     {
-        if((MissionLives <= 0 || EndlessLives <= 0) && !P1Active && !P2Active)
+        if(MissionLives <= 0 && !P1Active && !P2Active)
         {
             ResetTimer = 5;
             DoReset = true;

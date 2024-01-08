@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Game\GameManager.cs" />
+    <Compile Include="Assets\Script\Game\MenuModel.cs" />
     <Compile Include="Assets\Script\Player\PlayerControl.cs" />
     <Compile Include="Assets\Script\Player\GroundControl.cs" />
     <Compile Include="Assets\Script\Projectile\ProjectileScript.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Assets\Script\Player\OpenAirControl.cs" />
     <Compile Include="Assets\Script\Player\GroundPlayer.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyControl.cs" />
+    <Compile Include="Assets\Script\Enemy\EndlessSpawner.cs" />
     <Compile Include="Assets\Script\Shared\StatObject.cs" />
     <Compile Include="Assets\Script\Enemy\EnemySpawner.cs" />
   </ItemGroup>

@@ -112,7 +112,7 @@ public class EnemyControl : StatObject
             return;
         }
 
-        float Distance = Vector3.Distance(Cam.position, transform.position);
+        /*float Distance = Vector3.Distance(Cam.position, transform.position);
 
         float XRotFixed = transform.eulerAngles.x;
 
@@ -121,7 +121,7 @@ public class EnemyControl : StatObject
             MoveSpeed = 10;
 
             transform.Rotate(-0.5f, 0, 0);
-        }
+        }*/
     }
 
     void FireProjectiles()

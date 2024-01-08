@@ -156,7 +156,7 @@ MonoBehaviour:
   Health: 0
   MaxHealth: 3
   ScoreOnDeath: 7
-  MoveSpeed: -15
+  MoveSpeed: -13
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
   DefaultMat: {fileID: 0}
   DeathEffect: {fileID: 8852894649712479248, guid: 17d538284c8dd844db6e052951ff3a0a, type: 3}

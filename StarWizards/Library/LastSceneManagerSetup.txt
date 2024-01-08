@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Missions/Ground1.unity
+- path: Assets/Scenes/BootupScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

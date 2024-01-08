@@ -154,3 +154,4 @@ MonoBehaviour:
   P1Spawn: {x: -3, y: -3, z: 0}
   P2Spawn: {x: 3, y: -3, z: 0}
   cam: {fileID: 2417117328420591111}
+  AlwaysForward: 0
