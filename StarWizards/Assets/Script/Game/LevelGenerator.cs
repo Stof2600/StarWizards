@@ -27,7 +27,7 @@ public class LevelGenerator : MonoBehaviour
         if(RoomList.Count < MaxSpawns)
         {
             transform.position += transform.forward * StepDis;
-            Transform New = Instantiate(SegmentPrefabs[0], transform.position, transform.rotation).transform;
+            Transform New = Instantiate(SegmentPrefabs[Random.Range(0, SegmentPrefabs.Length)], transform.position, transform.rotation).transform;
             RoomList.Add(New);
         }
 

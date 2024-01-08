@@ -358,6 +358,7 @@
 "Assets/Script/Game/GameManager.cs"
 "Assets/Script/Game/LevelGenerator.cs"
 "Assets/Script/Game/MenuModel.cs"
+"Assets/Script/Game/OpenAreaGenerator.cs"
 "Assets/Script/Player/FlightControl.cs"
 "Assets/Script/Player/GroundControl.cs"
 "Assets/Script/Player/GroundPlayer.cs"

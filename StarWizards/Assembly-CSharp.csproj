@@ -65,6 +65,7 @@
     <Compile Include="Assets\Script\Player\GroundControl.cs" />
     <Compile Include="Assets\Script\Projectile\ProjectileScript.cs" />
     <Compile Include="Assets\Script\Player\FlightControl.cs" />
+    <Compile Include="Assets\Script\Game\OpenAreaGenerator.cs" />
     <Compile Include="Assets\Script\Player\OpenAirControl.cs" />
     <Compile Include="Assets\Script\Player\GroundPlayer.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyControl.cs" />

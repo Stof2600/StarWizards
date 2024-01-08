@@ -274,18 +274,27 @@ public class GameManager : MonoBehaviour
 
     void UIControl()
     {
-        if(OAC)
+        if(OAC || (FC && FC.TempOpenAir))
         {
             FCHud.SetActive(true);
             MapSelector.SetActive(false);
 
-            ScoreText.text = "SCORE\n" + VisualScore.ToString("000000000");
+            ScoreText.text = "SCORE\n" + VisualScore.ToString("000000");
 
-            LivesText.text = "LIVES: " + MissionLives.ToString("000");
+            LivesText.text = "LIVES: " + MissionLives.ToString("00");
              
             if (P1Active)
             {
-                PlayerControl P1C = OAC.P1.GetComponent<PlayerControl>();
+                PlayerControl P1C = null;
+                if(FC && FC.TempOpenAir)
+                {
+                    P1C = FC.P1.GetComponent<PlayerControl>();
+                }
+                else
+                {
+                    P1C = OAC.P1.GetComponent<PlayerControl>();
+                }
+
                 P1HPBar.maxValue = P1C.MaxHealth;
                 P1HPBar.value = P1C.Health;
             }
@@ -295,7 +304,15 @@ public class GameManager : MonoBehaviour
             }
             if (P2Active)
             {
-                PlayerControl P2C = OAC.P2.GetComponent<PlayerControl>();
+                PlayerControl P2C = null;
+                if (FC && FC.TempOpenAir)
+                {
+                    P2C = FC.P2.GetComponent<PlayerControl>();
+                }
+                else
+                {
+                    P2C = OAC.P2.GetComponent<PlayerControl>();
+                }
                 P2HPBar.maxValue = P2C.MaxHealth;
                 P2HPBar.value = P2C.Health;
             }

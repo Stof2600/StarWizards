@@ -114,6 +114,11 @@ public class PlayerControl : StatObject
 
     private void OnTriggerEnter(Collider other)
     {
+        if(!MoveActive && other.CompareTag("Border"))
+        {
+            FindObjectOfType<FlightControl>().StartTempOpen();
+        }
+
         if(!other.GetComponentInParent<PlayerControl>() && !other.GetComponentInParent<ProjectileScript>() && !other.CompareTag("Border"))
         {
             GetComponent<PlayerControl>().TakeDamage(1);

@@ -32,7 +32,10 @@ public class FlightControl : MonoBehaviour
     public Camera cam;
     public bool AlwaysForward;
 
-    bool TempOpenAir;
+    public bool TempOpenAir;
+    Camera P1Cam, P2Cam;
+    float P1CamTime, P2CamTime;
+    float MaxCamTime = 1.5f;
 
 
     // Start is called before the first frame update
@@ -48,6 +51,21 @@ public class FlightControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(TempOpenAir)
+        {
+            if (P1Active)
+            {
+                P1.GetComponent<PlayerControl>().MoveActive = true;
+            }
+            if (P2Active)
+            {
+                P2.GetComponent<PlayerControl>().MoveActive = true;
+            }
+
+            UpdateCameras();
+            return;
+        }
+
         if(!WonLevel)
         {
             ReadInput();
@@ -284,6 +302,62 @@ public class FlightControl : MonoBehaviour
         {
             GM.AddProgress = true;
             GM.StartLoadScene(1);
+        }
+    }
+
+    public void StartTempOpen()
+    {
+        TempOpenAir = true;
+    }
+    void UpdateCameras()
+    {
+        if (P1 && !P1Cam)
+        {
+            P1Cam = P1.GetComponentInChildren<Camera>();
+        }
+        if (P2 && !P2Cam)
+        {
+            P2Cam = P2.GetComponentInChildren<Camera>();
+        }
+
+        if (!P1Active && P1Cam)
+        {
+            P1CamTime += Time.deltaTime;
+
+            if (P1CamTime >= MaxCamTime)
+            {
+                Destroy(P1Cam.gameObject);
+                P1Cam = null;
+                P1CamTime = 0;
+            }
+        }
+        if (!P2Active && P2Cam)
+        {
+            P2CamTime += Time.deltaTime;
+
+            if (P2CamTime >= MaxCamTime)
+            {
+                Destroy(P2Cam.gameObject);
+                P2Cam = null;
+                P2CamTime = 0;
+            }
+        }
+
+        if (P1Cam && P2Cam)
+        {
+            P1Cam.rect = new Rect(0, 0.5f, 1, 0.5f);
+            P2Cam.rect = new Rect(0, 0, 1, 0.5f);
+        }
+        else
+        {
+            if (P1Cam && !P2Cam)
+            {
+                P1Cam.rect = new Rect(0, 0, 1, 1);
+            }
+            else if (P2Cam && !P1Cam)
+            {
+                P2Cam.rect = new Rect(0, 0, 1, 1);
+            }
         }
     }
 }

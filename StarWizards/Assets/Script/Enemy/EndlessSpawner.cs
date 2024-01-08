@@ -27,7 +27,7 @@ public class EndlessSpawner : MonoBehaviour
     {
         transform.position = PlayerHolder.transform.position + Vector3.forward * 50;
 
-        if(SpawnTimer > 0 && (PlayerHolder.P1Active || PlayerHolder.P2Active))
+        if(SpawnTimer > 0 && (PlayerHolder.P1Active || PlayerHolder.P2Active) && !PlayerHolder.TempOpenAir)
         {
             SpawnTimer -= Time.deltaTime;
         }
