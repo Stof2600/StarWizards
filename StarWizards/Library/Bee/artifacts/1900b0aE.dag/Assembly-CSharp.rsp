@@ -356,6 +356,7 @@
 "Assets/Script/Enemy/EnemyControl.cs"
 "Assets/Script/Enemy/EnemySpawner.cs"
 "Assets/Script/Game/GameManager.cs"
+"Assets/Script/Game/LevelGenerator.cs"
 "Assets/Script/Game/MenuModel.cs"
 "Assets/Script/Player/FlightControl.cs"
 "Assets/Script/Player/GroundControl.cs"

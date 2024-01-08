@@ -54,6 +54,12 @@ public class StatObject : MonoBehaviour
             {
                 Transform NewEffect = Instantiate(DeathEffect, transform.position, transform.rotation).transform;
                 NewEffect.localScale = transform.localScale;
+
+                TextMesh DeathText = NewEffect.GetComponentInChildren<TextMesh>();
+                if(DeathText && ScoreOnDeath > 0)
+                {
+                    DeathText.text = "+" + ScoreOnDeath.ToString("00");
+                }
             }
 
             Destroy(gameObject);

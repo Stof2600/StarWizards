@@ -53,10 +53,18 @@ public class GameManager : MonoBehaviour
     float ResetTimer;
     bool DoReset;
 
+    [Header("HIGHSCORE STUFF")]
+    public Text HighscoreDisplay;
+    int[] DisplayScores;
+    string[] DisplayNames;
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         GameOverScreen.SetActive(false);
+
+        DisplayScores = new int[5];
+        LoadScores();
 
         GameProgress = 0;
 
@@ -81,6 +89,7 @@ public class GameManager : MonoBehaviour
 
             if (ResetTimer <= 0 || Input.GetButtonDown("P1Fire") || Input.GetButtonDown("P2Fire"))
             {
+                SaveScores();
                 TotalScore = 0;
                 VisualScore = 0;
                 MissionLives = 5;
@@ -98,6 +107,7 @@ public class GameManager : MonoBehaviour
             print("LOADED SCENE");
             GameOverScreen.SetActive(false);
 
+            LoadScores();
             LoadTime = 0;
 
             P1Dead = false;
@@ -151,6 +161,10 @@ public class GameManager : MonoBehaviour
         {
             GameProgress += 1;
         }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ResetScores();
+        }
     }
 
     void ScoreCounter()
@@ -177,6 +191,11 @@ public class GameManager : MonoBehaviour
     public void AddScore(int Amount)
     {
         TotalScore += Amount;
+
+        if(TotalScore > 999999)
+        {
+            TotalScore = 999999;
+        }
     }
 
     void CheckForSpawn()
@@ -290,9 +309,9 @@ public class GameManager : MonoBehaviour
             FCHud.SetActive(true);
             MapSelector.SetActive(false);
 
-            ScoreText.text = "SCORE\n" + VisualScore.ToString("000000000");
+            ScoreText.text = "SCORE\n" + VisualScore.ToString("000000");
 
-            LivesText.text = "LIVES: " + MissionLives.ToString("000");
+            LivesText.text = "LIVES: " + MissionLives.ToString("00");
 
             if (FC.transform.position.z >= FC.EndPosition)
             {
@@ -489,7 +508,73 @@ public class GameManager : MonoBehaviour
         FCHud.SetActive(false);
 
         GameOverScreen.SetActive(true);
-        EndScore.text = "SCORE : " + TotalScore.ToString("000000000");
+        EndScore.text = "SCORE : " + TotalScore.ToString("000000");
+    }
+
+    void SaveScores()
+    {
+        for (int i = 0; i < DisplayScores.Length; i++)
+        {
+            string Key = "score" + i;
+            PlayerPrefs.SetInt(Key, DisplayScores[i]);
+        }
+
+        PlayerPrefs.SetInt("score5", TotalScore);
+        PlayerPrefs.Save();
+
+        LoadScores();
+    }
+    void LoadScores()
+    {
+        int[] LoadedScores = new int[6];
+
+        for(int i = 0; i < 6; i++)
+        {
+            string ScoreKey = "score" + i;
+            LoadedScores[i] = PlayerPrefs.GetInt(ScoreKey);
+        }
+
+        for (int j = 0; j < 10; j++)
+        {
+            for (int i = 0; i < LoadedScores.Length; i++)
+            {
+                if (i - 1 >= 0)
+                {
+                    int S1 = LoadedScores[i - 1];
+                    int S2 = LoadedScores[i];
+
+                    if (S1 < S2)
+                    {
+                        LoadedScores[i - 1] = S2;
+                        LoadedScores[i] = S1;
+                    }
+                }
+            }
+        }
+
+        string HSDText = "";
+        for (int i = 0; i < DisplayScores.Length; i++)
+        {
+            DisplayScores[i] = LoadedScores[i];
+
+            HSDText += (i + 1).ToString("00") + ": " + DisplayScores[i].ToString("000000") + "\n";
+        }
+
+        HighscoreDisplay.text = HSDText;
+    }
+    void ResetScores()
+    {
+        for (int i = 0; i < DisplayScores.Length; i++)
+        {
+            DisplayScores[i] = 0;
+            string Key = "score" + i;
+            PlayerPrefs.SetInt(Key, 0);
+        }
+
+        PlayerPrefs.SetInt("score5", 0);
+
+        PlayerPrefs.Save();
+        LoadScores();
     }
 }
 

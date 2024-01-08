@@ -31,7 +31,9 @@ public class FlightControl : MonoBehaviour
 
     public Camera cam;
     public bool AlwaysForward;
-   
+
+    bool TempOpenAir;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +52,7 @@ public class FlightControl : MonoBehaviour
         {
             ReadInput();
 
-            if (transform.position.z >= EndPosition)
+            if (transform.position.z >= EndPosition && !AlwaysForward)
             {
                 WonLevel = true;
             }

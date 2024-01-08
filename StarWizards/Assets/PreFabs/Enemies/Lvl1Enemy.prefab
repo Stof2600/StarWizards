@@ -51,7 +51,7 @@ MonoBehaviour:
   MoveSpeed: -5
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
   DefaultMat: {fileID: 0}
-  DeathEffect: {fileID: 8852894649712479248, guid: 17d538284c8dd844db6e052951ff3a0a, type: 3}
+  DeathEffect: {fileID: 8852894649712479248, guid: 11105911b279fcc4ab1753ebc1bd2130, type: 3}
   FireTimerMin: 0.7
   FireTimerMax: 1.5
   ShootCountdown: 1
