@@ -36,6 +36,9 @@ public class FlightControl : MonoBehaviour
     Camera P1Cam, P2Cam;
     float P1CamTime, P2CamTime;
     float MaxCamTime = 1.5f;
+    public OpenAreaGenerator OpenArea;
+    public bool WaitForPosition;
+    float MoveTimer;
 
 
     // Start is called before the first frame update
@@ -62,7 +65,71 @@ public class FlightControl : MonoBehaviour
                 P2.GetComponent<PlayerControl>().MoveActive = true;
             }
 
+            if(OpenArea.OpenAirDone)
+            {
+                if (P1Active)
+                {
+                    P1.GetComponent<PlayerControl>().MoveActive = false;
+                }
+                if (P2Active)
+                {
+                    P2.GetComponent<PlayerControl>().MoveActive = false;
+                }
+
+                MoveTimer = 2;
+                WaitForPosition = true;
+                TempOpenAir = false;
+            }
+
             UpdateCameras();
+            return;
+        }
+        else if(WaitForPosition)
+        {
+            bool P1Done = false, P2Done = false, HolderDone = false;
+            MoveTimer -= Time.deltaTime;
+
+            if (P1Active)
+            {
+                P1.transform.rotation = transform.rotation;
+                P1.transform.position = Vector3.MoveTowards(P1.transform.position, transform.position + P1Spawn, MoveTimer);
+
+                if(P1.transform.position == transform.position + P1Spawn)
+                {
+                    P1Done = true;
+                }
+            }
+            else
+            {
+                P1Done = true;
+            }
+            if (P2Active)
+            {
+                P2.transform.rotation = transform.rotation;
+                P2.transform.position = Vector3.MoveTowards(P2.transform.position, transform.position + P2Spawn, MoveTimer);
+
+                if (P2.transform.position == transform.position + P2Spawn)
+                {
+                    P2Done = true;
+                }
+            }
+            else
+            {
+                P2Done = true;
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, OpenArea.transform.position + new Vector3(0, 0, OpenArea.EndTPDis), MoveTimer);
+            if(transform.position == OpenArea.transform.position + new Vector3(0, 0, OpenArea.EndTPDis))
+            {
+                HolderDone = true;
+            }
+
+
+            if(P1Done && P2Done)
+            {
+                WaitForPosition = false;
+            }
+
             return;
         }
 
@@ -195,7 +262,7 @@ public class FlightControl : MonoBehaviour
         {
             Collider TCol = t.GetComponentInChildren<Collider>();
 
-            if(!GeometryUtility.TestPlanesAABB(planes, TCol.bounds))
+            if(!GeometryUtility.TestPlanesAABB(planes, TCol.bounds) && !t.OpenAir)
             {
                 Destroy(t.gameObject);
             }
@@ -305,8 +372,9 @@ public class FlightControl : MonoBehaviour
         }
     }
 
-    public void StartTempOpen()
+    public void StartTempOpen(OpenAreaGenerator Area)
     {
+        OpenArea = Area;
         TempOpenAir = true;
     }
     void UpdateCameras()

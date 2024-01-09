@@ -11,6 +11,7 @@ public class EnemyControl : StatObject
 
     public bool OpenAir;
     public bool StaticEnemy;
+    public bool IsTarget;
 
     public Transform FirePoint;
     public Transform AimBase, AimRot;
@@ -58,6 +59,10 @@ public class EnemyControl : StatObject
             ChaseStart = Random.Range(10, 100);
             GetOpenArea();
         }
+        else if(TargetArrow)
+        {
+            TargetArrow.gameObject.SetActive(false);
+        }
         PlayerTarget = null;
     }
 
@@ -67,7 +72,7 @@ public class EnemyControl : StatObject
         MoveForward();
         RunHitAnim();
 
-        if(TargetArrow && Target)
+        if(TargetArrow)
         {
             TargetArrowControl();
         }
@@ -266,6 +271,18 @@ public class EnemyControl : StatObject
 
     void TargetArrowControl()
     {
+        if(!IsTarget)
+        {
+            TargetArrow.gameObject.SetActive(false);
+            return;
+        }
+        if(!Target)
+        {
+            print("NoTarget");
+            Target = FindTarget();
+            return;
+        }
+
         TargetArrow.LookAt(Target.position);
         float Scale = Vector3.Distance(transform.position, Target.position) / 50;
 

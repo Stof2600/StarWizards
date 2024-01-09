@@ -116,7 +116,8 @@ public class PlayerControl : StatObject
     {
         if(!MoveActive && other.CompareTag("Border"))
         {
-            FindObjectOfType<FlightControl>().StartTempOpen();
+            FlightControl FC = FindObjectOfType<FlightControl>();
+            FC.StartTempOpen(other.GetComponentInChildren<OpenAreaGenerator>());
         }
 
         if(!other.GetComponentInParent<PlayerControl>() && !other.GetComponentInParent<ProjectileScript>() && !other.CompareTag("Border"))

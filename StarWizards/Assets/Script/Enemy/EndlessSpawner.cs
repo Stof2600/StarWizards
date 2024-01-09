@@ -27,7 +27,7 @@ public class EndlessSpawner : MonoBehaviour
     {
         transform.position = PlayerHolder.transform.position + Vector3.forward * 50;
 
-        if(SpawnTimer > 0 && (PlayerHolder.P1Active || PlayerHolder.P2Active) && !PlayerHolder.TempOpenAir)
+        if(SpawnTimer > 0 && (PlayerHolder.P1Active || PlayerHolder.P2Active) && !PlayerHolder.TempOpenAir && !PlayerHolder.WaitForPosition)
         {
             SpawnTimer -= Time.deltaTime;
         }
@@ -44,6 +44,12 @@ public class EndlessSpawner : MonoBehaviour
 
         if(SpawnCount >= 10)
         {
+            if(Difficulty % 2 == 0)
+            {
+                print("SpawnOpen");
+                FindObjectOfType<LevelGenerator>().RequestOpenArea();
+            }
+
             SpawnCount = 3;
             Difficulty += 1;
 

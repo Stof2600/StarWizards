@@ -172,10 +172,15 @@ MonoBehaviour:
   StepDis: 200
   StartRoomPrefab: {fileID: 4883627326932685395, guid: 7438c9df261fd224ca895c8853f232f2, type: 3}
   SegmentPrefabs:
+  - {fileID: 7055291487466083727, guid: 148cb6fd4bf6bf14bb262506a7238161, type: 3}
+  - {fileID: 352936604859117221, guid: ed4ffb6fe710544418f0410809388673, type: 3}
+  - {fileID: 4676343728992237240, guid: d45bf198a002f74438cbf2018f856aac, type: 3}
+  OpenAreaPrefabs:
   - {fileID: 5573045528894931624, guid: 1ac10891b674584438d63beab8dfc6c3, type: 3}
   MaxSpawns: 2
   RoomList: []
   PlayerHolder: {fileID: 0}
+  GenerateOpenNext: 0
 --- !u!1 &307620115
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,10 +8,13 @@ public class LevelGenerator : MonoBehaviour
     public GameObject StartRoomPrefab;
 
     public GameObject[] SegmentPrefabs;
+    public GameObject[] OpenAreaPrefabs;
     public int MaxSpawns = 0;
 
     public List<Transform> RoomList = new List<Transform>();
     public Transform PlayerHolder;
+
+    public bool GenerateOpenNext;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,16 @@ public class LevelGenerator : MonoBehaviour
     {
         if(RoomList.Count < MaxSpawns)
         {
+            if(GenerateOpenNext)
+            {
+                transform.position += transform.forward * StepDis;
+                Transform NewOpen = Instantiate(SegmentPrefabs[Random.Range(0, OpenAreaPrefabs.Length)], transform.position, transform.rotation).transform;
+                RoomList.Add(NewOpen);
+
+                GenerateOpenNext = false;
+                return;
+            }
+
             transform.position += transform.forward * StepDis;
             Transform New = Instantiate(SegmentPrefabs[Random.Range(0, SegmentPrefabs.Length)], transform.position, transform.rotation).transform;
             RoomList.Add(New);
@@ -41,5 +54,10 @@ public class LevelGenerator : MonoBehaviour
                 Destroy(t.gameObject);
             }
         } 
+    }
+
+    public void RequestOpenArea()
+    {
+        GenerateOpenNext = true;
     }
 }
