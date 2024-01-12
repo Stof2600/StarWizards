@@ -364,6 +364,7 @@
 "Assets/Script/Player/GroundPlayer.cs"
 "Assets/Script/Player/OpenAirControl.cs"
 "Assets/Script/Player/PlayerControl.cs"
+"Assets/Script/Player/ReticleCollision.cs"
 "Assets/Script/Projectile/ProjectileScript.cs"
 "Assets/Script/Shared/StatObject.cs"
 -langversion:9.0

@@ -15,9 +15,17 @@ public class PlayerControl : StatObject
     Vector2 PlayerInput;
 
     public GameObject ProjectilePrefab;
+    public Transform ReticleTarget;
+
+    public SpriteRenderer ShortReticle, LongReticle;
+
 
     float KillTimer;
     float SpawnTimer;
+
+    float ReticleUpdate;
+    float MaxReticleLength = 50;
+    float MaxAimAngle = 20;
 
     private void Start()
     {
@@ -62,7 +70,8 @@ public class PlayerControl : StatObject
         {
             WallInFrontCheck();
         }
-        
+
+        ReticleMove();
         RunHitAnim();
     }
 
@@ -112,6 +121,48 @@ public class PlayerControl : StatObject
         Model.localEulerAngles = new Vector3(PlayerInput.y * AnimRot, PlayerInput.x * AnimRot, -PlayerInput.x * AnimRot);
     }
 
+    void ReticleMove()
+    {
+        if(ReticleUpdate <= 0)
+        {
+            ReticleTarget = FindReticleTarget();
+            ReticleUpdate = 0.1f;
+        }
+        else
+        {
+            ReticleUpdate -= Time.deltaTime;
+        }
+
+        if(ReticleTarget)
+        {
+            LongReticle.transform.position = ReticleTarget.position;
+            float DisToTarget = Vector3.Distance(transform.position, ReticleTarget.position);
+            Vector3 DirToTarget = (ReticleTarget.position - transform.position).normalized;
+
+            LongReticle.transform.position = transform.position + DirToTarget * DisToTarget;
+            ShortReticle.transform.position = transform.position + DirToTarget * DisToTarget / 2;
+
+            if(Vector3.Angle(transform.forward, DirToTarget) <= 2f)   
+            {
+                LongReticle.color = Color.red;
+                ShortReticle.color = Color.red;
+            }
+            else
+            {
+                LongReticle.color = Color.green;
+                ShortReticle.color = Color.green;
+            }
+        }
+        else
+        {
+            LongReticle.transform.position = transform.position + transform.forward * MaxReticleLength;
+            ShortReticle.transform.position = transform.position + transform.forward * MaxReticleLength / 2;
+
+            LongReticle.color = Color.green;
+            ShortReticle.color = Color.green;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(!MoveActive && other.CompareTag("Border"))
@@ -144,5 +195,28 @@ public class PlayerControl : StatObject
         {
             TakeDamage(Health);
         }
+    }
+
+    Transform FindReticleTarget()
+    {
+        Transform ReturnValue = null;
+        float LastDis = Mathf.Infinity;
+
+        foreach(EnemyControl EC in FindObjectsOfType<EnemyControl>())
+        {
+            Transform T = EC.transform;
+            Vector3 DirToEnemy = (T.position - transform.position).normalized;
+            Debug.DrawRay(transform.position, DirToEnemy, Color.red);
+
+            float AimAngle = Vector3.Angle(transform.forward, DirToEnemy);
+            float Dis = Vector3.Distance(transform.position, T.position);
+            if(AimAngle <= MaxAimAngle && Dis <= LastDis && Dis <= MaxReticleLength)
+            {
+                ReturnValue = T;
+                LastDis = Dis;
+            }
+        }
+
+        return ReturnValue;
     }
 }
