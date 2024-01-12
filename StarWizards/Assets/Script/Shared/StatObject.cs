@@ -59,6 +59,8 @@ public class StatObject : MonoBehaviour
                 if(DeathText && ScoreOnDeath > 0)
                 {
                     DeathText.text = "+" + ScoreOnDeath.ToString("00");
+                    Vector3 LookDir = (FindFirstObjectByType<PlayerControl>().transform.position - transform.position).normalized;
+                    DeathText.transform.LookAt(LookDir);
                 }
             }
 

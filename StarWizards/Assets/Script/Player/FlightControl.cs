@@ -262,7 +262,7 @@ public class FlightControl : MonoBehaviour
         {
             Collider TCol = t.GetComponentInChildren<Collider>();
 
-            if(!GeometryUtility.TestPlanesAABB(planes, TCol.bounds) && !t.OpenAir)
+            if(!GeometryUtility.TestPlanesAABB(planes, TCol.bounds) && !t.StaticEnemy && !t.OpenAir)
             {
                 Destroy(t.gameObject);
             }

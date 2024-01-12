@@ -5,10 +5,11 @@ using UnityEngine;
 public class EndlessSpawner : MonoBehaviour
 {
     public FlightControl PlayerHolder;
+    public GameManager GM;
 
     public float LimitX, LimitY;
 
-    public int SpawnCount;
+    public float SpawnCount;
     public int Difficulty;
     public GameObject[] EnemyPrefabs;
 
@@ -17,9 +18,9 @@ public class EndlessSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Difficulty = 0;
-        SpawnCount = 2;
+        Difficulty = 1;
         PlayerHolder = FindObjectOfType<FlightControl>();
+        GM = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -36,30 +37,13 @@ public class EndlessSpawner : MonoBehaviour
             SpawnEnemy();
             SpawnTimer = Random.Range(5.0f, 7.0f);
         }
+
+        UpdateDifficulty();
     }
 
     void SpawnEnemy()
     {
-        SpawnCount++;
-
-        if(SpawnCount >= 10)
-        {
-            if(Difficulty % 2 == 0)
-            {
-                print("SpawnOpen");
-                FindObjectOfType<LevelGenerator>().RequestOpenArea();
-            }
-
-            SpawnCount = 3;
-            Difficulty += 1;
-
-            if(Difficulty >= EnemyPrefabs.Length)
-            {
-                Difficulty = EnemyPrefabs.Length - 1;
-            }
-        }
-
-        for (int i = 0; i < SpawnCount % 10; i++)
+        for (int i = 0; i < (int)SpawnCount; i++)
         {
             int EnemySelect = Random.Range(0, Difficulty + 1);
 
@@ -68,6 +52,17 @@ public class EndlessSpawner : MonoBehaviour
             {
                 Instantiate(EnemyPrefabs[EnemySelect], SpawnPosition, new Quaternion(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z, transform.rotation.w));
             }
+        }
+    }
+    void UpdateDifficulty()
+    {
+        float SpawnCountTicks = (float)GM.TotalScore / 50;
+        SpawnCountTicks -= Difficulty;
+        print((float)GM.TotalScore / 50);
+        SpawnCount = Mathf.Lerp(3, 10, SpawnCountTicks);
+        if(SpawnCount >= 10)
+        {
+            Difficulty += 1;
         }
     }
 

@@ -53,6 +53,10 @@ public class GameManager : MonoBehaviour
     float ResetTimer;
     bool DoReset;
 
+    LevelGenerator LG;
+    int MultipleCheck;
+    bool DidScoreCall;
+
     [Header("HIGHSCORE STUFF")]
     public Text HighscoreDisplay;
     int[] DisplayScores;
@@ -73,6 +77,7 @@ public class GameManager : MonoBehaviour
         PlayedTransitionEffect = false;
 
         MissionLives = 5;
+        MultipleCheck = 1;
 
         if (InFirstScene)
         {
@@ -93,6 +98,7 @@ public class GameManager : MonoBehaviour
                 TotalScore = 0;
                 VisualScore = 0;
                 MissionLives = 5;
+                MultipleCheck = 1;
                 DoReset = false;
                 GameProgress = 0;
                 MenuScreen.SetActive(true);
@@ -100,7 +106,6 @@ public class GameManager : MonoBehaviour
             }
             return;
         }
-
 
         if(LoadedNewScene)
         {
@@ -121,6 +126,8 @@ public class GameManager : MonoBehaviour
 
             InFlightControl = false;
             InOpenControl = false;
+
+            DidScoreCall = false;
 
             TransitionActive = false;
             PlayedTransitionEffect = false;
@@ -147,6 +154,10 @@ public class GameManager : MonoBehaviour
                 SpawnPlayer(0);
             }
         }
+        if(!LG)
+        {
+            LG = FindObjectOfType<LevelGenerator>();
+        }
 
         CheckForSpawn();
         CheckLives();
@@ -157,13 +168,29 @@ public class GameManager : MonoBehaviour
 
         TransitionAnim();
 
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetKeyDown(KeyCode.Z))
         {
             GameProgress += 1;
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.X))
         {
             ResetScores();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            TotalScore += 51;
+        }
+
+        if (LG && !DidScoreCall && TotalScore > (100 * MultipleCheck))
+        {
+            print("RequestOpen");
+            LG.RequestOpenArea(MultipleCheck * 2);
+            MultipleCheck += 1;
+            DidScoreCall = true;
+        }
+        else if(TotalScore % 100 != 0 && DidScoreCall)
+        {
+            DidScoreCall = false;
         }
     }
 

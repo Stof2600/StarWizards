@@ -15,6 +15,7 @@ public class LevelGenerator : MonoBehaviour
     public Transform PlayerHolder;
 
     public bool GenerateOpenNext;
+    int TCount;
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +33,11 @@ public class LevelGenerator : MonoBehaviour
             if(GenerateOpenNext)
             {
                 transform.position += transform.forward * StepDis;
-                Transform NewOpen = Instantiate(SegmentPrefabs[Random.Range(0, OpenAreaPrefabs.Length)], transform.position, transform.rotation).transform;
+                Transform NewOpen = Instantiate(OpenAreaPrefabs[Random.Range(0, OpenAreaPrefabs.Length)], transform.position, transform.rotation).transform;
+                NewOpen.GetComponentInChildren<OpenAreaGenerator>().SpawnCountOveride = TCount;
                 RoomList.Add(NewOpen);
 
+                TCount = 0;
                 GenerateOpenNext = false;
                 return;
             }
@@ -56,8 +59,9 @@ public class LevelGenerator : MonoBehaviour
         } 
     }
 
-    public void RequestOpenArea()
+    public void RequestOpenArea(int TargetCount)
     {
         GenerateOpenNext = true;
+        TCount = TargetCount;
     }
 }

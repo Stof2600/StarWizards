@@ -109,6 +109,8 @@ public class EnemyControl : StatObject
         if (StaticEnemy)
         {
             MoveSpeed = 0;
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+            OpenAir = false;
             return;
         }
 
@@ -117,16 +119,7 @@ public class EnemyControl : StatObject
             return;
         }
 
-        /*float Distance = Vector3.Distance(Cam.position, transform.position);
-
-        float XRotFixed = transform.eulerAngles.x;
-
-        if (Distance <= 15 && (XRotFixed > 360 - 90 || XRotFixed == 0))
-        {
-            MoveSpeed = 10;
-
-            transform.Rotate(-0.5f, 0, 0);
-        }*/
+        BackCheck();
     }
 
     void FireProjectiles()
@@ -278,7 +271,6 @@ public class EnemyControl : StatObject
         }
         if(!Target)
         {
-            print("NoTarget");
             Target = FindTarget();
             return;
         }
@@ -292,6 +284,15 @@ public class EnemyControl : StatObject
         }
 
         TargetArrow.localScale = new Vector3(Scale, Scale, Scale);
+    }
+
+    void BackCheck()
+    {
+        bool BackHit = Physics.Raycast(transform.position, -transform.forward, out RaycastHit Hit, 1.5f);
+        if(BackHit && Hit.transform.CompareTag("Level"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void GetOpenArea()

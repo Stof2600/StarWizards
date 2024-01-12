@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 3377586380331050231}
   - component: {fileID: 2685317839934584221}
   - component: {fileID: 9052940614213424980}
+  - component: {fileID: 6780750452623538044}
   m_Layer: 0
   m_Name: ArtileryBase
   m_TagString: Untagged
@@ -167,6 +168,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6780750452623538044
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735732986905364727}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 343817259083047711, guid: b92c75f3ef4fe494d9547e7a56c32a40, type: 3}
 --- !u!1 &1931382795145770619
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +233,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6198827187580007811}
   - component: {fileID: 2495424563178605676}
-  - component: {fileID: 2029668897074392089}
   m_Layer: 0
   m_Name: ArtileryEnemy
   m_TagString: Untagged
@@ -260,6 +282,7 @@ MonoBehaviour:
   ShootCountdown: 1
   OpenAir: 0
   StaticEnemy: 1
+  IsTarget: 0
   FirePoint: {fileID: 2285367732514647613}
   AimBase: {fileID: 1262827346072087745}
   AimRot: {fileID: 2285367732514647613}
@@ -278,27 +301,6 @@ MonoBehaviour:
   - {x: -1, y: 0, z: 0}
   - {x: -1, y: -1, z: 0}
   TargetArrow: {fileID: 6834024389010556249}
---- !u!95 &2029668897074392089
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7083426378963580211}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ac068b5fe821a742b0617bc753ba732, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7255805553577635410
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +312,7 @@ GameObject:
   - component: {fileID: 2228119325430146184}
   - component: {fileID: 8589219257845911322}
   - component: {fileID: 8883414905438819940}
+  - component: {fileID: 6765958842943505442}
   m_Layer: 0
   m_Name: ArtileryTurret
   m_TagString: Untagged
@@ -382,6 +385,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6765958842943505442
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255805553577635410}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1215768322391788952, guid: b92c75f3ef4fe494d9547e7a56c32a40, type: 3}
 --- !u!1 &8078972087535996494
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +450,7 @@ GameObject:
   - component: {fileID: 1675238644052363763}
   - component: {fileID: 2438787994769833116}
   - component: {fileID: 3973783607938557031}
+  - component: {fileID: 6386069770152535783}
   m_Layer: 0
   m_Name: TurretBarrel
   m_TagString: Untagged
@@ -497,3 +523,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6386069770152535783
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893394275207754270}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5395154236207405892, guid: b92c75f3ef4fe494d9547e7a56c32a40, type: 3}

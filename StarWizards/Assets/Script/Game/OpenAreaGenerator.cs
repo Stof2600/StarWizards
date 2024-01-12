@@ -7,7 +7,9 @@ public class OpenAreaGenerator : MonoBehaviour
     //do stuff
     public GameObject TargetPrefab;
 
-    public int AmountToSpawn = 5;
+    public Transform[] SpawnPoints;
+    public int SpawnCountOveride;
+
 
     public int AmountAlive;
     public bool OpenAirDone;
@@ -20,9 +22,15 @@ public class OpenAreaGenerator : MonoBehaviour
     {
         DidEndCheck = false;
 
-        for (int i = 0; i < AmountToSpawn; i++)
+        int SpawnCount = SpawnPoints.Length;
+        if(SpawnCountOveride > 0 && SpawnCountOveride <= SpawnPoints.Length)
         {
-            GameObject NewEnemy = Instantiate(TargetPrefab, transform.position, transform.rotation, transform);
+            SpawnCount = SpawnCountOveride;
+        }
+
+        for (int i = 0; i < SpawnCount; i++)
+        {
+            GameObject NewEnemy = Instantiate(TargetPrefab, SpawnPoints[i].position, Quaternion.Euler(0, 0, 0), transform);
             EnemyControl EC = NewEnemy.GetComponent<EnemyControl>();
             EC.OpenAir = true;
             EC.IsTarget = true;
