@@ -707,6 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4912485176896989241}
+  - component: {fileID: 1596839009560950777}
   m_Layer: 0
   m_Name: OpenSetup
   m_TagString: Untagged
@@ -729,6 +730,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6343418189160863747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1596839009560950777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682043924621885344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ee3cefb3c764c4d9202d2534faf9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetPrefab: {fileID: 7083426378963580211, guid: 3d8ad188e38a7f641aa6a1a9aea1c11a, type: 3}
+  FlyingEnemiesPrefab: {fileID: 7083426378963580211, guid: 854a624db9c2748478197de06b9e6829, type: 3}
+  SpawnPoints:
+  - {fileID: 9116458517390829379}
+  - {fileID: 3157904960421665746}
+  - {fileID: 7973973402939262595}
+  - {fileID: 5863431224140119191}
+  - {fileID: 3900801586533160631}
+  - {fileID: 2734658697581968639}
+  - {fileID: 957755651397373218}
+  - {fileID: 7813214563807497549}
+  - {fileID: 8791142727243026003}
+  - {fileID: 6518058020798427383}
+  SpawnCountOveride: 0
+  FlyingSpawns: 35
+  AmountAlive: 0
+  OpenAirDone: 0
+  EndTPDis: 100
 --- !u!1 &1821411586148209324
 GameObject:
   m_ObjectHideFlags: 0

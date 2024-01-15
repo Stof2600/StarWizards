@@ -133,7 +133,7 @@ MonoBehaviour:
   Health: 0
   MaxHealth: 1
   ScoreOnDeath: 5
-  MoveSpeed: 0
+  MoveSpeed: 2
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
   DefaultMat: {fileID: 0}
   DeathEffect: {fileID: 8852894649712479248, guid: 11105911b279fcc4ab1753ebc1bd2130, type: 3}
@@ -154,6 +154,9 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 10, y: 0, z: 0}
   - {x: -10, y: 0, z: 0}
+  PickUps:
+  - {fileID: 6796834574708637990, guid: 6ded9746f2c84fe41aaf6c4eb3073f88, type: 3}
+  - {fileID: 5703253052650837701, guid: 166b3fc46c2493d408e670d0c7961a82, type: 3}
   TargetArrow: {fileID: 6933063349733338970}
 --- !u!1 &9092242751312358815
 GameObject:

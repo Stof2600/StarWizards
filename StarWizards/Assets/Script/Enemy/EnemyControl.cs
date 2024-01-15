@@ -35,6 +35,8 @@ public class EnemyControl : StatObject
     Vector3 PatrolLimit;
     Vector3 MovePoint;
 
+    public GameObject[] PickUps;
+
     float ChaseTimer, ChaseStart;
 
     Transform Cam, PlayerTarget;
@@ -119,7 +121,10 @@ public class EnemyControl : StatObject
             return;
         }
 
-        BackCheck();
+        if(!OpenAir)
+        {
+            BackCheck();
+        }
     }
 
     void FireProjectiles()

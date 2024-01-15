@@ -26,7 +26,7 @@ public class EndlessSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = PlayerHolder.transform.position + Vector3.forward * 50;
+        transform.position = PlayerHolder.transform.position + Vector3.forward * 100;
 
         if(SpawnTimer > 0 && (PlayerHolder.P1Active || PlayerHolder.P2Active) && !PlayerHolder.TempOpenAir && !PlayerHolder.WaitForPosition)
         {
@@ -60,7 +60,7 @@ public class EndlessSpawner : MonoBehaviour
         SpawnCountTicks -= Difficulty;
         print((float)GM.TotalScore / 50);
         SpawnCount = Mathf.Lerp(3, 10, SpawnCountTicks);
-        if(SpawnCount >= 10)
+        if(SpawnCount >= 10 && Difficulty < EnemyPrefabs.Length)
         {
             Difficulty += 1;
         }

@@ -49,6 +49,17 @@ public class StatObject : MonoBehaviour
             {
                 FindObjectOfType<GameManager>().AddScore(ScoreOnDeath);
             }
+            if(GetComponent<EnemyControl>())
+            {
+                EnemyControl EC = GetComponent<EnemyControl>();
+                int R = Random.Range(0, 11);
+                if(R >= 5 && EC.PickUps.Length > 0)
+                {
+                    int ItemNum = Random.Range(0, EC.PickUps.Length);
+
+                    Instantiate(EC.PickUps[ItemNum], transform.position, transform.rotation);
+                }
+            }
 
             if(DeathEffect)
             {

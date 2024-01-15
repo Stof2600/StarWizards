@@ -7,6 +7,8 @@ TagManager:
   - Level
   - Border
   - Reticle
+  - BombPickup
+  - HealthPickup
   layers:
   - Default
   - TransparentFX

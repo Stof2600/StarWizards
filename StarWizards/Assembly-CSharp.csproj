@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script\Enemy\EndlessSpawner.cs" />
     <Compile Include="Assets\Script\Shared\StatObject.cs" />
     <Compile Include="Assets\Script\Enemy\EnemySpawner.cs" />
+    <Compile Include="Assets\Script\Projectile\Explosion.cs" />
     <Compile Include="Assets\Script\Game\LevelGenerator.cs" />
   </ItemGroup>
   <ItemGroup>

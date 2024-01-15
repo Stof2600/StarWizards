@@ -15,22 +15,25 @@ public class PlayerControl : StatObject
     Vector2 PlayerInput;
 
     public GameObject ProjectilePrefab;
+    public GameObject BombProjPrefab;
     public Transform ReticleTarget;
 
     public SpriteRenderer ShortReticle, LongReticle;
 
+    public int BombCount;
 
     float KillTimer;
     float SpawnTimer;
 
     float ReticleUpdate;
     float MaxReticleLength = 50;
-    float MaxAimAngle = 20;
+    float MaxAimAngle = 10;
 
     private void Start()
     {
         Setup();
 
+        BombCount = 1;
         SpawnTimer = 1;
     }
 
@@ -84,7 +87,12 @@ public class PlayerControl : StatObject
 
             if (Input.GetButtonDown("P1Fire"))
             {
-                Fire();
+                Fire(ProjectilePrefab);
+            }
+            if (Input.GetButtonDown("P1Bomb") && BombCount > 0)
+            {
+                Fire(BombProjPrefab);
+                BombCount--;   
             }
         }
         else
@@ -94,7 +102,12 @@ public class PlayerControl : StatObject
 
             if (Input.GetButtonDown("P2Fire"))
             {
-                Fire();
+                Fire(ProjectilePrefab);
+            }
+            if (Input.GetButtonDown("P2Bomb") && BombCount > 0)
+            {
+                Fire(BombProjPrefab);
+                BombCount--;
             }
         }
     }
@@ -105,7 +118,7 @@ public class PlayerControl : StatObject
         transform.Rotate(PlayerInput.y * RotateSpeed * Time.deltaTime, PlayerInput.x * RotateSpeed * Time.deltaTime, 0);
     }
 
-    void Fire()
+    void Fire(GameObject Projectile)
     {
         Quaternion FireRot = transform.rotation;
         if(MoveActive)
@@ -113,7 +126,7 @@ public class PlayerControl : StatObject
             FireRot = Model.rotation;
         }
 
-        Instantiate(ProjectilePrefab, Model.position, FireRot);
+        Instantiate(Projectile, Model.position, FireRot);
     }
 
     void ModelAnim()
@@ -123,6 +136,18 @@ public class PlayerControl : StatObject
 
     void ReticleMove()
     {
+        if(MoveActive)
+        {
+            ShortReticle.gameObject.SetActive(false);
+            LongReticle.gameObject.SetActive(false);
+            return;
+        }
+        else
+        {
+            ShortReticle.gameObject.SetActive(true);
+            LongReticle.gameObject.SetActive(true);
+        }
+
         if(ReticleUpdate <= 0)
         {
             ReticleTarget = FindReticleTarget();
@@ -142,7 +167,7 @@ public class PlayerControl : StatObject
             LongReticle.transform.position = transform.position + DirToTarget * DisToTarget;
             ShortReticle.transform.position = transform.position + DirToTarget * DisToTarget / 2;
 
-            if(Vector3.Angle(transform.forward, DirToTarget) <= 2f)   
+            if(Physics.Raycast(transform.position, transform.forward, out RaycastHit Hit) && Hit.transform.parent == ReticleTarget)   
             {
                 LongReticle.color = Color.red;
                 ShortReticle.color = Color.red;
@@ -165,7 +190,24 @@ public class PlayerControl : StatObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!MoveActive && other.CompareTag("Border"))
+        if (other.CompareTag("BombPickup"))
+        {
+            BombCount++;
+            Destroy(other.gameObject);
+            return;
+        }
+        if(other.CompareTag("HealthPickup"))
+        {
+            if(Health < MaxHealth)
+            {
+                Health += 1;
+            }
+
+            Destroy(other.gameObject);
+            return;
+        }
+
+        if (!MoveActive && other.CompareTag("Border"))
         {
             FlightControl FC = FindObjectOfType<FlightControl>();
             FC.StartTempOpen(other.GetComponentInChildren<OpenAreaGenerator>());

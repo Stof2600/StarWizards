@@ -292,6 +292,9 @@ MonoBehaviour:
   EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}
   ProjectileDirections:
   - {x: 0, y: 0, z: 0}
+  PickUps:
+  - {fileID: 0}
+  - {fileID: 5703253052650837701, guid: 166b3fc46c2493d408e670d0c7961a82, type: 3}
   TargetArrow: {fileID: 8751959289337218737}
 --- !u!95 &2029668897074392089
 Animator:

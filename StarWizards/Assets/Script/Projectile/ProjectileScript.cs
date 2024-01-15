@@ -6,9 +6,11 @@ public class ProjectileScript : StatObject
 {
     public bool PlayerProjectile;
     public float DespawnTimer;
+    Vector3 OldPos;
 
     private void Start()
     {
+        OldPos = transform.position;
         StartCoroutine(DespawnTime());
     }
 
@@ -16,6 +18,7 @@ public class ProjectileScript : StatObject
     void Update()
     {
         MoveForward();
+        CollisionDetection();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,19 +28,43 @@ public class ProjectileScript : StatObject
 
         if(!PlayerProjectile && PC)
         {
+            if(DeathEffect)
+            {
+                Instantiate(DeathEffect, transform.position, transform.rotation);
+                Destroy(gameObject);
+                return;
+            }
+
             PC.TakeDamage(1);
             Destroy(gameObject);
         }
         else if(PlayerProjectile && EC)
         {
+            if (DeathEffect)
+            {
+                Instantiate(DeathEffect, transform.position, transform.rotation);
+                Destroy(gameObject);
+                return;
+            }
+
             EC.TakeDamage(1);
             Destroy(gameObject);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void CollisionDetection()
     {
-        Destroy(gameObject);
+        if(Physics.Linecast(OldPos, transform.position, out RaycastHit Hit) && Hit.transform.CompareTag("Level"))
+        {
+            if (DeathEffect)
+            {
+                Instantiate(DeathEffect, transform.position, transform.rotation);
+            }
+
+            Destroy(gameObject);
+        }
+
+        OldPos = transform.position;
     }
 
     IEnumerator DespawnTime()

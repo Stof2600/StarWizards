@@ -65,6 +65,10 @@ public class FlightControl : MonoBehaviour
                 P2.GetComponent<PlayerControl>().MoveActive = true;
             }
 
+            if(!OpenArea)
+            {
+                OpenArea = FindObjectOfType<OpenAreaGenerator>();
+            }
             if(OpenArea.OpenAirDone)
             {
                 if (P1Active)
@@ -275,6 +279,11 @@ public class FlightControl : MonoBehaviour
         {
             case 0:
                 P1 = NewPlayer.transform;
+                if(P1Cam)
+                {
+                    Destroy(P1Cam);
+                    P1Cam = null;
+                }
                 P1Model = NewPlayer.Model;
                 NewPlayer.MoveActive = false;
                 NewPlayer.playerID = 0;
@@ -282,6 +291,11 @@ public class FlightControl : MonoBehaviour
                 break;
             case 1:
                 P2 = NewPlayer.transform;
+                if (P2Cam)
+                {
+                    Destroy(P2Cam);
+                    P2Cam = null;
+                }
                 P2Model = NewPlayer.Model;
                 NewPlayer.MoveActive = false;
                 NewPlayer.playerID = 1;
@@ -376,6 +390,14 @@ public class FlightControl : MonoBehaviour
     {
         OpenArea = Area;
         TempOpenAir = true;
+
+        foreach(EnemyControl EC in FindObjectsOfType<EnemyControl>())
+        {
+            if(!EC.OpenAir && !EC.IsTarget)
+            {
+                Destroy(EC.gameObject);
+            }
+        }
     }
     void UpdateCameras()
     {

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public Slider P1HPBar, P2HPBar;
     public Text ScoreText;
     public Text LivesText;
+    public Text P1BombText, P2BombText;
     public GameObject FCHud;
 
     public GameObject MenuScreen;
@@ -178,7 +179,7 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            TotalScore += 51;
+            TotalScore += 50;
         }
 
         if (LG && !DidScoreCall && TotalScore > (100 * MultipleCheck))
@@ -239,7 +240,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnPlayer(int PlayerID)
     {
-        if(InFlightControl)
+        if(InFlightControl || FC)
         {
             PlayerControl PC = null;
 
@@ -268,7 +269,7 @@ public class GameManager : MonoBehaviour
                 
             }
         }
-        if(InOpenControl)
+        if(InOpenControl && OAC)
         {
             Transform NewP;
 
@@ -306,10 +307,16 @@ public class GameManager : MonoBehaviour
             FCHud.SetActive(true);
             MapSelector.SetActive(false);
 
+            if(FC && FC.TempOpenAir)
+            {
+                InOpenControl = true;
+                InFlightControl = false;
+            }
+
             ScoreText.text = "SCORE\n" + VisualScore.ToString("000000");
 
             LivesText.text = "LIVES: " + MissionLives.ToString("00");
-             
+
             if (P1Active)
             {
                 PlayerControl P1C = null;
@@ -324,10 +331,13 @@ public class GameManager : MonoBehaviour
 
                 P1HPBar.maxValue = P1C.MaxHealth;
                 P1HPBar.value = P1C.Health;
+
+                P1BombText.text = "BOMBS: " + P1C.BombCount.ToString();
             }
             else
             {
                 P1HPBar.value = 0;
+                P1BombText.text = "FIRE BUTTON TO SPAWN";
             }
             if (P2Active)
             {
@@ -342,16 +352,22 @@ public class GameManager : MonoBehaviour
                 }
                 P2HPBar.maxValue = P2C.MaxHealth;
                 P2HPBar.value = P2C.Health;
+
+                P2BombText.text = "BOMBS: " + P2C.BombCount.ToString();
             }
             else
             {
                 P2HPBar.value = 0;
+                P2BombText.text = "FIRE BUTTON TO SPAWN";
             }
         }
         else if(FC)
         {
             FCHud.SetActive(true);
             MapSelector.SetActive(false);
+
+            InOpenControl = false;
+            InFlightControl = true;
 
             ScoreText.text = "SCORE\n" + VisualScore.ToString("000000");
 
@@ -367,20 +383,24 @@ public class GameManager : MonoBehaviour
                 PlayerControl P1C = FC.P1.GetComponent<PlayerControl>();
                 P1HPBar.maxValue = P1C.MaxHealth;
                 P1HPBar.value = P1C.Health;
+                P1BombText.text = "BOMBS: " + P1C.BombCount.ToString();
             }
             else
             {
                 P1HPBar.value = 0;
+                P1BombText.text = "FIRE BUTTON TO SPAWN";
             }
             if (P2Active)
             {
                 PlayerControl P2C = FC.P2.GetComponent<PlayerControl>();
                 P2HPBar.maxValue = P2C.MaxHealth;
                 P2HPBar.value = P2C.Health;
+                P2BombText.text = "BOMBS: " + P2C.BombCount.ToString();
             }
             else
             {
                 P2HPBar.value = 0;
+                P2BombText.text = "FIRE BUTTON TO SPAWN";
             }
         }
         else
@@ -417,7 +437,7 @@ public class GameManager : MonoBehaviour
             {
                 t.localPosition = new Vector3(t.localPosition.x, UIYPosFlight[i], t.localPosition.z);
             }
-            else if (InOpenControl && OAC.P2Active && OAC.P1Active)
+            else if (InOpenControl && P2Active && P1Active)
             {
                 t.localPosition = new Vector3(t.localPosition.x, UIYPosOpen[i], t.localPosition.z);
             }
@@ -432,13 +452,13 @@ public class GameManager : MonoBehaviour
                 P1Active = false;
                 P1Dead = true;
 
-                if (InFlightControl)
+                if (InFlightControl || FC)
                 {
                     FC.P1 = null;
                     FC.P1Model = null;
                     FC.P1Active = false;
                 }
-                if(InOpenControl)
+                if(InOpenControl && OAC)
                 {
                     OAC.P1Active = false;
                     OAC.P1 = null;
@@ -448,13 +468,13 @@ public class GameManager : MonoBehaviour
                 P2Active = false;
                 P2Dead = true;
 
-                if (InFlightControl)
+                if (InFlightControl || FC)
                 {
                     FC.P2 = null;
                     FC.P2Model = null;
                     FC.P2Active = false;
                 }
-                if (InOpenControl)
+                if (InOpenControl && OAC)
                 {
                     OAC.P2Active = false;
                     OAC.P2 = null;

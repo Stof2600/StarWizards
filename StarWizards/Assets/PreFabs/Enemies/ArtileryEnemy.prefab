@@ -300,6 +300,9 @@ MonoBehaviour:
   - {x: -1, y: 1, z: 0}
   - {x: -1, y: 0, z: 0}
   - {x: -1, y: -1, z: 0}
+  PickUps:
+  - {fileID: 0}
+  - {fileID: 5703253052650837701, guid: 166b3fc46c2493d408e670d0c7961a82, type: 3}
   TargetArrow: {fileID: 6834024389010556249}
 --- !u!1 &7255805553577635410
 GameObject:

@@ -175,8 +175,17 @@ MonoBehaviour:
   - {fileID: 7055291487466083727, guid: 148cb6fd4bf6bf14bb262506a7238161, type: 3}
   - {fileID: 352936604859117221, guid: ed4ffb6fe710544418f0410809388673, type: 3}
   - {fileID: 4676343728992237240, guid: d45bf198a002f74438cbf2018f856aac, type: 3}
+  - {fileID: 8975492596579349185, guid: 8f3c77d211dd12548a17e14f7beaef15, type: 3}
+  - {fileID: 4514220479258044606, guid: a81009e3e01591b4883637578b248b9b, type: 3}
+  - {fileID: 428325418684653313, guid: 79212799010996e4794bd4e914cab463, type: 3}
+  - {fileID: 1269243305725137373, guid: cd81528a11eede443a08f3f197f75028, type: 3}
+  - {fileID: 3890351497407986210, guid: c73ff96d4f0572e48b39f561d41979a2, type: 3}
+  - {fileID: 3086463363281881141, guid: 6118916d0ec42634c985e9959cb5cf8b, type: 3}
+  - {fileID: 5314056521765594726, guid: ec48ae40e9a7ee74eab7d75cfd1fb9c3, type: 3}
+  - {fileID: 3197023572393082637, guid: 8b978ba2cc350964ba2ae49e286dbcb9, type: 3}
   OpenAreaPrefabs:
-  - {fileID: 5573045528894931624, guid: 1ac10891b674584438d63beab8dfc6c3, type: 3}
+  - {fileID: 8712935996827780026, guid: 47097010e6ba01848a198fef59c2b944, type: 3}
+  - {fileID: 8330676184038049162, guid: bb71d57e86040dd49a0957c93f046bc2, type: 3}
   MaxSpawns: 2
   RoomList: []
   PlayerHolder: {fileID: 0}
@@ -211,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHolder: {fileID: 0}
+  GM: {fileID: 0}
   LimitX: 8.5
   LimitY: 4.5
   SpawnCount: 0
@@ -218,6 +228,7 @@ MonoBehaviour:
   EnemyPrefabs:
   - {fileID: 7083426378963580211, guid: 854a624db9c2748478197de06b9e6829, type: 3}
   - {fileID: 7083426378963580211, guid: 94160eaef9dcb274d945fd994e175591, type: 3}
+  - {fileID: 7083426378963580211, guid: 45cd93dad5a594b47a96a30c0221124e, type: 3}
   - {fileID: 7083426378963580211, guid: 37eb193a741e82a439d7d99f1c67bff0, type: 3}
   SpawnTimer: 0
 --- !u!4 &307620117

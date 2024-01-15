@@ -6,9 +6,12 @@ public class OpenAreaGenerator : MonoBehaviour
 {
     //do stuff
     public GameObject TargetPrefab;
+    public GameObject FlyingEnemiesPrefab;
+
 
     public Transform[] SpawnPoints;
     public int SpawnCountOveride;
+    public int FlyingSpawns;
 
 
     public int AmountAlive;
@@ -34,6 +37,13 @@ public class OpenAreaGenerator : MonoBehaviour
             EnemyControl EC = NewEnemy.GetComponent<EnemyControl>();
             EC.OpenAir = true;
             EC.IsTarget = true;
+            EC.MoveSpeed = 20;
+        }
+        for (int i = 0; i < FlyingSpawns; i++)
+        {
+            GameObject NewEnemy = Instantiate(FlyingEnemiesPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+            EnemyControl EC = NewEnemy.GetComponent<EnemyControl>();
+            EC.OpenAir = true;
             EC.MoveSpeed = 20;
         }
     }
