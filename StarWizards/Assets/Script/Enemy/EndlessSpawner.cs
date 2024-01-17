@@ -57,7 +57,7 @@ public class EndlessSpawner : MonoBehaviour
     void UpdateDifficulty()
     {
         float SpawnCountTicks = (float)GM.TotalScore / 50;
-        SpawnCountTicks -= Difficulty;
+        SpawnCountTicks -= Difficulty - 1;
         print((float)GM.TotalScore / 50);
         SpawnCount = Mathf.Lerp(3, 10, SpawnCountTicks);
         if(SpawnCount >= 10 && Difficulty < EnemyPrefabs.Length)

@@ -184,8 +184,11 @@ public class GameManager : MonoBehaviour
 
         if (LG && !DidScoreCall && TotalScore > (100 * MultipleCheck))
         {
-            print("RequestOpen");
-            LG.RequestOpenArea(MultipleCheck * 2);
+            if(FC && !FC.TempOpenAir)
+            {
+                print("RequestOpen");
+                LG.RequestOpenArea(MultipleCheck * 2);
+            }
             MultipleCheck += 1;
             DidScoreCall = true;
         }
@@ -240,6 +243,11 @@ public class GameManager : MonoBehaviour
 
     void SpawnPlayer(int PlayerID)
     {
+        if(MissionLives <= 0)
+        {
+            return;
+        }
+
         if(InFlightControl || FC)
         {
             PlayerControl PC = null;
@@ -302,6 +310,21 @@ public class GameManager : MonoBehaviour
 
     void UIControl()
     {
+
+        string DeadText = MissionLives > 0 ? "FIRE BUTTON TO START" : "OUT OF LIVES";
+        if(!P1Active)
+        {
+            P1HPBar.value = 0;
+            P1HPBar.gameObject.SetActive(false);
+            P1BombText.text = DeadText;
+        }
+        if(!P2Active)
+        {
+            P2HPBar.value = 0;
+            P2HPBar.gameObject.SetActive(false);
+            P2BombText.text = DeadText;
+        }
+
         if(OAC || (FC && FC.TempOpenAir))
         {
             FCHud.SetActive(true);
@@ -329,15 +352,11 @@ public class GameManager : MonoBehaviour
                     P1C = OAC.P1.GetComponent<PlayerControl>();
                 }
 
+                P1HPBar.gameObject.SetActive(true);
                 P1HPBar.maxValue = P1C.MaxHealth;
                 P1HPBar.value = P1C.Health;
 
                 P1BombText.text = "BOMBS: " + P1C.BombCount.ToString();
-            }
-            else
-            {
-                P1HPBar.value = 0;
-                P1BombText.text = "FIRE BUTTON TO SPAWN";
             }
             if (P2Active)
             {
@@ -350,15 +369,12 @@ public class GameManager : MonoBehaviour
                 {
                     P2C = OAC.P2.GetComponent<PlayerControl>();
                 }
+
+                P2HPBar.gameObject.SetActive(true);
                 P2HPBar.maxValue = P2C.MaxHealth;
                 P2HPBar.value = P2C.Health;
 
                 P2BombText.text = "BOMBS: " + P2C.BombCount.ToString();
-            }
-            else
-            {
-                P2HPBar.value = 0;
-                P2BombText.text = "FIRE BUTTON TO SPAWN";
             }
         }
         else if(FC)
@@ -381,26 +397,18 @@ public class GameManager : MonoBehaviour
             if (P1Active)
             {
                 PlayerControl P1C = FC.P1.GetComponent<PlayerControl>();
+                P1HPBar.gameObject.SetActive(true);
                 P1HPBar.maxValue = P1C.MaxHealth;
                 P1HPBar.value = P1C.Health;
                 P1BombText.text = "BOMBS: " + P1C.BombCount.ToString();
             }
-            else
-            {
-                P1HPBar.value = 0;
-                P1BombText.text = "FIRE BUTTON TO SPAWN";
-            }
             if (P2Active)
             {
                 PlayerControl P2C = FC.P2.GetComponent<PlayerControl>();
+                P2HPBar.gameObject.SetActive(true);
                 P2HPBar.maxValue = P2C.MaxHealth;
                 P2HPBar.value = P2C.Health;
                 P2BombText.text = "BOMBS: " + P2C.BombCount.ToString();
-            }
-            else
-            {
-                P2HPBar.value = 0;
-                P2BombText.text = "FIRE BUTTON TO SPAWN";
             }
         }
         else
@@ -436,10 +444,12 @@ public class GameManager : MonoBehaviour
             if(InFlightControl || (InOpenControl && ((P1Active && !P2Active) || (!P1Active && P2Active))))
             {
                 t.localPosition = new Vector3(t.localPosition.x, UIYPosFlight[i], t.localPosition.z);
+                P2BombText.alignment = TextAnchor.UpperCenter;
             }
             else if (InOpenControl && P2Active && P1Active)
             {
                 t.localPosition = new Vector3(t.localPosition.x, UIYPosOpen[i], t.localPosition.z);
+                P2BombText.alignment = TextAnchor.LowerCenter;
             }
         }
     }

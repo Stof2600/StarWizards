@@ -16,18 +16,15 @@ public class PlayerControl : StatObject
 
     public GameObject ProjectilePrefab;
     public GameObject BombProjPrefab;
-    public Transform ReticleTarget;
 
     public SpriteRenderer ShortReticle, LongReticle;
+    public Transform AimOrigin;
 
     public int BombCount;
+    public Color ReticleColor;
 
     float KillTimer;
     float SpawnTimer;
-
-    float ReticleUpdate;
-    float MaxReticleLength = 50;
-    float MaxAimAngle = 10;
 
     private void Start()
     {
@@ -120,7 +117,7 @@ public class PlayerControl : StatObject
 
     void Fire(GameObject Projectile)
     {
-        Quaternion FireRot = transform.rotation;
+        Quaternion FireRot = Quaternion.LookRotation(LongReticle.transform.forward, transform.up);
         if(MoveActive)
         {
             FireRot = Model.rotation;
@@ -136,56 +133,31 @@ public class PlayerControl : StatObject
 
     void ReticleMove()
     {
+        if(Physics.Raycast(transform.position, transform.forward, out RaycastHit Hit) && Hit.transform.GetComponentInParent<EnemyControl>())
+        {
+            ShortReticle.color = Color.red;
+            LongReticle.color = Color.red;
+        }
+        else
+        {
+            ShortReticle.color = ReticleColor;
+            LongReticle.color = ReticleColor;
+        }
+
+        float Offset = 1f;
         if(MoveActive)
         {
-            ShortReticle.gameObject.SetActive(false);
-            LongReticle.gameObject.SetActive(false);
-            return;
+            AimOrigin = PlayerCam.transform;
+            Offset = 1.2f;
         }
         else
         {
-            ShortReticle.gameObject.SetActive(true);
-            LongReticle.gameObject.SetActive(true);
+            AimOrigin = GetComponentInParent<FlightControl>().cam.transform;
+            Offset = 0.7f;
         }
 
-        if(ReticleUpdate <= 0)
-        {
-            ReticleTarget = FindReticleTarget();
-            ReticleUpdate = 0.1f;
-        }
-        else
-        {
-            ReticleUpdate -= Time.deltaTime;
-        }
-
-        if(ReticleTarget)
-        {
-            LongReticle.transform.position = ReticleTarget.position;
-            float DisToTarget = Vector3.Distance(transform.position, ReticleTarget.position);
-            Vector3 DirToTarget = (ReticleTarget.position - transform.position).normalized;
-
-            LongReticle.transform.position = transform.position + DirToTarget * DisToTarget;
-            ShortReticle.transform.position = transform.position + DirToTarget * DisToTarget / 2;
-
-            if(Physics.Raycast(transform.position, transform.forward, out RaycastHit Hit) && Hit.transform.parent == ReticleTarget)   
-            {
-                LongReticle.color = Color.red;
-                ShortReticle.color = Color.red;
-            }
-            else
-            {
-                LongReticle.color = Color.green;
-                ShortReticle.color = Color.green;
-            }
-        }
-        else
-        {
-            LongReticle.transform.position = transform.position + transform.forward * MaxReticleLength;
-            ShortReticle.transform.position = transform.position + transform.forward * MaxReticleLength / 2;
-
-            LongReticle.color = Color.green;
-            ShortReticle.color = Color.green;
-        }
+        Vector3 ToPlayerDir = (transform.position + transform.forward * 20) - AimOrigin.position;
+        LongReticle.transform.position = AimOrigin.position + ToPlayerDir * Offset;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -237,28 +209,5 @@ public class PlayerControl : StatObject
         {
             TakeDamage(Health);
         }
-    }
-
-    Transform FindReticleTarget()
-    {
-        Transform ReturnValue = null;
-        float LastDis = Mathf.Infinity;
-
-        foreach(EnemyControl EC in FindObjectsOfType<EnemyControl>())
-        {
-            Transform T = EC.transform;
-            Vector3 DirToEnemy = (T.position - transform.position).normalized;
-            Debug.DrawRay(transform.position, DirToEnemy, Color.red);
-
-            float AimAngle = Vector3.Angle(transform.forward, DirToEnemy);
-            float Dis = Vector3.Distance(transform.position, T.position);
-            if(AimAngle <= MaxAimAngle && Dis <= LastDis && Dis <= MaxReticleLength)
-            {
-                ReturnValue = T;
-                LastDis = Dis;
-            }
-        }
-
-        return ReturnValue;
     }
 }

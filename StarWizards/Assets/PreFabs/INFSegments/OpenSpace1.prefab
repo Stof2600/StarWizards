@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 745481703735083112}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.66, y: 71.93, z: 0.21}
+  m_LocalPosition: {x: 56.66, y: 71.76, z: 0.21}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -418,7 +418,6 @@ Transform:
   - {fileID: 197607948827001984}
   - {fileID: 8501522497400825616}
   - {fileID: 5167540648690031830}
-  - {fileID: 8097617400220012521}
   - {fileID: 2439706734949517836}
   m_Father: {fileID: 665838208510112164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -447,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 1486380349673738020}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.7, y: 42.4, z: 47.1}
+  m_LocalPosition: {x: 54.7, y: 46.06, z: 47.1}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -590,37 +589,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2216660195188217476
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8097617400220012521}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Level
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8097617400220012521
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2216660195188217476}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.8, y: -82.59999, z: 48}
-  m_LocalScale: {x: 20, y: 20, z: 20}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4130174135820684243}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2483848314160695982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,10 +2539,9 @@ MonoBehaviour:
   - {fileID: 197607948827001984}
   - {fileID: 8501522497400825616}
   - {fileID: 5167540648690031830}
-  - {fileID: 8097617400220012521}
   - {fileID: 2439706734949517836}
   SpawnCountOveride: 0
-  FlyingSpawns: 35
+  FlyingSpawns: 20
   AmountAlive: 0
   OpenAirDone: 0
   EndTPDis: 100

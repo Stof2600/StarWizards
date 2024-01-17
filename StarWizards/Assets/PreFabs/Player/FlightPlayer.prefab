@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 771519709664935166}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 50}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6204743489437259841}
@@ -272,10 +272,11 @@ MonoBehaviour:
   PlayerCam: {fileID: 3852490459226511944}
   ProjectilePrefab: {fileID: 1467398005605321871, guid: 50aabef53969c9d4aa71d0d3ea061b00, type: 3}
   BombProjPrefab: {fileID: 8329352330980509331, guid: 8e385e13f87d56240ba3768700f5b2ab, type: 3}
-  ReticleTarget: {fileID: 0}
   ShortReticle: {fileID: 4230336131469306844}
   LongReticle: {fileID: 5301310691394339065}
+  AimOrigin: {fileID: 0}
   BombCount: 0
+  ReticleColor: {r: 0.7, g: 0, b: 0.7, a: 1}
 --- !u!54 &5522609624763917013
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -707,8 +708,8 @@ Transform:
   m_GameObject: {fileID: 7250661720399100687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 25}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6204743489437259841}
