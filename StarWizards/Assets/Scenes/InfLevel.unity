@@ -225,11 +225,19 @@ MonoBehaviour:
   LimitY: 4.5
   SpawnCount: 0
   Difficulty: 0
-  EnemyPrefabs:
-  - {fileID: 7083426378963580211, guid: 854a624db9c2748478197de06b9e6829, type: 3}
-  - {fileID: 7083426378963580211, guid: 94160eaef9dcb274d945fd994e175591, type: 3}
-  - {fileID: 7083426378963580211, guid: 45cd93dad5a594b47a96a30c0221124e, type: 3}
-  - {fileID: 7083426378963580211, guid: 37eb193a741e82a439d7d99f1c67bff0, type: 3}
+  DifficultyLevels:
+  - EnemyPrefabs:
+    - {fileID: 7083426378963580211, guid: 854a624db9c2748478197de06b9e6829, type: 3}
+    - {fileID: 7083426378963580211, guid: 94160eaef9dcb274d945fd994e175591, type: 3}
+  - EnemyPrefabs:
+    - {fileID: 7083426378963580211, guid: 45cd93dad5a594b47a96a30c0221124e, type: 3}
+    - {fileID: 7083426378963580211, guid: b715e47d8ccf16344b84e6e26ac65a54, type: 3}
+  - EnemyPrefabs:
+    - {fileID: 7083426378963580211, guid: 37eb193a741e82a439d7d99f1c67bff0, type: 3}
+    - {fileID: 7083426378963580211, guid: 76f04b66d432ce74ca61a891d34ceb0c, type: 3}
+  - EnemyPrefabs:
+    - {fileID: 7083426378963580211, guid: 5349b967e2551594f851a638b01aecc1, type: 3}
+    - {fileID: 7083426378963580211, guid: 7fbbca8adc023864a8d19dce2a8be5d7, type: 3}
   SpawnTimer: 0
 --- !u!4 &307620117
 Transform:

@@ -11,14 +11,14 @@ public class EndlessSpawner : MonoBehaviour
 
     public float SpawnCount;
     public int Difficulty;
-    public GameObject[] EnemyPrefabs;
+    public DifficultyLevel[] DifficultyLevels;
 
     public float SpawnTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        Difficulty = 1;
+        Difficulty = 0;
         PlayerHolder = FindObjectOfType<FlightControl>();
         GM = FindObjectOfType<GameManager>();
     }
@@ -45,22 +45,23 @@ public class EndlessSpawner : MonoBehaviour
     {
         for (int i = 0; i < (int)SpawnCount; i++)
         {
-            int EnemySelect = Random.Range(0, Difficulty + 1);
+            int DifficultySelect = Random.Range(0, Difficulty + 1);
+            int EnemySelect = Random.Range(0, DifficultyLevels[DifficultySelect].EnemyPrefabs.Length);
 
             Vector3 SpawnPosition = new Vector3(Random.Range(-LimitX, LimitX), Random.Range(-LimitY, LimitY), transform.position.z);
             if(ClearArea(SpawnPosition))
             {
-                Instantiate(EnemyPrefabs[EnemySelect], SpawnPosition, new Quaternion(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z, transform.rotation.w));
+                Instantiate(DifficultyLevels[DifficultySelect].EnemyPrefabs[EnemySelect], SpawnPosition, new Quaternion(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z, transform.rotation.w));
             }
         }
     }
     void UpdateDifficulty()
     {
         float SpawnCountTicks = (float)GM.TotalScore / 50;
-        SpawnCountTicks -= Difficulty - 1;
+        SpawnCountTicks -= Difficulty;
         print((float)GM.TotalScore / 50);
         SpawnCount = Mathf.Lerp(3, 10, SpawnCountTicks);
-        if(SpawnCount >= 10 && Difficulty < EnemyPrefabs.Length)
+        if(SpawnCount >= 10 && Difficulty < DifficultyLevels.Length)
         {
             Difficulty += 1;
         }
@@ -78,5 +79,11 @@ public class EndlessSpawner : MonoBehaviour
         {
             return true;
         }
+    }
+
+    [System.Serializable]
+    public class DifficultyLevel
+    {
+        public GameObject[] EnemyPrefabs;
     }
 }
