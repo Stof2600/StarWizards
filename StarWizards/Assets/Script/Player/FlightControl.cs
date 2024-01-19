@@ -122,16 +122,18 @@ public class FlightControl : MonoBehaviour
                 P2Done = true;
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, OpenArea.transform.position + new Vector3(0, 0, OpenArea.EndTPDis), MoveTimer);
-            if(transform.position == OpenArea.transform.position + new Vector3(0, 0, OpenArea.EndTPDis))
+            transform.position += new Vector3(0, 0, LevelSpeed * 4) * Time.deltaTime;
+            if (transform.position.z >= OpenArea.EndTPPoint.position.z)
             {
                 HolderDone = true;
             }
 
 
-            if(P1Done && P2Done)
+            if(P1Done && P2Done && HolderDone)
             {
+                GM.ChangeLives(1, true);
                 WaitForPosition = false;
+                GM.ForceAudioChange();
             }
 
             return;
@@ -398,6 +400,8 @@ public class FlightControl : MonoBehaviour
                 Destroy(EC.gameObject);
             }
         }
+
+        GM.ForceAudioChange();
     }
     void UpdateCameras()
     {

@@ -3,9 +3,12 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - EndlessSpawner
     - EnemyControl
+    - Explosion
     - FlightControl
     - GameManager
+    - LevelGenerator
     - MenuModel
+    - OpenAreaGenerator
     - PlayerControl
     - ProjectileScript
     Unity.Rider.Editor.dll:
@@ -15,8 +18,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    Unity.TextMeshPro.dll:
-    - TMPro.TMP_FontAsset
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -32,6 +33,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
   serializedClasses:
     Assembly-CSharp:
+    - EndlessSpawner/DifficultyLevel
     - MultiButtonSelect
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -115,9 +117,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 96
       Script: {instanceID: 0}
@@ -130,29 +142,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2182}
     - Class: 114
-      Script: {instanceID: 2598}
+      Script: {instanceID: 2602}
     - Class: 114
-      Script: {instanceID: 2758}
+      Script: {instanceID: 2762}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 3088}
+      Script: {instanceID: 2998}
     - Class: 114
-      Script: {instanceID: 4068}
+      Script: {instanceID: 3094}
     - Class: 114
-      Script: {instanceID: 4316}
+      Script: {instanceID: 4074}
     - Class: 114
-      Script: {instanceID: 4936}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 5006}
+      Script: {instanceID: 4942}
     - Class: 114
-      Script: {instanceID: 5252}
+      Script: {instanceID: 5012}
     - Class: 114
-      Script: {instanceID: 6006}
+      Script: {instanceID: 5258}
     - Class: 114
-      Script: {instanceID: 6576}
+      Script: {instanceID: 6012}
     - Class: 114
-      Script: {instanceID: 7222}
+      Script: {instanceID: 6584}
+    - Class: 114
+      Script: {instanceID: 7230}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -164,6 +178,8 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -202,11 +218,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
+      Script: {instanceID: 0}
+    - Class: 102
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -217,10 +239,22 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1630}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 2490}
     - Class: 114
-      Script: {instanceID: 7222}
+      Script: {instanceID: 2998}
+    - Class: 114
+      Script: {instanceID: 6176}
+    - Class: 114
+      Script: {instanceID: 7156}
+    - Class: 114
+      Script: {instanceID: 7230}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -229,6 +263,10 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     Assets/Scenes/MissionSelect.unity:
     - Class: 1
@@ -258,7 +296,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -274,7 +312,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 27804c494ff3ef7ea2ef576574f15f86
+      Hash: 70b511a76aa2e912069ab3fdd3458ade
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: EnemyControl
@@ -292,7 +330,7 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: a3f158bb5bf2719e6aebdaa20c6de6bb
+      Hash: f49f80105c79cb998ab617bfd04d49f9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: FlightControl
@@ -376,6 +414,12 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ReticleCollision
+  - hash:
+      serializedVersion: 2
       Hash: 6f67dd406ddfc18c9b3f8a90725c6266
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -386,6 +430,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 12e7da8aec86aead7f19f07cea5c6b2f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LevelGenerator
   - hash:
       serializedVersion: 2
       Hash: bcdedb1b3a567eb05111be4716618ce1
@@ -424,7 +474,7 @@ ScriptsOnlyBuild:
     className: UnityMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a869223f009550ecbdcc2f97faaf7f7e
+      Hash: bc954eabac8ffe73bc679d54aad80a21
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -494,6 +544,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 3e5c117333f37de3eb633514a31bc337
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Explosion
   - hash:
       serializedVersion: 2
       Hash: a4d905db69ca7f45f45458ae380fb66f
@@ -934,6 +990,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 8ead0d7b621a8784b78f5804a3750a70
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: OpenAreaGenerator
+  - hash:
+      serializedVersion: 2
       Hash: f4f39b64f410b0cd98b49df4bad0eb7e
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -1006,7 +1068,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 86d5b491a9e405cb843850718ffcaa76
+      Hash: 6ae1b8425f54b941d184f65e7eae5cb1
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerControl
@@ -1078,7 +1140,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 5f8c5e8ddc061cfa25dace3555ed8643
+      Hash: 222b299afdaf6985395e40c006aeae00
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: EndlessSpawner
@@ -1165,4 +1227,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/BootupScene.unity
   - Assets/Scenes/MissionSelect.unity
   - Assets/Scenes/InfLevel.unity
-  playerPath: C:/Users/stefs/Documents/Unity/BuildFiles/Spaceship/STAR WIZARDS.exe
+  playerPath: C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS.exe

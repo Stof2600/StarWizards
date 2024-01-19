@@ -84,6 +84,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6001185059389503962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9076120047845993896}
+  m_Layer: 0
+  m_Name: AimRot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9076120047845993896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001185059389503962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8459433765492995877}
+  m_Father: {fileID: 6198827187580007811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7083426378963580211
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,8 +146,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8459433765492995877}
   - {fileID: 3626031290691294351}
+  - {fileID: 9076120047845993896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2495424563178605676
@@ -137,19 +169,19 @@ MonoBehaviour:
   HitMat: {fileID: 2100000, guid: bcbb9c519fb876a458b33d953312da62, type: 2}
   DefaultMat: {fileID: 0}
   DeathEffect: {fileID: 8852894649712479248, guid: 11105911b279fcc4ab1753ebc1bd2130, type: 3}
-  FireTimerMin: 0.6
-  FireTimerMax: 0.6
+  FireTimerMin: 1
+  FireTimerMax: 2
   ShootCountdown: 1
   OpenAir: 0
   StaticEnemy: 0
   IsTarget: 0
-  FirePoint: {fileID: 8459433765492995877}
-  AimBase: {fileID: 8459433765492995877}
-  AimRot: {fileID: 0}
+  FirePoint: {fileID: 9076120047845993896}
+  AimBase: {fileID: 0}
+  AimRot: {fileID: 9076120047845993896}
   RotateSpeed: 3
   TimeCount: 0
   FireRate: 0
-  EnemyProjectilePrefab: {fileID: 1467398005605321871, guid: 77d7c7855d1dd8d48b137081b64408e5, type: 3}
+  EnemyProjectilePrefab: {fileID: 8329352330980509331, guid: fe679cba73241774bb8942961ba47dea, type: 3}
   ProjectileDirections:
   - {x: 0, y: 0, z: 0}
   PickUps:
@@ -183,12 +215,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9092242751312358815}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.0028514764, y: 0, z: -0.05198171}
   m_LocalScale: {x: 80, y: 80, z: 80}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6198827187580007811}
+  m_Father: {fileID: 9076120047845993896}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4812704944054909056
 MeshFilter:

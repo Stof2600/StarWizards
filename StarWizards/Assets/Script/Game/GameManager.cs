@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,6 +58,14 @@ public class GameManager : MonoBehaviour
     LevelGenerator LG;
     int MultipleCheck;
     bool DidScoreCall;
+
+    [Header("BGM")]
+    public AudioClip MenuTheme;
+    public AudioClip FlightTheme;
+    public AudioClip OpenTheme;
+    public AudioSource AS;
+    public AudioSource TransitionAudio;
+    bool UpdatedAudioClip;
 
     [Header("HIGHSCORE STUFF")]
     public Text HighscoreDisplay;
@@ -130,6 +139,8 @@ public class GameManager : MonoBehaviour
 
             DidScoreCall = false;
 
+            UpdatedAudioClip = true;
+
             TransitionActive = false;
             PlayedTransitionEffect = false;
             LoadedNewScene = false;
@@ -195,6 +206,12 @@ public class GameManager : MonoBehaviour
         else if(TotalScore % 100 != 0 && DidScoreCall)
         {
             DidScoreCall = false;
+        }
+
+        if(UpdatedAudioClip)
+        {
+            AudioChange();
+            UpdatedAudioClip = false;
         }
     }
 
@@ -453,6 +470,24 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    void AudioChange()
+    {
+        if(FC && !FC.TempOpenAir)
+        {
+            AS.clip = FlightTheme;
+            AS.Play();
+        }
+        else if(OAC || (FC && FC.TempOpenAir))
+        {
+            AS.clip = OpenTheme;
+            AS.Play();
+        }
+        else if(!OAC && !FC)
+        {
+            AS.clip = MenuTheme;
+            AS.Play();
+        }
+    }
 
     public void ResetPlayer(int PlayerID)
     {
@@ -527,6 +562,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ForceAudioChange()
+    {
+        UpdatedAudioClip = true;
+    }
+
     void CheckLives()
     {
         if(MissionLives <= 0 && !P1Active && !P2Active)
@@ -561,6 +601,7 @@ public class GameManager : MonoBehaviour
 
             if(!PlayedTransitionEffect)
             {
+                TransitionAudio.Play();
                 TransitionEffect.Play();
                 PlayedTransitionEffect = true;
             }

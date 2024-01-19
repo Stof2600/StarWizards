@@ -31,6 +31,7 @@ public class EnemyControl : StatObject
 
     public List<Vector3> ProjectileDirections = new List<Vector3>();
 
+    public bool ManualAreaSet;
     Vector3 PatrolPoint;
     Vector3 PatrolLimit;
     Vector3 MovePoint;
@@ -59,7 +60,10 @@ public class EnemyControl : StatObject
         if(OpenAir)
         {
             ChaseStart = Random.Range(10, 100);
-            GetOpenArea();
+            if(!ManualAreaSet)
+            {
+                GetOpenArea();
+            }
         }
         else if(TargetArrow)
         {
@@ -304,6 +308,11 @@ public class EnemyControl : StatObject
     {
         BoxCollider Area = GameObject.FindGameObjectWithTag("Border").GetComponent<BoxCollider>();
 
+        PatrolPoint = Area.transform.position + Area.center;
+        PatrolLimit = Area.size * 0.5f;
+    }
+    public void SetOpenArea(BoxCollider Area)
+    {
         PatrolPoint = Area.transform.position + Area.center;
         PatrolLimit = Area.size * 0.5f;
     }

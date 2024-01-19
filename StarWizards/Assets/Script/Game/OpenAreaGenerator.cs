@@ -17,7 +17,7 @@ public class OpenAreaGenerator : MonoBehaviour
     public int AmountAlive;
     public bool OpenAirDone;
 
-    public float EndTPDis = 100; //how much should the FlightController jump forward at the end (+ position of self)
+    public Transform EndTPPoint;
     bool DidEndCheck;
 
     // Start is called before the first frame update
@@ -38,6 +38,8 @@ public class OpenAreaGenerator : MonoBehaviour
             EC.OpenAir = true;
             EC.IsTarget = true;
             EC.MoveSpeed = 20;
+            EC.ManualAreaSet = true;
+            EC.SetOpenArea(GetComponentInParent<BoxCollider>());
         }
         for (int i = 0; i < FlyingSpawns; i++)
         {
@@ -45,6 +47,8 @@ public class OpenAreaGenerator : MonoBehaviour
             EnemyControl EC = NewEnemy.GetComponent<EnemyControl>();
             EC.OpenAir = true;
             EC.MoveSpeed = 20;
+            EC.ManualAreaSet = true;
+            EC.SetOpenArea(GetComponentInParent<BoxCollider>());
         }
     }
 
