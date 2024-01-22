@@ -1,327 +1,329 @@
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1705665054706523, "dur":1652, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1705665054708185, "dur":114, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1705665054708333, "dur":187, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1705665054708534, "dur":2567, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1705665054711103, "dur":127871, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1705665054838976, "dur":227, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1705665054839315, "dur":1400, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1705665054708808, "dur":2300, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1705665054711109, "dur":4511, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1705665054715635, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1705665054715703, "dur":77, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1705665054715838, "dur":878, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":1, "ts":1705665054716934, "dur":93, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":1, "ts":1705665054717032, "dur":151, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":1, "ts":1705665054717184, "dur":165, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":1, "ts":1705665054717350, "dur":184, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":1, "ts":1705665054717535, "dur":322, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":1, "ts":1705665054717858, "dur":57, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":1, "ts":1705665054717916, "dur":201, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":1, "ts":1705665054715702, "dur":2510, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1705665054718382, "dur":57, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1705665054718918, "dur":115614, "ph":"X", "name": "AddBootConfigGUID",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1705665054837941, "dur":94, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\WinPlayerBuildProgram\\boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1705665054837940, "dur":96, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1705665054838054, "dur":882, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/boot.config" }}
-,{ "pid":12345, "tid":2, "ts":1705665054708824, "dur":2288, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054711117, "dur":1014, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054712131, "dur":3490, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054715631, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054715724, "dur":105, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054725132, "dur":792, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/app.info" }}
-,{ "pid":12345, "tid":2, "ts":1705665054725934, "dur":93, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054725927, "dur":120, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054726159, "dur":10607, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054736824, "dur":150, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054738617, "dur":78, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054736995, "dur":1710, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054738784, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054738856, "dur":1446, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054740403, "dur":1328, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054741840, "dur":960, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054742849, "dur":97, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054742961, "dur":1382, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054744391, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054744459, "dur":2305, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054746875, "dur":1593, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054748563, "dur":108, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054748687, "dur":1243, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.PropertiesModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054750044, "dur":1733, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054751836, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054751928, "dur":1679, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054753670, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054753735, "dur":1318, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ContentLoadModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054755379, "dur":1856, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1705665054757375, "dur":1590, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets2.assets" }}
-,{ "pid":12345, "tid":2, "ts":1705665054759079, "dur":3011, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":2, "ts":1705665054762150, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1705665054762276, "dur":1746, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/resources.assets" }}
-,{ "pid":12345, "tid":2, "ts":1705665054764161, "dur":2264, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level0" }}
-,{ "pid":12345, "tid":2, "ts":1705665054766470, "dur":72490, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054708840, "dur":2279, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054711120, "dur":937, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054712057, "dur":743, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054712800, "dur":2832, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054715643, "dur":84, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":3, "ts":1705665054715632, "dur":96, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":3, "ts":1705665054715729, "dur":88, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054716485, "dur":3523, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":3, "ts":1705665054720053, "dur":95, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":3, "ts":1705665054720464, "dur":695, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":3, "ts":1705665054721200, "dur":97, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":3, "ts":1705665054721398, "dur":674, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":3, "ts":1705665054722150, "dur":75, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":3, "ts":1705665054722276, "dur":794, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":3, "ts":1705665054723151, "dur":84, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config" }}
-,{ "pid":12345, "tid":3, "ts":1705665054723149, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":3, "ts":1705665054723556, "dur":728, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":3, "ts":1705665054724320, "dur":69, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":3, "ts":1705665054724470, "dur":898, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":3, "ts":1705665054725426, "dur":105, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":3, "ts":1705665054725532, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054725806, "dur":817, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":3, "ts":1705665054727820, "dur":6416, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054734306, "dur":210, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054734524, "dur":108, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054734644, "dur":2671, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054737364, "dur":228, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054737631, "dur":1612, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054739335, "dur":1238, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054740614, "dur":189, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054740819, "dur":1224, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054742113, "dur":173, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054742301, "dur":1145, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054743489, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054743593, "dur":1553, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054745191, "dur":112, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054745319, "dur":2118, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054747506, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054747575, "dur":1441, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054749127, "dur":1381, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054750609, "dur":1624, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054752277, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054752359, "dur":1631, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054754057, "dur":83, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054754159, "dur":1676, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054755878, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054755970, "dur":1346, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1705665054757369, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054757433, "dur":2636, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets1.assets" }}
-,{ "pid":12345, "tid":3, "ts":1705665054760133, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054760275, "dur":1498, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":3, "ts":1705665054761950, "dur":113, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1705665054762090, "dur":4000, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/resources.assets.resS" }}
-,{ "pid":12345, "tid":3, "ts":1705665054766258, "dur":72699, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054708866, "dur":2261, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054711128, "dur":1061, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054712189, "dur":3448, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054715642, "dur":198, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":4, "ts":1705665054726324, "dur":949, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":4, "ts":1705665054727330, "dur":97, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054727645, "dur":3541, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054731266, "dur":154, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054731446, "dur":2686, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054734296, "dur":168, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054734514, "dur":1602, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054736163, "dur":144, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054736326, "dur":3506, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054739977, "dur":133, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054740123, "dur":1310, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054741484, "dur":102, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054741602, "dur":897, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054742551, "dur":109, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054742827, "dur":1864, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054744869, "dur":113, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054745012, "dur":1959, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054747041, "dur":234, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054747305, "dur":1594, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054748962, "dur":109, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054749089, "dur":1916, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054751051, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054751121, "dur":1355, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054752576, "dur":1510, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054754151, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054754239, "dur":1867, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054756218, "dur":1205, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1705665054757463, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054757544, "dur":5592, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets0.resource" }}
-,{ "pid":12345, "tid":4, "ts":1705665054763218, "dur":82, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054763322, "dur":180, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1705665054763521, "dur":2778, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level1" }}
-,{ "pid":12345, "tid":4, "ts":1705665054766343, "dur":72616, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054708855, "dur":2268, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054711124, "dur":978, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054712102, "dur":3547, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054715666, "dur":89, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config" }}
-,{ "pid":12345, "tid":5, "ts":1705665054715654, "dur":101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":5, "ts":1705665054715756, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054725222, "dur":923, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":5, "ts":1705665054726306, "dur":1168, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS.exe" }}
-,{ "pid":12345, "tid":5, "ts":1705665054727514, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054727765, "dur":3859, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054731740, "dur":3003, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054734817, "dur":107, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054737219, "dur":51, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054734954, "dur":2326, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054737348, "dur":247, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054737633, "dur":1766, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054739759, "dur":2452, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054742281, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054742352, "dur":131, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054742495, "dur":1726, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054744340, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054744417, "dur":1634, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054746126, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054746210, "dur":1747, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054748021, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054748107, "dur":1517, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054749708, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054749798, "dur":2026, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054751931, "dur":1212, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054753182, "dur":83, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054753282, "dur":2184, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054755579, "dur":1688, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1705665054757311, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054759232, "dur":103, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054757392, "dur":1956, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets1.assets.resS" }}
-,{ "pid":12345, "tid":5, "ts":1705665054759458, "dur":3656, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":5, "ts":1705665054763159, "dur":92, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054763275, "dur":977, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level1.resS" }}
-,{ "pid":12345, "tid":5, "ts":1705665054764307, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1705665054764377, "dur":1762, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":5, "ts":1705665054766186, "dur":72776, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054708886, "dur":2245, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054711132, "dur":980, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054712112, "dur":3532, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054715646, "dur":116, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":6, "ts":1705665054715763, "dur":69, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054725747, "dur":1282, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":6, "ts":1705665054727073, "dur":79, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":6, "ts":1705665054727514, "dur":1973, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":6, "ts":1705665054729557, "dur":1011, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054730868, "dur":1850, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054732789, "dur":99, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054732908, "dur":3240, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054736207, "dur":107, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054736336, "dur":2174, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054738561, "dur":82, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054738676, "dur":1004, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054739722, "dur":87, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054739823, "dur":1126, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054740992, "dur":95, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054741105, "dur":1034, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054742239, "dur":961, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054743318, "dur":1418, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054744865, "dur":115, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054745010, "dur":1741, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054746860, "dur":1604, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054748584, "dur":1094, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054749728, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054749810, "dur":1697, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054751557, "dur":141, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054751716, "dur":1164, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054752929, "dur":86, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054754818, "dur":50, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1705665054753043, "dur":1840, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054754997, "dur":1524, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1705665054756618, "dur":1082, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets2.resource" }}
-,{ "pid":12345, "tid":6, "ts":1705665054757802, "dur":4806, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":6, "ts":1705665054762781, "dur":1379, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level2" }}
-,{ "pid":12345, "tid":6, "ts":1705665054764255, "dur":3733, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/globalgamemanagers.assets.resS" }}
-,{ "pid":12345, "tid":6, "ts":1705665054768068, "dur":70888, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054708910, "dur":2224, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054711136, "dur":932, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054712069, "dur":3564, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054715643, "dur":87, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml" }}
-,{ "pid":12345, "tid":7, "ts":1705665054715633, "dur":98, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":7, "ts":1705665054715731, "dur":92, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054716925, "dur":1149, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":7, "ts":1705665054718107, "dur":63, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\machine.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054718105, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054718466, "dur":767, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054719276, "dur":96, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":7, "ts":1705665054719469, "dur":683, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":7, "ts":1705665054720192, "dur":69, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\web.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054720190, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054720443, "dur":731, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054721221, "dur":93, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\machine.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054721219, "dur":96, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054721411, "dur":745, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054722193, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":7, "ts":1705665054722495, "dur":610, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":7, "ts":1705665054723188, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":7, "ts":1705665054723542, "dur":680, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":7, "ts":1705665054724265, "dur":79, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\machine.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054724262, "dur":83, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054724451, "dur":937, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":7, "ts":1705665054725442, "dur":78, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\EmbedRuntime\\MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054725441, "dur":80, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054725790, "dur":1384, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054727585, "dur":3592, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054731367, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054731481, "dur":3761, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054735294, "dur":355, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054735668, "dur":1650, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054737374, "dur":220, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054737635, "dur":1505, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054739248, "dur":1256, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054740565, "dur":239, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054740822, "dur":1432, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054742349, "dur":1041, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054743495, "dur":1536, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054745071, "dur":147, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054745233, "dur":1283, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054746615, "dur":1390, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054748050, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054748139, "dur":1252, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054749507, "dur":1152, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054750752, "dur":1421, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054752215, "dur":129, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054752360, "dur":1301, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054753706, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1705665054753793, "dur":1376, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054755275, "dur":1214, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054756533, "dur":84, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityPlayer.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054756531, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054756671, "dur":17234, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":7, "ts":1705665054773954, "dur":65007, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054708929, "dur":2209, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054711138, "dur":1099, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054712237, "dur":3419, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054715657, "dur":164, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":8, "ts":1705665054726070, "dur":1177, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":8, "ts":1705665054727633, "dur":4065, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054731765, "dur":215, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054732000, "dur":2979, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054735054, "dur":451, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054735543, "dur":2447, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054738056, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054738158, "dur":1769, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054739991, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054740075, "dur":1923, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054742157, "dur":1784, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054743989, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054744069, "dur":1453, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054745587, "dur":185, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054745790, "dur":1805, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054747672, "dur":77, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054747767, "dur":1865, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054749673, "dur":108, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054749799, "dur":1812, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054751714, "dur":1103, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054752919, "dur":1625, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054754613, "dur":100, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054754729, "dur":2003, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1705665054756776, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054756866, "dur":1370, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets2.assets.resS" }}
-,{ "pid":12345, "tid":8, "ts":1705665054758294, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054758401, "dur":3604, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":8, "ts":1705665054762165, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054762281, "dur":1714, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level2.resS" }}
-,{ "pid":12345, "tid":8, "ts":1705665054764061, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1705665054764159, "dur":1881, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level0.resS" }}
-,{ "pid":12345, "tid":8, "ts":1705665054766171, "dur":981, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":8, "ts":1705665054767227, "dur":71748, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1705665054842740, "dur":894, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid":12345, "tid":0, "ts":1705929602414309, "dur":12115, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1705929602426437, "dur":472, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1705929602426950, "dur":192, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1705929602427917, "dur":100, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1705929602428080, "dur":96, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1705929602428342, "dur":114, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1705929602428510, "dur":102, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1705929602428671, "dur":89, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1705929602427157, "dur":2920, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1705929602430078, "dur":942156, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1705929603372234, "dur":199, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1705929603372555, "dur":1434, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1705929602427584, "dur":2499, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1705929602430085, "dur":4443, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1705929602434548, "dur":83, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1705929602434640, "dur":74, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1705929602434752, "dur":6286, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":1, "ts":1705929602441331, "dur":113, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":1, "ts":1705929602441445, "dur":144, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":1, "ts":1705929602441591, "dur":217, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":1, "ts":1705929602441809, "dur":291, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":1, "ts":1705929602442102, "dur":418, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":1, "ts":1705929602442523, "dur":96, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":1, "ts":1705929602442620, "dur":298, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\stefs\\Documents\\School\\GitHub\\Repos\\StarWizards\\StarWizards\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":1, "ts":1705929602434639, "dur":8419, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1705929602443336, "dur":70, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1705929602443822, "dur":923860, "ph":"X", "name": "AddBootConfigGUID",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1705929603371059, "dur":89, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\WinPlayerBuildProgram\\boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1705929603371058, "dur":91, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1705929603371165, "dur":1020, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/boot.config" }}
+,{ "pid":12345, "tid":2, "ts":1705929602427618, "dur":2476, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602430096, "dur":930, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602431027, "dur":3505, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602434536, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":2, "ts":1705929602434670, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602435766, "dur":1778, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":2, "ts":1705929602437588, "dur":105, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":2, "ts":1705929602437694, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602437815, "dur":1061, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":2, "ts":1705929602438945, "dur":108, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\web.config" }}
+,{ "pid":12345, "tid":2, "ts":1705929602438944, "dur":110, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1705929602439255, "dur":931, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1705929602440249, "dur":100, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1705929602440247, "dur":102, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1705929602440400, "dur":1260, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1705929602441710, "dur":263, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1705929602441974, "dur":420, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602442602, "dur":910, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1705929602443566, "dur":97, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1705929602443664, "dur":135, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602444160, "dur":1542, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1705929602445949, "dur":4833, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602450870, "dur":88, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602451001, "dur":1525, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602452579, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602452657, "dur":1963, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602454775, "dur":1051, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602455874, "dur":168, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602458075, "dur":104, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602456061, "dur":2149, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602458275, "dur":100, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602458407, "dur":1100, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602459549, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602459641, "dur":1410, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602461112, "dur":349, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602461477, "dur":2365, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602463890, "dur":843, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602464751, "dur":2661, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602467669, "dur":154, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602467860, "dur":1642, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602469608, "dur":2001, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602471681, "dur":129, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602471851, "dur":2105, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602474015, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602474108, "dur":2027, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602476174, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602476266, "dur":1863, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602478220, "dur":100, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602478337, "dur":1795, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602480204, "dur":154, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602480377, "dur":2265, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602482712, "dur":715, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602483447, "dur":3399, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1705929602486943, "dur":3816, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":2, "ts":1705929602490875, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602490951, "dur":64, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1705929602491021, "dur":1561, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":2, "ts":1705929602492684, "dur":10657, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":2, "ts":1705929602503528, "dur":5538, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level0.resS" }}
+,{ "pid":12345, "tid":2, "ts":1705929602509151, "dur":863136, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602427720, "dur":2402, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602430123, "dur":1021, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602431144, "dur":3387, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602434535, "dur":149, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":3, "ts":1705929602434685, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602441462, "dur":1021, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":3, "ts":1705929602442540, "dur":92, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config" }}
+,{ "pid":12345, "tid":3, "ts":1705929602442538, "dur":95, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1705929602442871, "dur":1689, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1705929602444620, "dur":123, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602444618, "dur":126, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602444853, "dur":11289, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602456261, "dur":2638, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602458997, "dur":1890, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602460951, "dur":1990, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602462992, "dur":100, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602463110, "dur":2535, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602465697, "dur":91, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602465805, "dur":2478, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602468343, "dur":89, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602468573, "dur":2025, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602470768, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602470865, "dur":2137, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602473053, "dur":167, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602473260, "dur":1916, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602475297, "dur":167, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602475482, "dur":1437, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602476967, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602477043, "dur":1913, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602479008, "dur":111, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602479134, "dur":3202, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602482446, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602482542, "dur":4224, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1705929602486898, "dur":3674, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":3, "ts":1705929602490765, "dur":5226, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":3, "ts":1705929602496093, "dur":7252, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level2" }}
+,{ "pid":12345, "tid":3, "ts":1705929602503415, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1705929602503528, "dur":5619, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level0" }}
+,{ "pid":12345, "tid":3, "ts":1705929602509204, "dur":863000, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602427640, "dur":2463, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602430105, "dur":931, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602431036, "dur":3494, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602434547, "dur":197, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":4, "ts":1705929602434535, "dur":210, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":4, "ts":1705929602462834, "dur":2592, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":4, "ts":1705929602465479, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602465558, "dur":1886, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1705929602467498, "dur":253, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602467771, "dur":1623, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1705929602469458, "dur":119, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602469596, "dur":1948, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1705929602471599, "dur":212, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602471850, "dur":1775, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1705929602473681, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602473779, "dur":2093, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.PropertiesModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1705929602475993, "dur":1356, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1705929602477400, "dur":95, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602477513, "dur":1622, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1705929602479185, "dur":277, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602479485, "dur":2467, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ContentLoadModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1705929602482008, "dur":126, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602482177, "dur":2087, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1705929602484358, "dur":4093, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets2.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1705929602488509, "dur":120, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1705929602488649, "dur":7301, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":4, "ts":1705929602496098, "dur":7415, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level2.resS" }}
+,{ "pid":12345, "tid":4, "ts":1705929602503646, "dur":8724, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/globalgamemanagers.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1705929602512429, "dur":859776, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602427692, "dur":2419, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602430113, "dur":933, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602431047, "dur":3500, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602434557, "dur":138, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config" }}
+,{ "pid":12345, "tid":5, "ts":1705929602434548, "dur":148, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1705929602434700, "dur":85, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602442067, "dur":1089, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1705929602443216, "dur":309, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\machine.config" }}
+,{ "pid":12345, "tid":5, "ts":1705929602443214, "dur":312, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":5, "ts":1705929602443587, "dur":1169, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":5, "ts":1705929602444799, "dur":85, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":5, "ts":1705929602445234, "dur":8029, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":5, "ts":1705929602453385, "dur":890, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602454386, "dur":1419, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602455857, "dur":190, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602456066, "dur":2397, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602458570, "dur":1182, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602459810, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602459909, "dur":1938, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602461967, "dur":1758, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602463778, "dur":785, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602464590, "dur":1207, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602465850, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602465923, "dur":2158, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602468158, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602468235, "dur":1523, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602469836, "dur":82, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602469935, "dur":2032, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602472065, "dur":1738, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602473857, "dur":129, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602474003, "dur":2099, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602476155, "dur":99, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602476271, "dur":1851, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602478207, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602478278, "dur":1763, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602480150, "dur":2396, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602482604, "dur":143, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602482765, "dur":4157, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1705929602487031, "dur":136, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1705929602487184, "dur":13446, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets0.resource" }}
+,{ "pid":12345, "tid":5, "ts":1705929602500741, "dur":3420, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level1" }}
+,{ "pid":12345, "tid":5, "ts":1705929602504291, "dur":4541, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":5, "ts":1705929602508906, "dur":863313, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602427600, "dur":2487, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602430092, "dur":921, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602431013, "dur":540, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602431553, "dur":2975, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602434542, "dur":106, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602434654, "dur":90, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602435636, "dur":1570, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/app.info" }}
+,{ "pid":12345, "tid":6, "ts":1705929602437212, "dur":119, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1705929602437210, "dur":122, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1705929602437333, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602437736, "dur":1009, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1705929602438811, "dur":94, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":6, "ts":1705929602439118, "dur":850, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":6, "ts":1705929602440015, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":6, "ts":1705929602440195, "dur":1008, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":6, "ts":1705929602441270, "dur":138, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1705929602441462, "dur":1749, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1705929602443255, "dur":85, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1705929602443399, "dur":1250, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1705929602444770, "dur":1120, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS.exe" }}
+,{ "pid":12345, "tid":6, "ts":1705929602445999, "dur":4259, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602450322, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602450439, "dur":1799, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602452378, "dur":1662, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602454214, "dur":2313, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602456579, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602456663, "dur":1739, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602458614, "dur":1412, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602460083, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602460177, "dur":2011, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602462241, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602462321, "dur":2365, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602464790, "dur":1413, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602466310, "dur":175, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602466503, "dur":2806, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602469366, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602469458, "dur":2166, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602471676, "dur":133, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602471854, "dur":1864, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602473827, "dur":2071, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602476018, "dur":1757, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602477835, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602477919, "dur":1897, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602479865, "dur":69, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602482343, "dur":225, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602479957, "dur":2621, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602482647, "dur":96, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602482760, "dur":3851, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1705929602486738, "dur":274, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1705929602487017, "dur":4467, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets2.assets" }}
+,{ "pid":12345, "tid":6, "ts":1705929602491720, "dur":4234, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":6, "ts":1705929602496080, "dur":9927, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/resources.assets" }}
+,{ "pid":12345, "tid":6, "ts":1705929602506057, "dur":866149, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602427635, "dur":2464, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602430100, "dur":941, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602431041, "dur":3489, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602434548, "dur":144, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml" }}
+,{ "pid":12345, "tid":7, "ts":1705929602434536, "dur":157, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":7, "ts":1705929602434693, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602441963, "dur":904, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":7, "ts":1705929602442923, "dur":94, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":7, "ts":1705929602443103, "dur":838, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":7, "ts":1705929602443996, "dur":74, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\EmbedRuntime\\MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602443994, "dur":77, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602444636, "dur":1975, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602446739, "dur":5330, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602452225, "dur":1311, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602453755, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602453839, "dur":165, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602454019, "dur":1463, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602455587, "dur":1350, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602457071, "dur":1703, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602458888, "dur":1539, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602460473, "dur":238, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602460729, "dur":1588, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602462361, "dur":249, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602462627, "dur":2248, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602464932, "dur":342, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602465313, "dur":1335, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602466718, "dur":121, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602466857, "dur":1880, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602468863, "dur":1787, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602470743, "dur":102, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602470861, "dur":1917, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602472896, "dur":1796, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602474759, "dur":227, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602475004, "dur":1385, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602476473, "dur":106, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602476596, "dur":1868, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602478604, "dur":1587, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602480237, "dur":123, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1705929602480380, "dur":3226, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602483656, "dur":114, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.12f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityPlayer.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602483654, "dur":117, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602483833, "dur":34886, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":7, "ts":1705929602518783, "dur":853488, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602427670, "dur":2437, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602430109, "dur":931, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602431040, "dur":3508, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602434548, "dur":192, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":8, "ts":1705929602434741, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602463321, "dur":1588, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":8, "ts":1705929602464982, "dur":292, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602465316, "dur":1103, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1705929602466540, "dur":1907, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1705929602468552, "dur":2922, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1705929602471532, "dur":281, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602471853, "dur":1744, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1705929602473680, "dur":82, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602473803, "dur":1918, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1705929602475797, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602475883, "dur":1478, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1705929602477405, "dur":94, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602477515, "dur":1173, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1705929602478760, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602478856, "dur":2134, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1705929602481075, "dur":207, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602481305, "dur":2706, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1705929602484113, "dur":3754, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets2.resource" }}
+,{ "pid":12345, "tid":8, "ts":1705929602487983, "dur":9501, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":8, "ts":1705929602497558, "dur":1970, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602499615, "dur":4552, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/level1.resS" }}
+,{ "pid":12345, "tid":8, "ts":1705929602504221, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1705929602504315, "dur":6189, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/stefs/Documents/Unity/BuildFiles/StarWizard/Builds/STAR WIZARDS_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":8, "ts":1705929602510591, "dur":861624, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1705929603376394, "dur":990, "ph":"X", "name": "ProfilerWriteOutput" }
 ,

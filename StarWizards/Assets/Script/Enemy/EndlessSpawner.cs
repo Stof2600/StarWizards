@@ -59,7 +59,6 @@ public class EndlessSpawner : MonoBehaviour
     {
         float SpawnCountTicks = (float)GM.TotalScore / 50;
         SpawnCountTicks -= Difficulty;
-        print((float)GM.TotalScore / 50);
         SpawnCount = Mathf.Lerp(3, 10, SpawnCountTicks);
         if(SpawnCount >= 10 && Difficulty < DifficultyLevels.Length)
         {

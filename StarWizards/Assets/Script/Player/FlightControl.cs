@@ -80,7 +80,7 @@ public class FlightControl : MonoBehaviour
                     P2.GetComponent<PlayerControl>().MoveActive = false;
                 }
 
-                MoveTimer = 2;
+                MoveTimer = 0;
                 WaitForPosition = true;
                 TempOpenAir = false;
             }
@@ -91,7 +91,11 @@ public class FlightControl : MonoBehaviour
         else if(WaitForPosition)
         {
             bool P1Done = false, P2Done = false, HolderDone = false;
-            MoveTimer -= Time.deltaTime;
+
+            if (MoveTimer < 1)
+            {
+                MoveTimer += Time.deltaTime;
+            }
 
             if (P1Active)
             {
@@ -123,17 +127,34 @@ public class FlightControl : MonoBehaviour
             }
 
             transform.position += new Vector3(0, 0, LevelSpeed * 4) * Time.deltaTime;
-            if (transform.position.z >= OpenArea.EndTPPoint.position.z)
+
+
+            if(!OpenArea)
+            {
+                print("NoAreaError");
+                HolderDone = true;
+            }
+            if(!OpenArea.EndTPPoint)
+            {
+                print("EndPointError");
+                HolderDone = true;
+            }
+
+            Vector3 DirToEnd = (transform.position - OpenArea.EndTPPoint.position).normalized;
+            Debug.DrawRay(OpenArea.EndTPPoint.position, DirToEnd * 500, Color.red);
+            print(DirToEnd);
+            if(DirToEnd.z > 0)
             {
                 HolderDone = true;
             }
 
 
-            if(P1Done && P2Done && HolderDone)
+            if((P1Done && P2Done) || HolderDone)
             {
                 GM.ChangeLives(1, true);
                 WaitForPosition = false;
                 GM.ForceAudioChange();
+                MoveTimer = 0;
             }
 
             return;
